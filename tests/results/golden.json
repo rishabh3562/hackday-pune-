@@ -1,0 +1,98 @@
+{
+ "suite": "golden",
+ "ran_at": "2026-10-17 16:47",
+ "passed": 18,
+ "total": 18,
+ "items": [
+  {
+   "id": "Q1",
+   "desc": "Q1",
+   "ok": true
+  },
+  {
+   "id": "Q2",
+   "desc": "Q2",
+   "ok": true
+  },
+  {
+   "id": "Q3",
+   "desc": "Q3",
+   "ok": true
+  },
+  {
+   "id": "Q4",
+   "desc": "Q4",
+   "ok": true
+  },
+  {
+   "id": "Q5",
+   "desc": "Q5",
+   "ok": true
+  },
+  {
+   "id": "Q6",
+   "desc": "Q6",
+   "ok": true
+  },
+  {
+   "id": "Q7",
+   "desc": "Q7",
+   "ok": true
+  },
+  {
+   "id": "Q8",
+   "desc": "Q8",
+   "ok": true
+  },
+  {
+   "id": "Q9",
+   "desc": "Q9",
+   "ok": true
+  },
+  {
+   "id": "Q10",
+   "desc": "Q10",
+   "ok": true
+  },
+  {
+   "id": "Q14a",
+   "desc": "Q14a",
+   "ok": true
+  },
+  {
+   "id": "Q14b",
+   "desc": "Q14b",
+   "ok": true
+  },
+  {
+   "id": "Q11",
+   "desc": "Q11",
+   "ok": true
+  },
+  {
+   "id": "Q12",
+   "desc": "Q12",
+   "ok": true
+  },
+  {
+   "id": "Q12b",
+   "desc": "Q12b",
+   "ok": true
+  },
+  {
+   "id": "Q13",
+   "desc": "Q13",
+   "ok": true
+  },
+  {
+   "id": "Q15",
+   "desc": "Q15",
+   "ok": true
+  },
+  {
+   "id": "SQL store Q5",
+   "desc": "SQL store Q5",
+   "ok": true
+  }
+ ]
+}

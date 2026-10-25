@@ -1,0 +1,92 @@
+{
+ "suite": "sql-tool",
+ "ran_at": "2026-10-17 14:43",
+ "passed": 14,
+ "total": 14,
+ "items": [
+  {
+   "id": "Q1",
+   "desc": "counts by method in 2025 match pandas",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q2",
+   "desc": "top technician by corrective cost matches pandas",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q3",
+   "desc": "average wellhead temp matches pandas",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q4",
+   "desc": "top-5 manual inspectors match pandas",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q5",
+   "desc": "validator rejects: DROP TABLE wells",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q6",
+   "desc": "validator rejects: SELECT 1; SELECT 2",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q7",
+   "desc": "validator rejects: SELECT * FROM read_csv('/etc/passwd')",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q8",
+   "desc": "validator rejects: DELETE FROM inspections",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q9",
+   "desc": "validator rejects: COPY wells TO '/tmp/x.csv'",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q10",
+   "desc": "validator rejects: PRAGMA database_list",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q11",
+   "desc": "validator rejects: INSERT INTO wells VALUES (1)",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q12",
+   "desc": "validator accepts a plain SELECT and a WITH query",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q13",
+   "desc": "an open-ended question routes to sql_query",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "id": "Q14",
+   "desc": "a question a typed tool covers does NOT use sql_query",
+   "ok": true,
+   "info": ""
+  }
+ ]
+}

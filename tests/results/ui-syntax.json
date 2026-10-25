@@ -1,0 +1,113 @@
+{
+ "suite": "ui-syntax",
+ "ran_at": "2026-10-17 16:47",
+ "passed": 21,
+ "total": 21,
+ "items": [
+  {
+   "id": "static/js/api.js",
+   "desc": "static/js/api.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/blocks.js",
+   "desc": "static/js/blocks.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/chats.js",
+   "desc": "static/js/chats.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/context.js",
+   "desc": "static/js/context.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/dom.js",
+   "desc": "static/js/dom.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/main.js",
+   "desc": "static/js/main.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/md.js",
+   "desc": "static/js/md.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/narrate.js",
+   "desc": "static/js/narrate.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/poster.js",
+   "desc": "static/js/poster.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/render.js",
+   "desc": "static/js/render.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/report.js",
+   "desc": "static/js/report.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/text.js",
+   "desc": "static/js/text.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/architecture.js",
+   "desc": "static/js/views/architecture.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/audit.js",
+   "desc": "static/js/views/audit.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/copilot.js",
+   "desc": "static/js/views/copilot.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/knowledge.js",
+   "desc": "static/js/views/knowledge.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/overview.js",
+   "desc": "static/js/views/overview.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/qa.js",
+   "desc": "static/js/views/qa.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/scorecard.js",
+   "desc": "static/js/views/scorecard.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/views/wiki.js",
+   "desc": "static/js/views/wiki.js",
+   "ok": true
+  },
+  {
+   "id": "static/js/voice.js",
+   "desc": "static/js/voice.js",
+   "ok": true
+  }
+ ]
+}

@@ -1,0 +1,506 @@
+{
+ "suite": "extra",
+ "ran_at": "2026-10-17 16:10",
+ "passed": 22,
+ "total": 22,
+ "items": [
+  {
+   "id": "M1",
+   "desc": "Which wells in Southwest Block 24 are 'high failed' wells: two or more corrective repairs in the last 12 months?",
+   "ok": true,
+   "ms": 0,
+   "tool": "repair_summary",
+   "question": "Which wells in Southwest Block 24 are 'high failed' wells: two or more corrective repairs in the last 12 months?",
+   "expected": "['WELL-0052', 'WELL-0055', 'WELL-0058', 'WELL-0060', 'WELL-0061', 'WELL-0062', 'WELL-0063', 'WELL-0064', 'WELL-0065', 'WELL-0069', 'WELL-0071', 'WELL-0073', 'WELL-0074', 'WELL-0075', 'WELL-0077', 'WELL-0078', 'WELL-0079', 'WELL-0080', 'WELL-0082', 'WELL-0084', 'WELL-0085', 'WELL-0088', 'WELL-0089', 'WELL-0090', 'WELL-0092', 'WELL-0093', 'WELL-0097', 'WELL-0098', 'WELL-0099', 'WELL-0100']",
+   "actual": "The following wells in Southwest Block 24 have two or more corrective repairs in the last 12 months: WELL-0069 (5 repairs, $61868), WELL-0092 (2 repairs, $50495), WELL-0063 (3 repairs, $46012), WELL-0085 (8 repairs, $40878), WELL-0061 (3 repairs, $32229), WELL-0073 (5 repairs, $31885), WELL-0093 (4 repairs, $31836), WELL-0065 (4 repairs, $31792), WELL-0071 (5 repairs, $31039), WELL-0090 (4 repairs, $28420), WELL-0074 (4 repairs, $28092), WELL-0060 (3 repairs, $27989), WELL-0079 (4 repairs, $27212), WELL-0099 (3 repairs, $24896), WELL-0080 (3 repairs, $23006), WELL-0098 (3 repairs, $22167), WELL-0064 (2 repairs, $21417), WELL-0077 (3 repairs, $20277), WELL-0088 (4 repairs, $18307), WELL-0052 (2 repairs, $17523), WELL-0097 (2 repairs, $17086), WELL-0058 (3 repairs, $16501), WELL-0084 (5 repairs, $16417), WELL-0082 (2 repairs, $16200), WELL-0075 (3 repairs, $14453), WELL-0062 (2 repairs, $14414), WELL-0100 (2 repairs, $13158), WELL-0055 (2 repairs, $7396), WELL-0078 (2 repairs, $6359), and WELL-0089 (2 repairs, $5119).",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 3,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": [
+     "The answer text does not cite any record IDs to support its claims."
+    ]
+   }
+  },
+  {
+   "id": "M2",
+   "desc": "Compare total repair spend by area for 2025 as a bar chart.",
+   "ok": true,
+   "ms": 0,
+   "tool": "repair_summary",
+   "question": "Compare total repair spend by area for 2025 as a bar chart.",
+   "expected": "{'Northeast Block 7': 1080231, 'Northeast Block 8': 863216, 'Southwest Block 23': 841077, 'Southwest Block 24': 1246369}",
+   "actual": "For 2025, Southwest Block 24 has a repair cost of $1,246,369 across 399 repairs. Northeast Block 7 has a repair cost of $1,080,231 across 360 repairs. Northeast Block 8 has a repair cost of $863,216 across 354 repairs. Southwest Block 23 has a repair cost of $841,077 across 352 repairs. The total repair spend for 2025 is $4,030,893 over 1465 repairs. These figures are based on maintenance records (MNT-0051-021 to MNT-0058-021).",
+   "visual": "bar",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "M3",
+   "desc": "Which wells breached the 14-day inspection rule (RC-01) in 2026?",
+   "ok": true,
+   "ms": 0,
+   "tool": "inspection_gaps",
+   "question": "Which wells breached the 14-day inspection rule (RC-01) in 2026?",
+   "expected": "['WELL-0161', 'WELL-0173', 'WELL-0198']",
+   "actual": "The following wells breached the 14-day inspection rule (RC-01) in 2026: WELL-0173, WELL-0161, and WELL-0198. WELL-0173's inspection (INS-0173-0170) on 2026-03-05 occurred 21 days after the previous one. WELL-0161's inspection (INS-0161-0135) on 2026-05-28 occurred 20 days after the previous one. WELL-0198's inspection (INS-0198-0186) on 2026-06-18 occurred 20 days after the previous one.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "M4",
+   "desc": "What is the total of open regulator fines across the field and which wells carry them?",
+   "ok": true,
+   "ms": 0,
+   "tool": "fines",
+   "question": "What is the total of open regulator fines across the field and which wells carry them?",
+   "expected": "{'total': 7500, 'wells': ['WELL-0001', 'WELL-0160']}",
+   "actual": "The total of open regulator fines across the field is 7,500 USD. WELL-0001 has an open fine of 5,000 USD (REG-0001-002) for a reportable spill not reported within 24 hours of discovery, dated 2026-06-30. WELL-0160 has an open fine of 2,500 USD (REG-0160-002) for a reportable spill not reported within 24 hours of discovery, dated 2023-05-05.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "M5",
+   "desc": "Show monthly downtime days for Northeast Block 7 in 2026 as a line chart.",
+   "ok": true,
+   "ms": 0,
+   "tool": "downtime_trend",
+   "question": "Show monthly downtime days for Northeast Block 7 in 2026 as a line chart.",
+   "expected": "{1: 63, 2: 28, 3: 84, 4: 77, 5: 70, 6: 70, 7: 98, 8: 98, 9: 77, 10: 84}",
+   "actual": "The total downtime for Northeast Block 7 in 2026 is as follows: 63 days in January, 28 days in February, 84 days in March, 77 days in April, 70 days in May, 70 days in June, 98 days in July, 98 days in August, 77 days in September, and 84 days in October. These figures represent the sum over the selected wells, with 7 days counted for each non-producing weekly inspection.",
+   "visual": "line",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 4,
+     "honesty": 4,
+     "clarity": 5
+    },
+    "verdict": "partial",
+    "issues": [
+     "The answer is incomplete because it only provides data for 10 months of the year, without explaining why the last two months are missing."
+    ]
+   }
+  },
+  {
+   "id": "M6",
+   "desc": "What is the mean time between corrective repairs for T200 versus T350 wells? Bar chart please.",
+   "ok": true,
+   "ms": 0,
+   "tool": "mtbf",
+   "question": "What is the mean time between corrective repairs for T200 versus T350 wells? Bar chart please.",
+   "expected": "{'T200': 144.5, 'T350': 156.2}",
+   "actual": "The mean time between corrective repairs for T200 wells is 144.5 days. For T350 wells, it is 156.2 days. These figures are computed from the gaps between consecutive corrective repair start dates on the same well.",
+   "visual": "bar",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 1,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "partial",
+    "issues": [
+     "no_grounding"
+    ]
+   }
+  },
+  {
+   "id": "M7",
+   "desc": "What was the single most expensive repair in 2026?",
+   "ok": true,
+   "ms": 0,
+   "tool": "top_repairs",
+   "question": "What was the single most expensive repair in 2026?",
+   "expected": "('MNT-0069-035', 37313)",
+   "actual": "The single most expensive repair in 2026 was MNT-0069-035 on WELL-0069. This was a corrective repair for a downhole pump that was stuck, started on 2026-06-26, and cost $37313.",
+   "visual": "card",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "M8",
+   "desc": "Which technicians did the most corrective repairs in Northeast Block 8 in the last 12 months? Top 3.",
+   "ok": true,
+   "ms": 0,
+   "tool": "repair_summary",
+   "question": "Which technicians did the most corrective repairs in Northeast Block 8 in the last 12 months? Top 3.",
+   "expected": "{'U-303': 31, 'U-304': 26, 'U-305': 21}",
+   "actual": "Kevin Price (U-303) performed 31 repairs costing 271,435 USD. Brian Coleman (U-304) performed 26 repairs costing 264,506 USD. Megan Ward (U-305) performed 21 repairs costing 169,168 USD. These repairs are cited in MNT-0151-023, MNT-0154-029, MNT-0159-025, MNT-0161-017, MNT-0164-021, MNT-0170-025, MNT-0170-029, MNT-0171-017, MNT-0174-028, MNT-0175-028, MNT-0175-031, MNT-0175-033, MNT-0177-023, MNT-0177-025, MNT-0178-033, MNT-0180-025, MNT-0182-021, MNT-0182-023, MNT-0183-026, MNT-0185-023, MNT-0187-022, MNT-0188-026, MNT-0192-025, MNT-0192-027, MNT-0193-019, MNT-0193-023, MNT-0194-036, MNT-0195-029, MNT-0197-022, MNT-0199-027, MNT-0200-020, MNT-0151-020, MNT-0153-024, MNT-0154-028, MNT-0155-022, MNT-0156-027, MNT-0160-028, MNT-0160-029, MNT-0161-021, MNT-0162-025, MNT-0164-024, MNT-0165-029, MNT-0168-024, MNT-0168-026, MNT-0170-031, MNT-0171-021, MNT-0173-026, MNT-0178-029, MNT-0182-018, MNT-0182-020, MNT-0188-031, MNT-0189-030, MNT-0189-033, MNT-0191-024, MNT-0193-020, MNT-0194-031, MNT-0199-031, MNT-0151-025, MNT-0152-026, MNT-0155-023.",
+   "visual": "bar",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 4
+    },
+    "verdict": "pass",
+    "issues": [
+     "The list of citations is very long and clutters the answer text."
+    ]
+   }
+  },
+  {
+   "id": "M9",
+   "desc": "Which wells in Southwest Block 23 have a recorded status that disagrees with their latest inspection?",
+   "ok": true,
+   "ms": 0,
+   "tool": "stale_status",
+   "question": "Which wells in Southwest Block 23 have a recorded status that disagrees with their latest inspection?",
+   "expected": "['WELL-0001', 'WELL-0002', 'WELL-0013']",
+   "actual": "WELL-0002 has a recorded status of 'down' but is actually producing. Its last inspection was on 2026-10-15, showing a wellhead temperature of 30.5\u00b0C above air temperature. WELL-0001 has a recorded status of 'active' but is not producing. Its last inspection was on 2026-10-15, showing a wellhead temperature of 3.2\u00b0C above air temperature. WELL-0013 has a recorded status of 'active' but is not producing. Its last inspection was on 2026-10-15, showing a wellhead temperature of 1.2\u00b0C above air temperature. Recorded statuses refresh monthly, and inspections are considered the truth.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "M10",
+   "desc": "In the last 12 months, how many real spills were found by drone versus manual inspection?",
+   "ok": true,
+   "ms": 0,
+   "tool": "spill_breakdown",
+   "question": "In the last 12 months, how many real spills were found by drone versus manual inspection?",
+   "expected": "{'drone': 132, 'manual': 33}",
+   "actual": "In the last 12 months, 132 real spills were found by drone inspection, totaling 290.8 barrels. Manual inspections found 33 real spills, totaling 75.3 barrels. Corrected detections were excluded from these numbers. (INS-0001-0185, INS-0001-0201, INS-0002-0105, INS-0005-0174, INS-0005-0183, INS-0007-0178, INS-0010-0181, INS-0013-0163, INS-0013-0165, INS-0013-0177, INS-0013-0183, INS-0013-0188, INS-0015-0166, INS-0017-0188, INS-0017-0198, INS-0018-0178, INS-0021-0182, INS-0022-0195, INS-0023-0181, INS-0024-0158, INS-0026-0179, INS-0029-0068, INS-0030-0192, INS-0032-0169, INS-0033-0175, INS-0034-0145, INS-0037-0154, INS-0037-0158, INS-0039-0192, INS-0039-0193, INS-0041-0165, INS-0041-0198, INS-0042-0203, INS-0042-0204, INS-0044-0197, INS-0045-0167, INS-0045-0185, INS-0045-0198, INS-0047-0156, INS-0048-0169, INS-0050-0175, INS-0052-0165, INS-0052-0172, INS-0053-0167, INS-0058-0162, INS-0060-0169, INS-0060-0190, INS-0060-0191, INS-0063-0155, INS-0064-0171, INS-0069-0171, INS-0071-0164, INS-0071-0180, INS-0071-0184, INS-0073-0180, INS-0073-0182, INS-0073-0195, INS-0074-0171, INS-0074-0176, INS-0074-0179)",
+   "visual": "bar",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "M11",
+   "desc": "Which repairs are currently in progress across the field?",
+   "ok": true,
+   "ms": 0,
+   "tool": "open_repairs_all",
+   "question": "Which repairs are currently in progress across the field?",
+   "expected": "['WELL-0013', 'WELL-0077', 'WELL-0079', 'WELL-0110', 'WELL-0115', 'WELL-0121', 'WELL-0123', 'WELL-0170', 'WELL-0172']",
+   "actual": "Wells: WELL-0013, WELL-0077, WELL-0079, WELL-0110, WELL-0115, WELL-0121, WELL-0123, WELL-0170, WELL-0172.\nThere are 9 repairs currently in progress across the field.\nWELL-0013 has a prime mover failure (MNT-0013-037) that started on 2026-10-16 and is planned to end on 2026-10-27.\nWELL-0077 has a flowline leak causing spill (MNT-0077-025) that started on 2026-10-16 and is planned to end on 2026-10-17.\nWELL-0079 has a prime mover failure (MNT-0079-036) that started on 2026-10-16 and is planned to end on 2026-11-03.\nWELL-0110 has a flowline corrosion pinhole leak (MNT-0110-030) that started on 2026-10-16 and is planned to end on 2026-10-27.\nWELL-0115 has a flowline corrosion pinhole leak (MNT-0115-037) that started on 2026-10-10 and is planned to end on 2026-10-27.\nWELL-0121 has a prime mover failure (MNT-0121-035) that started on 2026-10-09 and is planned to end on 2026-10-28.\nWELL-0123 has a downhole pump stuck (MNT-0123-015) that started on 2026-10-09 and is planned to end on 2026-10-27.\nWELL-0170 has walking beam bearing wear (MNT-0170-031) that started on 2026-09-19 and is planned to end on 2026-10-28.\nWELL-0172 has a flowline corrosion pinhole leak (MNT-0172-028) that started on 2026-10-03 and is planned to end on 2026-10-21.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C1",
+   "desc": "Which wells have been down for more than 14 consecutive days right now and must be reported to the supervisor (RC-03)?",
+   "ok": true,
+   "ms": 0,
+   "tool": "consecutive_down",
+   "question": "Which wells have been down for more than 14 consecutive days right now and must be reported to the supervisor (RC-03)?",
+   "expected": "['WELL-0170', 'WELL-0172']",
+   "actual": "WELL-0170 has been down for 35 consecutive days since 2026-09-17 (INS-0170-0206, INS-0170-0205, INS-0170-0204, INS-0170-0203, INS-0170-0202). Its recorded status is 'down'. WELL-0172 has been down for 21 consecutive days since 2026-10-01 (INS-0172-0206, INS-0172-0205, INS-0172-0204). Its recorded status is 'active', which contradicts the fact that it has been down for 21 days. Both wells must be reported to the area production supervisor as they have been down for more than 14 consecutive days.\nRC-03: down more than 14 consecutive days must be reported to the area production supervisor.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C2",
+   "desc": "Which wells had repeat failures in 2026: a corrective repair on the same equipment within 90 days of the last one?",
+   "ok": true,
+   "ms": 0,
+   "tool": "repeat_failures",
+   "question": "Which wells had repeat failures in 2026: a corrective repair on the same equipment within 90 days of the last one?",
+   "expected": "['WELL-0001', 'WELL-0005', 'WELL-0013', 'WELL-0017', 'WELL-0021', 'WELL-0025', 'WELL-0033', 'WELL-0039', 'WELL-0041', 'WELL-0042', 'WELL-0060', 'WELL-0065', 'WELL-0069', 'WELL-0071', 'WELL-0073', 'WELL-0074', 'WELL-0075', 'WELL-0080', 'WELL-0085', 'WELL-0088', 'WELL-0092', 'WELL-0098', 'WELL-0099', 'WELL-0102', 'WELL-0108', 'WELL-0110', 'WELL-0113', 'WELL-0121', 'WELL-0131', 'WELL-0133', 'WELL-0136', 'WELL-0138', 'WELL-0141', 'WELL-0145', 'WELL-0148', 'WELL-0151', 'WELL-0154', 'WELL-0182', 'WELL-0183', 'WELL-0191', 'WELL-0199']",
+   "actual": "The following wells had repeat failures in 2026:\nWELL-0001 had 1 repeat failure on the flowline (MNT-0001-029).\nWELL-0005 had 1 repeat failure on the flowline (MNT-0005-029).\nWELL-0013 had 4 repeat failures on the flowline and pump_jack (MNT-0013-029, MNT-0013-031, MNT-0013-033, MNT-0013-037).\nWELL-0017 had 1 repeat failure on the flowline (MNT-0017-029).\nWELL-0021 had 1 repeat failure on the flowline (MNT-0021-029).\nWELL-0025 had 1 repeat failure on the flowline (MNT-0025-032).\nWELL-0033 had 2 repeat failures on the flowline (MNT-0033-023, MNT-0033-024).\nWELL-0039 had 2 repeat failures on the flowline (MNT-0039-026, MNT-0039-027).\nWELL-0041 had 1 repeat failure on the flowline (MNT-0041-035).\nWELL-0042 had 1 repeat failure on the flowline (MNT-0042-026).\nWELL-0060 had 1 repeat failure on the flowline (MNT-0060-033).\nWELL-0065 had 1 repeat failure on the flowline (MNT-0065-024).\nWELL-0069 had 1 repeat failure on the pump_jack (MNT-0069-034).\nWELL-0071 had 1 repeat failure on the flowline (MNT-0071-036).\nWELL-0073 had 1 repeat failure on the flowline (MNT-0073-024).\nWELL-0074 had 3 repeat failures on the flowline (MNT-0074-030, MNT-0074-031, MNT-0074-033).\nWELL-0075 had 1 repeat failure on the flowline (MNT-0075-032).\nWELL-0080 had 1 repeat failure on the flowline (MNT-0080-028).\nWELL-0085 had 5 repeat failures on the flowline (MNT-0085-021, MNT-0085-022, MNT-0085-028, MNT-0085-030, MNT-0085-031).\nWELL-0088 had 2 repeat failures on the flowline (MNT-0088-029, MNT-0088-031).\nWELL-0092 had 1 repeat failure on the downhole_pump (MNT-0092-027).\nWELL-0098 had 1 repeat failure on the flowline (MNT-0098-027).\nWELL-0099 had 1 repeat failure on the flowline (MNT-0099-028).\nWELL-0102 had 1 repeat failure on the flowline (MNT-0102-027).\nWELL-0108 had 2 repeat failures on the pump_jack (MNT-0108-026, MNT-0108-028).\nWELL-0110 had 1 repeat failure on the flowline (MNT-0110-028).\nWELL-0113 had 1 repeat failure on the flowline (MNT-0113-030).\nWELL-0121 had 1 repeat failure on the pump_jack (MNT-0121-035).\nWELL-0131 had 1 repeat failure on the flowline (MNT-0131-020).\nWELL-0133 had 1 repeat failure on the flowline (MNT-0133-023).",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 2,
+     "grounding": 5,
+     "completeness": 2,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "fail",
+    "issues": [
+     "The answer is missing 11 of the 41 wells that had repeat failures."
+    ]
+   }
+  },
+  {
+   "id": "C3",
+   "desc": "Of the reportable spills in the last 12 months, how many were reported late or never, and what fines are still open?",
+   "ok": true,
+   "ms": 0,
+   "tool": null,
+   "question": "Of the reportable spills in the last 12 months, how many were reported late or never, and what fines are still open?",
+   "expected": "{'reportable': 11, 'late_or_missing': 4, 'fines_open': 5000}",
+   "actual": "There were 4 reportable spills that were reported late or never in the last 12 months. These occurred at WELL-0033 (INS-0033-0175), WELL-0099 (INS-0099-0171), WELL-0001 (INS-0001-0185), and WELL-0013 (INS-0013-0188). There is one open fine of USD 5,000 for WELL-0001 (REG-0001-002) due to a reportable spill not being reported within 24 hours.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C4",
+   "desc": "How much did repairs triggered by spills cost in 2026, by area?",
+   "ok": true,
+   "ms": 0,
+   "tool": "spill_repair_cost",
+   "question": "How much did repairs triggered by spills cost in 2026, by area?",
+   "expected": "{'Northeast Block 7': 254847, 'Northeast Block 8': 195033, 'Southwest Block 23': 246694, 'Southwest Block 24': 309278}",
+   "actual": "In 2026, repairs triggered by spills cost $254,847 in Northeast Block 7, $195,033 in Northeast Block 8, $246,694 in Southwest Block 23, and $309,278 in Southwest Block 24. These costs are based on 37 repairs in Northeast Block 7, 26 repairs in Northeast Block 8, 35 repairs in Southwest Block 23, and 43 repairs in Southwest Block 24. The data is cited from multiple maintenance records (MNT-0001-029, MNT-0001-032, MNT-0002-013, MNT-0005-028, MNT-0005-029, MNT-0007-028, MNT-0010-026, MNT-0013-026, MNT-0013-029, MNT-0013-031, MNT-0013-033, MNT-0015-028, MNT-0017-025, MNT-0017-029, MNT-0018-025, MNT-0021-029, MNT-0022-024, MNT-0023-028, MNT-0026-027, MNT-0029-010, MNT-0030-032, MNT-0032-022, MNT-0033-023, MNT-0034-017, MNT-0039-026, MNT-0039-027, MNT-0041-035, MNT-0042-025, MNT-0042-026, MNT-0044-036, MNT-0045-025, MNT-0045-029, MNT-0045-032, MNT-0048-022, MNT-0050-021, MNT-0052-028, MNT-0053-029, MNT-0060-028, MNT-0060-031, MNT-0060-033, MNT-0064-024, MNT-0069-029, MNT-0071-030, MNT-0071-034, MNT-0071-036, MNT-0073-023, MNT-0073-024, MNT-0073-028, MNT-0074-029, MNT-0074-030, MNT-0074-031, MNT-0074-033, MNT-0075-032, MNT-0077-025, MNT-0079-034, MNT-0080-027, MNT-0080-028, MNT-0081-026, MNT-0082-025, MNT-0082-028).",
+   "visual": "bar",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C5",
+   "desc": "Which areas still lack the annual flowline integrity test (RC-02) for 2026, and how many wells in each?",
+   "ok": true,
+   "ms": 0,
+   "tool": "flowline_tests",
+   "question": "Which areas still lack the annual flowline integrity test (RC-02) for 2026, and how many wells in each?",
+   "expected": "{'Northeast Block 8': 11, 'Southwest Block 23': 8, 'Southwest Block 24': 6, 'Northeast Block 7': 4}",
+   "actual": "The following areas still lack the annual flowline integrity test (RC-02) for 2026:\n\n*   Northeast Block 7 has 4 wells without the test: WELL-0116, WELL-0138, WELL-0142, WELL-0145.\n*   Northeast Block 8 has 11 wells without the test: WELL-0151, WELL-0155, WELL-0164, WELL-0169, WELL-0177, WELL-0187, WELL-0190, WELL-0192, WELL-0193, WELL-0198, WELL-0199.\n*   Southwest Block 23 has 8 wells without the test: WELL-0008, WELL-0012, WELL-0020, WELL-0022, WELL-0031, WELL-0036, WELL-0040, WELL-0046.\n*   Southwest Block 24 has 6 wells without the test: WELL-0068, WELL-0071, WELL-0082, WELL-0092, WELL-0094, WELL-0099.\n\nIn total, 29 of 200 wells have no annual flowline integrity test in 2026 (RC-02).",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C6",
+   "desc": "In 2025, where did we see hot wellheads above 45 \u00b0C that were still not producing oil? Count by area.",
+   "ok": true,
+   "ms": 0,
+   "tool": "hot_false_alarms",
+   "question": "In 2025, where did we see hot wellheads above 45 \u00b0C that were still not producing oil? Count by area.",
+   "expected": "{'Northeast Block 7': 2, 'Northeast Block 8': 3, 'Southwest Block 23': 2, 'Southwest Block 24': 2}",
+   "actual": "In 2025, the Northeast Block 7 area had 2 hot but not producing wellheads. Northeast Block 8 had 3 hot but not producing wellheads. Southwest Block 23 had 2 hot but not producing wellheads. Southwest Block 24 had 2 hot but not producing wellheads. The rise over air temperature is the relevant factor, not the absolute reading (manual section 9.3).",
+   "visual": "bar",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 2,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "partial",
+    "issues": [
+     "The answer provides a citation for a piece of contextual information but does not cite the record IDs or data sources for the primary facts (the wellhead counts)."
+    ]
+   }
+  },
+  {
+   "id": "C7",
+   "desc": "Which wells are not producing right now and also had a corrective repair in the last 90 days?",
+   "ok": true,
+   "ms": 0,
+   "tool": "down_with_recent_repair",
+   "question": "Which wells are not producing right now and also had a corrective repair in the last 90 days?",
+   "expected": "['WELL-0001', 'WELL-0013', 'WELL-0079', 'WELL-0101', 'WELL-0110', 'WELL-0115', 'WELL-0121', 'WELL-0123', 'WELL-0128', 'WELL-0170', 'WELL-0172', 'WELL-0175']",
+   "actual": "Wells: WELL-0001, WELL-0013, WELL-0079, WELL-0101, WELL-0110, WELL-0115, WELL-0121, WELL-0123, WELL-0128, WELL-0170, WELL-0172, WELL-0175.\nThe following wells are not producing and had corrective repairs in the last 90 days:\n\nWELL-0001 had 1 corrective repair (MNT-0001-032) for a flowline leak causing a spill.\nWELL-0013 had 3 corrective repairs (MNT-0013-034, MNT-0013-036, MNT-0013-037) for a prime mover failure.\nWELL-0079 had 1 corrective repair (MNT-0079-036) for a prime mover failure.\nWELL-0101 had 1 corrective repair (MNT-0101-029) for a flowline leak causing a spill.\nWELL-0110 had 1 corrective repair (MNT-0110-030) for a flowline corrosion pinhole leak.\nWELL-0115 had 1 corrective repair (MNT-0115-037) for a flowline corrosion pinhole leak.\nWELL-0121 had 2 corrective repairs (MNT-0121-034, MNT-0121-035) for a prime mover failure.\nWELL-0123 had 2 corrective repairs (MNT-0123-014, MNT-0123-015) for a downhole pump stuck.\nWELL-0128 had 1 corrective repair (MNT-0128-036) for a flowline leak causing a spill.\nWELL-0170 had 2 corrective repairs (MNT-0170-029, MNT-0170-031) for walking beam bearing wear.\nWELL-0172 had 1 corrective repair (MNT-0172-028) for a flowline corrosion pinhole leak.\nWELL-0175 had 1 corrective repair (MNT-0175-033) for a flowline leak causing a spill.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C8",
+   "desc": "Which wells stopped producing at their latest inspection after producing at the one before?",
+   "ok": true,
+   "ms": 0,
+   "tool": "newly_stopped",
+   "question": "Which wells stopped producing at their latest inspection after producing at the one before?",
+   "expected": "['WELL-0013', 'WELL-0060', 'WELL-0066', 'WELL-0079', 'WELL-0101', 'WELL-0110', 'WELL-0128', 'WELL-0164', 'WELL-0175']",
+   "actual": "The following wells stopped producing at their latest inspection on 2026-10-15 after producing at the one before: WELL-0013 (INS-0013-0206), WELL-0060 (INS-0060-0207), WELL-0066 (INS-0066-0205), WELL-0079 (INS-0079-0200), WELL-0101 (INS-0101-0205), WELL-0110 (INS-0110-0205), WELL-0128 (INS-0128-0203), WELL-0164 (INS-0164-0205), and WELL-0175 (INS-0175-0204).",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C9",
+   "desc": "How many 2026 spill detections were removed by corrections, and how many real spills remain?",
+   "ok": true,
+   "ms": 0,
+   "tool": null,
+   "question": "How many 2026 spill detections were removed by corrections, and how many real spills remain?",
+   "expected": "{'detected': 158, 'real': 141, 'corrected_out': 17}",
+   "actual": "17 2026 spill detections were removed by corrections. 141 real spills remain. The removed detections are: INS-0003-0183, INS-0004-0190, INS-0011-0201, INS-0015-0205, INS-0024-0172, INS-0054-0172, INS-0062-0187, INS-0080-0192, INS-0081-0171, INS-0107-0201, INS-0119-0191, INS-0120-0202, INS-0121-0170, INS-0122-0201, INS-0183-0182, INS-0194-0192, INS-0199-0200.\n141 spills, 316.9 bbl total.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C10",
+   "desc": "For the 5 wells with the most downtime in the last 12 months, what did repairs cost and what is the cost per downtime day?",
+   "ok": true,
+   "ms": 0,
+   "tool": "downtime_cost",
+   "question": "For the 5 wells with the most downtime in the last 12 months, what did repairs cost and what is the cost per downtime day?",
+   "expected": "{'WELL-0121': (91, 30964), 'WELL-0061': (77, 35860), 'WELL-0031': (70, 30088), 'WELL-0015': (63, 24596), 'WELL-0069': (63, 67660)}",
+   "actual": "WELL-0121 had 91 days of downtime, with a repair cost of $30,964, resulting in a cost of $340 per downtime day. WELL-0061 experienced 77 days of downtime, costing $35,860 for repairs, or $466 per downtime day. WELL-0031 had 70 days of downtime, with repair costs totaling $30,088, which is $430 per downtime day. WELL-0015 and WELL-0069 both had 63 days of downtime. For WELL-0015, repair costs were $24,596, or $390 per downtime day. For WELL-0069, repair costs were $67,660, or $1074 per downtime day. Repair costs are by start date within the same window.",
+   "visual": "table",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "C11",
+   "desc": "Show the quarterly trend of reportable spills (5 bbl or more) since 2023.",
+   "ok": true,
+   "ms": 0,
+   "tool": "spill_breakdown",
+   "question": "Show the quarterly trend of reportable spills (5 bbl or more) since 2023.",
+   "expected": "{'2023Q1': 2, '2023Q2': 6, '2023Q3': 1, '2023Q4': 1, '2024Q1': 3, '2024Q2': 4, '2024Q3': 1, '2024Q4': 3, '2025Q2': 1, '2025Q3': 3, '2026Q1': 4, '2026Q2': 5, '2026Q3': 2}",
+   "actual": "The quarterly trend of reportable spills (5 bbl or more) since 2023 is as follows:\n\n*   **2023Q1**: 2 spills, totaling 11.2 barrels.\n*   **2023Q2**: 6 spills, totaling 34.3 barrels.\n*   **2023Q3**: 1 spill, totaling 5.2 barrels.\n*   **2023Q4**: 1 spill, totaling 6.2 barrels.\n*   **2024Q1**: 3 spills, totaling 15.8 barrels.\n*   **2024Q2**: 4 spills, totaling 23.6 barrels.\n*   **2024Q3**: 1 spill, totaling 5.3 barrels.\n*   **2024Q4**: 3 spills, totaling 15.9 barrels.\n*   **2025Q2**: 1 spill, totaling 5.5 barrels.\n*   **2025Q3**: 3 spills, totaling 17.0 barrels.\n*   **2026Q1**: 4 spills, totaling 21.2 barrels.\n*   **2026Q2**: 5 spills, totaling 29.1 barrels.\n*   **2026Q3**: 2 spills, totaling 11.4 barrels.\n\nCorrected detections are excluded from these figures. (INS-0001-0185, INS-0002-0105, INS-0008-0106, INS-0012-0012, INS-0013-0188, INS-0019-0042, INS-0025-0107, INS-0028-0079, INS-0033-0175, INS-0042-0203, INS-0048-0079, INS-0052-0152, INS-0056-0031, INS-0064-0103, INS-0071-0184, INS-0074-0053, INS-0076-0146, INS-0078-0101, INS-0079-0028, INS-0090-0032, INS-0099-0171, INS-0113-0140, INS-0114-0036, INS-0120-0086, INS-0123-0093, INS-0135-0185, INS-0138-0079, INS-0145-0067, INS-0155-0069, INS-0160-0025, INS-0168-0037, INS-0168-0144, INS-0168-0190, INS-0176-0020, INS-0182-0164, INS-0190-0063)",
+   "visual": "line",
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  }
+ ],
+ "judge_model": "gemini-2.5-pro",
+ "judged_at": "2026-10-17 16:23"
+}

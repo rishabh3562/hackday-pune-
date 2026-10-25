@@ -1,0 +1,3 @@
+{ "name": "docs-tools", "private": true, "type": "module",
+  "scripts": { "pdf": "node build-pdf.mjs" },
+  "dependencies": { "marked": "^15.0.0", "mermaid": "^11.4.0", "playwright-core": "^1.56.0" } }

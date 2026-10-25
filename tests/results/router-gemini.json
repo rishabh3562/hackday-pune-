@@ -1,0 +1,210 @@
+{
+ "suite": "router-gemini",
+ "ran_at": "2026-10-17 14:46",
+ "passed": 40,
+ "total": 40,
+ "items": [
+  {
+   "id": "1",
+   "desc": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?",
+   "ok": true
+  },
+  {
+   "id": "2",
+   "desc": "Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a ",
+   "ok": true
+  },
+  {
+   "id": "3",
+   "desc": "Show a line chart of WELL-0001's wellhead temperature against air temperature for the last",
+   "ok": true
+  },
+  {
+   "id": "4",
+   "desc": "How many oil spills has WELL-0001 had in the last 4 years, and how much oil in total? List",
+   "ok": true
+  },
+  {
+   "id": "5",
+   "desc": "How many days was WELL-0001 down in 2025?",
+   "ok": true
+  },
+  {
+   "id": "6",
+   "desc": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months? Show a bar ",
+   "ok": true
+  },
+  {
+   "id": "7",
+   "desc": "Show on a map every well in Northeast Block 8 with a real spill in the last 90 days.",
+   "ok": true
+  },
+  {
+   "id": "8",
+   "desc": "Show a heatmap of 2026 spills by geographic area and month.",
+   "ok": true
+  },
+  {
+   "id": "9",
+   "desc": "Which rules has WELL-0001 broken in the last 12 months, and what is still open?",
+   "ok": true
+  },
+  {
+   "id": "10",
+   "desc": "In Southwest Block 24, which spills in the last 90 days were not contained within the SOP ",
+   "ok": true
+  },
+  {
+   "id": "11",
+   "desc": "The 15 Oct reading for WELL-0164 is wrong. The handheld thermal gun used in that inspectio",
+   "ok": true
+  },
+  {
+   "id": "12",
+   "desc": "The AI estimated the 24 Sep spill at WELL-0151 as 4.5 bbl. The field crew measured 5.4 bbl",
+   "ok": true
+  },
+  {
+   "id": "13",
+   "desc": "Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?",
+   "ok": true
+  },
+  {
+   "id": "14",
+   "desc": "Note for all T350 wells: our team now wants a pump jack root-cause analysis after 2 repair",
+   "ok": true
+  },
+  {
+   "id": "15",
+   "desc": "FYI for everyone: WELL-0007 will be shut in from 17 Oct for a 10-day planned workover.",
+   "ok": true
+  },
+  {
+   "id": "16",
+   "desc": "WELL-0175 is running fine.",
+   "ok": true
+  },
+  {
+   "id": "17",
+   "desc": "Was the 20 Aug spill at WELL-0101 real oil?",
+   "ok": true
+  },
+  {
+   "id": "18",
+   "desc": "Which spills in Northeast Block 8 in the last 90 days needed a report to the regulator?",
+   "ok": true
+  },
+  {
+   "id": "19",
+   "desc": "Which wells in Southwest Block 24 are 'high failed' wells: two or more corrective repairs ",
+   "ok": true
+  },
+  {
+   "id": "20",
+   "desc": "Compare total repair spend by area for 2025 as a bar chart.",
+   "ok": true
+  },
+  {
+   "id": "21",
+   "desc": "Which wells breached the 14-day inspection rule (RC-01) in 2026?",
+   "ok": true
+  },
+  {
+   "id": "22",
+   "desc": "What is the total of open regulator fines across the field and which wells carry them?",
+   "ok": true
+  },
+  {
+   "id": "23",
+   "desc": "Show monthly downtime days for Northeast Block 7 in 2026 as a line chart.",
+   "ok": true
+  },
+  {
+   "id": "24",
+   "desc": "What is the mean time between corrective repairs for T200 versus T350 wells? Bar chart ple",
+   "ok": true
+  },
+  {
+   "id": "25",
+   "desc": "What was the single most expensive repair in 2026?",
+   "ok": true
+  },
+  {
+   "id": "26",
+   "desc": "Which technicians did the most corrective repairs in Northeast Block 8 in the last 12 mont",
+   "ok": true
+  },
+  {
+   "id": "27",
+   "desc": "Which wells in Southwest Block 23 have a recorded status that disagrees with their latest ",
+   "ok": true
+  },
+  {
+   "id": "28",
+   "desc": "In the last 12 months, how many real spills were found by drone versus manual inspection?",
+   "ok": true
+  },
+  {
+   "id": "29",
+   "desc": "Which repairs are currently in progress across the field?",
+   "ok": true
+  },
+  {
+   "id": "30",
+   "desc": "Which wells have been down for more than 14 consecutive days right now and must be reporte",
+   "ok": true
+  },
+  {
+   "id": "31",
+   "desc": "Which wells had repeat failures in 2026: a corrective repair on the same equipment within ",
+   "ok": true
+  },
+  {
+   "id": "32",
+   "desc": "Of the reportable spills in the last 12 months, how many were reported late or never, and ",
+   "ok": true
+  },
+  {
+   "id": "33",
+   "desc": "How much did repairs triggered by spills cost in 2026, by area?",
+   "ok": true
+  },
+  {
+   "id": "34",
+   "desc": "Which areas still lack the annual flowline integrity test (RC-02) for 2026, and how many w",
+   "ok": true
+  },
+  {
+   "id": "35",
+   "desc": "In 2025, where did we see hot wellheads above 45 \u00b0C that were still not producing oil? Cou",
+   "ok": true
+  },
+  {
+   "id": "36",
+   "desc": "Which wells are not producing right now and also had a corrective repair in the last 90 da",
+   "ok": true
+  },
+  {
+   "id": "37",
+   "desc": "Which wells stopped producing at their latest inspection after producing at the one before",
+   "ok": true
+  },
+  {
+   "id": "38",
+   "desc": "How many 2026 spill detections were removed by corrections, and how many real spills remai",
+   "ok": true
+  },
+  {
+   "id": "39",
+   "desc": "For the 5 wells with the most downtime in the last 12 months, what did repairs cost and wh",
+   "ok": true
+  },
+  {
+   "id": "40",
+   "desc": "Show the quarterly trend of reportable spills (5 bbl or more) since 2023.",
+   "ok": true
+  }
+ ],
+ "tool_kind_accuracy": 40,
+ "tool_args_accuracy": 40
+}

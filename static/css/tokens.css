@@ -1,0 +1,19 @@
+/* Design tokens: the only place colours, spacing and type scale are defined. Dark follows the OS unless data-theme is set. */
+:root {
+  --bg: #f5f6f9; --surface: #ffffff; --surface-2: #f0f2f7; --line: #e2e6ee; --ink: #1b2233; --mute: #667085;
+  --brand: #e8920a; --brand-ink: #1b1204; --ok: #12905f; --bad: #d92d3a; --warn: #c27803; --info: #4650e0;
+  --ok-bg: #e5f6ee; --bad-bg: #fdebed; --warn-bg: #fff4de; --info-bg: #eceefe;
+  --chart-1: #e8920a; --chart-2: #4650e0; --chart-3: #12905f; --chart-4: #d92d3a; --chart-5: #0891b2; --chart-6: #9333ea; --chart-7: #64748b; --chart-8: #db2777; --chart-grid: #e2e6ee;
+  --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px;
+  --shadow: 0 1px 2px rgb(16 24 40 / 6%), 0 4px 14px rgb(16 24 40 / 6%);
+  --font: Inter, ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --sidebar-w: 232px; --panel-w: 340px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0e121a; --surface: #161b26; --surface-2: #1d2331; --line: #283042; --ink: #e9edf5; --mute: #93a0b8;
+    --brand: #f5a524; --brand-ink: #1b1204; --ok: #39c98b; --bad: #ff6b76; --warn: #f2b13a; --info: #8f98ff;
+    --ok-bg: #12332a; --bad-bg: #3a1a20; --warn-bg: #36290f; --info-bg: #1f2447; --chart-grid: #283042; --chart-4: #ff6b76; --chart-5: #22d3ee; --chart-6: #c084fc; --chart-7: #94a3b8; --chart-8: #f472b6; --shadow: 0 1px 2px rgb(0 0 0 / 40%); }
+}
+:root[data-theme="dark"] { --bg: #0e121a; --surface: #161b26; --surface-2: #1d2331; --line: #283042; --ink: #e9edf5; --mute: #93a0b8;
+  --brand: #f5a524; --brand-ink: #1b1204; --ok: #39c98b; --bad: #ff6b76; --warn: #f2b13a; --info: #8f98ff;
+  --ok-bg: #12332a; --bad-bg: #3a1a20; --warn-bg: #36290f; --info-bg: #1f2447; --chart-grid: #283042; --chart-4: #ff6b76; --chart-5: #22d3ee; --chart-6: #c084fc; --chart-7: #94a3b8; --chart-8: #f472b6; --shadow: 0 1px 2px rgb(0 0 0 / 40%); }

@@ -1,0 +1,80 @@
+{
+ "suite": "embeddings",
+ "ran_at": "2026-10-17 15:17",
+ "passed": 12,
+ "total": 12,
+ "items": [
+  {
+   "id": "E1",
+   "desc": "every chunk has an embedding (768-d, unit length)",
+   "ok": true,
+   "info": "((1705, 768), 1705)"
+  },
+  {
+   "id": "E2",
+   "desc": "a live-embedded query lands on the right SOP section by cosine alone (SR-02: containment in 4 hours)",
+   "ok": true,
+   "info": "[('spill-response-sop.md', '**SR-02** | The source must be'), ('T200.md', '9.5 Spill-related shut-in'), ('spill-response-sop.md', '**SR-01** | For a **reportable')]"
+  },
+  {
+   "id": "E3",
+   "desc": "second search uses the on-disk cache (no re-embedding of the corpus)",
+   "ok": true,
+   "info": "4.3s"
+  },
+  {
+   "id": "E4",
+   "desc": "hybrid finds the right document for paraphrases: 7/8 (BM25 only: 5/8)",
+   "ok": true,
+   "info": "([True, False, True, True, True, True, False, False], [True, True, True, True, False, True, True, True])"
+  },
+  {
+   "id": "E5",
+   "desc": "embeddings add value: at least one paraphrase BM25-only misses but hybrid finds",
+   "ok": true,
+   "info": "([True, False, True, True, True, True, False, False], [True, True, True, True, False, True, True, True])"
+  },
+  {
+   "id": "E6",
+   "desc": "agent called search_docs, hybrid used the embeddings, and the answer is right (24)",
+   "ok": true,
+   "info": "('search_docs', ['hybrid search: BM25 + text-embedding-005 vectors in chroma (1705 chunks)'], 'For a reportable or major spill, the State Oil & Gas Commission must be phoned immediately (fleet/sops/spill-response-sop.md). A written notice, inclu')"
+  },
+  {
+   "id": "E7",
+   "desc": "agent called search_docs, hybrid used the embeddings, and the answer is right (20)",
+   "ok": true,
+   "info": "('search_docs', ['hybrid search: BM25 + text-embedding-005 vectors in chroma (1705 chunks)'], 'A T350 well is considered producing (active) when its wellhead temperature is at least 20 \u00b0C above the ambient air temperature at the time of the read')"
+  },
+  {
+   "id": "E8",
+   "desc": "Chroma holds every chunk (persistent collection)",
+   "ok": true,
+   "info": "(1705, 1705)"
+  },
+  {
+   "id": "E9",
+   "desc": "Chroma agrees with the exact numpy cosine ranking (avg top-10 overlap >= 9)",
+   "ok": true,
+   "info": "[10, 10, 10, 10, 10, 10, 10, 10]"
+  },
+  {
+   "id": "E10",
+   "desc": "metadata filter: a well-filtered query returns only that well's chunks",
+   "ok": true,
+   "info": "[{'well_type': '', 'well': 'WELL-0001', 'kind': 'note', 'doc': 'CTX-0001-002'}, {'kind': 'maintenance report', 'well': 'WELL-0001', 'doc': 'MNT-0001-021', 'well_type': ''}]"
+  },
+  {
+   "id": "E11",
+   "desc": "a fresh engine reopens the persisted Chroma collection and the cache (no re-embedding, no rebuild)",
+   "ok": true,
+   "info": "3.7s"
+  },
+  {
+   "id": "E12",
+   "desc": "a 'why did it fail on WELL-X' question gets the repair reports' root causes (tool root_causes or well-filtered search)",
+   "ok": true,
+   "info": "('root_causes', 'The flowline on WELL-0001 failed due to several reasons according to repair reports. Thread fatigue from pump jack vibration was cited on 2026-10-02 (')"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "suite": "context",
+ "ran_at": "2026-10-17 15:20",
+ "passed": 6,
+ "total": 6,
+ "items": [
+  {
+   "id": "X1",
+   "desc": "an answer reports real token counts for each model call (router + writer)",
+   "ok": true,
+   "info": "[('router', True), ('writer', True), ('critic', True), ('writer-retry', True)]"
+  },
+  {
+   "id": "X2",
+   "desc": "total tokens = prompt + output, and the prompt parts add up to the prompt (within 3%)",
+   "ok": true,
+   "info": "[{'name': 'instructions + tools (fixed)', 'tokens': 2195}, {'name': 'your question', 'tokens': 27}]"
+  },
+  {
+   "id": "X3",
+   "desc": "the question is a tiny part of the router prompt and no dataset rows are in it",
+   "ok": true,
+   "info": "[{'name': 'instructions + tools (fixed)', 'tokens': 2195}, {'name': 'your question', 'tokens': 27}]"
+  },
+  {
+   "id": "X4",
+   "desc": "the model saw far less than 1% of the source data",
+   "ok": true,
+   "info": "(0.0857, 5872740)"
+  },
+  {
+   "id": "X5",
+   "desc": "large results are capped before the writer: rows sent <= 30 while rows returned can be larger",
+   "ok": true,
+   "info": "(200, 30)"
+  },
+  {
+   "id": "X6",
+   "desc": "the grounding guard outcome is recorded",
+   "ok": true,
+   "info": "passed first time"
+  }
+ ]
+}

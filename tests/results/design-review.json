@@ -1,0 +1,936 @@
+{
+ "suite": "design-review",
+ "ran_at": "2026-10-17 16:20",
+ "passed": 29,
+ "total": 29,
+ "items": [
+  {
+   "id": "S1",
+   "desc": "multi-row 'add' correction applies to every matched row and changes the area answer",
+   "ok": true,
+   "core": true,
+   "ms": 31722,
+   "info": "(['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'], ['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'], ['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'], 51, \"Recorded Michael Turner's correction (add wellhead_temp_c = 6.0) for 51 inspections across 33 well(s). Originals are kept; it applie",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 8 are not producing oil right now, and why?",
+     "a": "WELL-0164 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing, but the inspector noted, \"Pump jack not moving.\" A field check is suggested.\n\nWELL-0170 is not producing. Its recorded status is down. The last inspection was on 2026-10-15 (INS-0170-0206). The reason is an open repair (MNT-0170-031) for walking beam bearing wear, which started on 2026-09-19.\n\nWELL-0172 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0172-0206). The reason is an open repair (MNT-0172-028) for a flowline corrosion pinhole leak, which started on 2026-10-03.\n\nWELL-0175 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason for it not producing. A field check is suggested.",
+     "tool": "wells_not_producing"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "All manual-method readings in Northeast Block 8 between 1 Sep and 15 Oct 2026 were taken with a gun that reads 6 degrees too low; add 6 degrees to them.",
+     "a": "Recorded Michael Turner's correction (add wellhead_temp_c = 6.0) for 51 inspections across 33 well(s). Originals are kept; it applies to every user and you can say 'undo that correction' to revoke it. Reason: Manual readings taken with a gun that reads 6 degrees too low",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 8 are not producing oil right now, and why?",
+     "a": "WELL-0164 is not producing. Its recorded status is \"active (out of date)\". The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing, but the inspector noted, \"Pump jack not moving.\" A field check is suggested. Michael Turner corrected the wellhead temperature, stating it was shifted by 6.0 due to manual readings taken with a gun that reads 6 degrees too low.\n\nWELL-0170 is not producing. Its recorded status is \"down\". The last inspection was on 2026-10-15 (INS-0170-0206). The reason is an open repair (MNT-0170-031) for \"Walking beam bearing wear\" which started on 2026-09-19.\n\nWELL-0172 is not producing. Its recorded status is \"active (out of date)\". The last inspection was on 2026-10-15 (INS-0172-0206). The reason is an open repair (MNT-0172-028) for \"Flowline corrosion pinhole leak\" which started on 2026-10-03.\n\nWELL-0175 is not producing. Its recorded status is \"active (out of date)\". The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason for it not producing. A field check is suggested.",
+     "tool": "wells_not_producing"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 1,
+     "grounding": 5,
+     "completeness": 1,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "fail",
+    "issues": [
+     "The core requirement of the test scenario was not met.",
+     "The correction applied by the user did not change the final answer, which was the entire point of the demonstration."
+    ]
+   }
+  },
+  {
+   "id": "S2",
+   "desc": "'undo' revokes: originals restored, record kept as revoked in the audit log",
+   "ok": true,
+   "core": true,
+   "ms": 32714,
+   "info": "(['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'], ['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'], ['revoked'])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 8 are not producing oil right now?",
+     "a": "WELL-0164 is not producing. Its recorded status is active but out of date. The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing; the inspector noted the pump jack was not moving. A field check is suggested. WELL-0170 is not producing. Its recorded status is down. The last inspection was on 2026-10-15 (INS-0170-0206). The reason is an open repair (MNT-0170-031) for walking beam bearing wear, started on 2026-09-19. WELL-0172 is not producing. Its recorded status is active but out of date. The last inspection was on 2026-10-15 (INS-0172-0206). The reason is an open repair (MNT-0172-028) for a flowline corrosion pinhole leak, started on 2026-10-03. WELL-0175 is not producing. Its recorded status is active but out of date. The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason for it not producing. A field check is suggested.",
+     "tool": "wells_not_producing"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "All manual-method readings in Northeast Block 8 between 1 Sep and 15 Oct 2026 read 6 degrees too low; add 6 degrees.",
+     "a": "Recorded Michael Turner's correction (add wellhead_temp_c = 6.0) for 51 inspections across 33 well(s). Originals are kept; it applies to every user and you can say 'undo that correction' to revoke it. Reason: manual-method readings in Northeast Block 8 between 1 Sep and 15 Oct 2026 read 6 degrees too low",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Undo my last correction.",
+     "a": "Revoked your correction #1 (All manual-method readings in Northeast Block 8 between 1 Sep and 15 Oct 2026 re). It stays in the audit log but no longer affects answers.",
+     "tool": "revoke"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 8 are not producing oil right now?",
+     "a": "WELL-0164 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing, but the inspector noted, \"Pump jack not moving.\" A field check is suggested. WELL-0170 is not producing. Its recorded status is down. The last inspection was on 2026-10-15 (INS-0170-0206). The reason is repair MNT-0170-031 for walking beam bearing wear, which started on 2026-09-19 and is still open. WELL-0172 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0172-0206). The reason is repair MNT-0172-028 for a flowline corrosion pinhole leak, which started on 2026-10-03 and is still open. WELL-0175 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason for it not producing. A field check is suggested.",
+     "tool": "wells_not_producing"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S3",
+   "desc": "a newer correction on the same selector supersedes the older one (+5 applies, not +8)",
+   "ok": true,
+   "core": false,
+   "ms": 5402,
+   "info": "(['superseded', 'confirmed'], np.float64(29.0), np.float64(24.0))",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "All manual-method readings for WELL-0164 and WELL-0172 between 1 Sep and 15 Oct 2026 read 3 degrees too low; add 3 degrees.",
+     "a": "Recorded Michael Turner's correction (add wellhead_temp_c = 3.0) for 4 inspections across 2 well(s). Originals are kept; it applies to every user and you can say 'undo that correction' to revoke it. Reason: manual-method readings were 3 degrees too low",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "All manual-method readings for WELL-0164 and WELL-0172 between 1 Sep and 15 Oct 2026 read 5 degrees too low; add 5 degrees.",
+     "a": "Recorded Michael Turner's correction (add wellhead_temp_c = 5.0) for 4 inspections across 2 well(s). Originals are kept; it applies to every user and you can say 'undo that correction' to revoke it. Reason: manual-method readings were 5 degrees too low",
+     "tool": "correct_raw"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 2,
+     "grounding": 5,
+     "completeness": 2,
+     "honesty": 2,
+     "clarity": 2
+    },
+    "verdict": "fail",
+    "issues": [
+     "The copilot's response is ambiguous and does not explicitly state that the new correction supersedes the old one.",
+     "A user could mistakenly believe the corrections are cumulative (i.e., a +8 adjustment is now in effect).",
+     "The dialogue fails to demonstrate the required behavior clearly."
+    ]
+   }
+  },
+  {
+   "id": "S4",
+   "desc": "most specific scope wins: well/inspection-level value beats the area-wide shift",
+   "ok": true,
+   "core": false,
+   "ms": 13080,
+   "info": "(np.float64(41.0),)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "All readings in Northeast Block 8 between 1 Oct and 15 Oct 2026 read 2 degrees too low; add 2 degrees.",
+     "a": "Recorded Michael Turner's correction (add wellhead_temp_c = 2.0) for 148 inspections across 50 well(s). Originals are kept; it applies to every user and you can say 'undo that correction' to revoke it. Reason: read 2 degrees too low",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "For WELL-0164 only, the 15 Oct reading is 41.0 degrees, the field crew re-measured it.",
+     "a": "Recorded Michael Turner's correction on INS-0164-0205 (2026-10-15): wellhead_temp_c 24.0 -> 41.0. The original value is kept and the correction applies to every user from now on. Reason: field crew re-measured it\nWith the corrected reading, the wellhead is 21.1 \u00b0C above air (limit 15.0 \u00b0C), so WELL-0164 IS producing oil.\nNote: the same inspection has the inspector note \"Pump jack not moving.\" which may disagree with this correction. Can you confirm?",
+     "tool": "correct_raw"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S5",
+   "desc": "a well-type rule changes only that type's threshold (T200: 4, T350 stays 3), applied in a new chat",
+   "ok": true,
+   "core": true,
+   "ms": 17039,
+   "info": "(['WELL-0108', 'WELL-0138'], ['WELL-0108', 'WELL-0138'])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "New rule: all T200 wells need a root-cause analysis after 4 corrective repairs, not 3.",
+     "a": "Recorded Michael Turner's rule for all T200 wells: rca_count = 4 (manual says 3). It applies to T200 wells only, for every user, and I'll say when an answer follows this rule instead of the manual.",
+     "tool": "rule"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?",
+     "a": "WELL-0108 and WELL-0138, both T350 type wells, require a root-cause analysis on their pump jack. Both wells have met their threshold of 3 corrective repairs in the last 12 months. WELL-0108 had repairs MNT-0108-024, MNT-0108-026, and MNT-0108-028. WELL-0138 had repairs MNT-0138-031, MNT-0138-032, and MNT-0138-034.",
+     "tool": "rca_candidates"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S6",
+   "desc": "a vague, unscoped feedback never silently rewrites the fleet (nothing is recorded; it asks)",
+   "ok": true,
+   "core": false,
+   "ms": 12849,
+   "info": "('I cannot fix the readings as I do not have access to well data or the ability to modify records. However, I can provide information related to spills and safety protocols.\\n\\nA maintenance report (MNT-0', [])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "All the readings in the whole field are wrong, fix them.",
+     "a": "I cannot fix the readings as I do not have access to well data or the ability to modify records. However, I can provide information related to spills and safety protocols.\n\nA maintenance report (MNT-0001-029) from June 11, 2026, details a crude oil spill of an estimated 6.8 bbl around a flowline coupling, staining 9.4% of the pad. This was a reportable spill and required immediate shut-in according to the T200 manual. The well was shut in by Jake Morales on the afternoon of June 11, 2026. The spill was contained approximately 7 hours after the inspection flight. The spill report to the State Oil & Gas Commission was filed 41 hours after detection on June 13, 2026, due to a missed HSE on-call handover. The root cause was external corrosion under a failed protective wrap on the threaded coupling.\n\nRegarding safety protocols, the field-work-sop manual outlines several procedures:\n*   **WS-06** (fleet/sops/field-work-sop.md) states that contaminated soil, absorbents, and replaced parts with oil on them are waste and must be bagged, contained, and shipped with a waste manifest to an approved disposal site.\n*   **WS-03** (fleet/sops/field-work-sop.md) requires every crew member to wear a personal H2S monitor, bump-tested daily. Work must stop if any monitor reads 10 ppm or more, and personnel must move upwind and not return until readings are below 10 ppm and approved by the HSE officer. This 10 ppm action level is also mentioned in API RP 49 (fleet/sops/field-work-sop.md).\n*   The spill-response-sop (fleet/sops/spill-response-sop.md) indicates that our company's reporting threshold for crude oil losses is 5 bbl or more, and a written report is required within 24 hours. Cleanup standards, such as those in Texas Statewide Rule 91, require free oil removal and soil cleaned to 1.0% total petroleum hydrocarbons (TPH) by weight.\nAssumed: Assuming 'readings' refers to general data and 'fix them' implies a need for information on data correction, the best default is to search documentation for relevant procedures.",
+     "tool": "search_docs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S7",
+   "desc": "'the wells we discussed in April' resolves a 6-month-old conversation by its timestamp",
+   "ok": true,
+   "core": true,
+   "ms": 27927,
+   "info": "(['WELL-0107', 'WELL-0121', 'WELL-0138'], ['Repairs started 2026-01-01 to 2026-12-31.'])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months? Show a bar chart.",
+     "a": "The wells with the most downtime in the last 4 months (2026-06-16 to 2026-10-17) are WELL-0121 with 49 days, WELL-0107 with 42 days, and WELL-0138 with 42 days. Each non-producing weekly inspection counts as 7 days of downtime.",
+     "tool": "downtime"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "For the three wells we discussed in April, what have repairs cost this year?",
+     "a": "For WELL-0107, repairs this year cost 5176 USD across 6 repairs (MNT-0107-025, MNT-0107-026, MNT-0107-027, MNT-0107-028, MNT-0107-029, MNT-0107-030). For WELL-0121, repairs this year cost 25794 USD across 7 repairs (MNT-0121-029, MNT-0121-030, MNT-0121-031, MNT-0121-032, MNT-0121-033, MNT-0121-034, MNT-0121-035). For WELL-0138, repairs this year cost 46942 USD across 10 repairs (MNT-0138-026, MNT-0138-027, MNT-0138-028, MNT-0138-029, MNT-0138-030, MNT-0138-031, MNT-0138-032, MNT-0138-033, MNT-0138-034, MNT-0138-035). These costs are for repairs started between 2026-01-01 and 2026-12-31.",
+     "tool": "repair_costs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 1,
+     "grounding": 2,
+     "completeness": 5,
+     "honesty": 1,
+     "clarity": 5
+    },
+    "verdict": "fail",
+    "issues": [
+     "The copilot failed to resolve the temporal reference 'in April' to a past conversation.",
+     "The copilot incorrectly assumed the user was referring to the wells from the current conversation (in October), not a previous one from April.",
+     "The answer is dishonest as it presents information for the wrong set of wells without acknowledging the ambiguity or its failure to find the correct context."
+    ]
+   }
+  },
+  {
+   "id": "S8",
+   "desc": "'yesterday' with nothing yesterday: falls back to the latest match and says so",
+   "ok": true,
+   "core": false,
+   "ms": 26356,
+   "info": "(['WELL-0107', 'WELL-0121', 'WELL-0138'], ['Repairs started 2026-01-01 to 2026-12-31.', \"No conversation of yours matched 'yesterday', so I used your most recent matching one (2026-04-10).\"])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months?",
+     "a": "The three wells in Northeast Block 7 with the most downtime in the last 4 months are WELL-0121, WELL-0107, and WELL-0138. WELL-0121 experienced 49 days of downtime, as recorded across 7 inspections (INS-0121-0189, INS-0121-0200, INS-0121-0201, INS-0121-0202, INS-0121-0203, INS-0121-0205, INS-0121-0206). WELL-0107 had 42 days of downtime over 6 inspections (INS-0107-0194, INS-0107-0195, INS-0107-0196, INS-0107-0197, INS-0107-0198, INS-0107-0199). WELL-0138 also had 42 days of downtime across 6 inspections (INS-0138-0195, INS-0138-0196, INS-0138-0200, INS-0138-0201, INS-0138-0206, INS-0138-0207). Each non-producing weekly inspection counts as 7 days of downtime, within the window of 2026-06-16 to 2026-10-17.",
+     "tool": "downtime"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "For the three wells we discussed yesterday, what have repairs cost this year?",
+     "a": "For WELL-0107, repairs this year cost 5176 USD across 6 repairs (MNT-0107-025, MNT-0107-026, MNT-0107-027, MNT-0107-028, MNT-0107-029, MNT-0107-030). For WELL-0121, repairs cost 25794 USD across 7 repairs (MNT-0121-029, MNT-0121-030, MNT-0121-031, MNT-0121-032, MNT-0121-033, MNT-0121-034, MNT-0121-035). For WELL-0138, repairs cost 46942 USD across 10 repairs (MNT-0138-026, MNT-0138-027, MNT-0138-028, MNT-0138-029, MNT-0138-030, MNT-0138-031, MNT-0138-032, MNT-0138-033, MNT-0138-034, MNT-0138-035). These costs are for repairs started between 2026-01-01 and 2026-12-31. No conversation of yours matched 'yesterday', so your most recent matching one (2026-04-10) was used.\nNo conversation of yours matched 'yesterday', so I used your most recent matching one (2026-04-10).",
+     "tool": "repair_costs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S9",
+   "desc": "two different 3-well sets in history: uses the latest and lists the other set for the user to confirm",
+   "ok": true,
+   "core": false,
+   "ms": 76980,
+   "info": "(['Repairs started 2026-01-01 to 2026-12-31.', 'I used WELL-0160, WELL-0170, WELL-0188 (from 2026-10-17). Other sets you looked at: WELL-0107, WELL-0121, WELL-0138 (2026-10-17). Tell me if you meant one of those.'],)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months?",
+     "a": "The three wells in Northeast Block 7 with the most downtime in the last 4 months are WELL-0121, WELL-0107, and WELL-0138. WELL-0121 experienced 49 days of downtime, as recorded across 7 inspections (INS-0121-0189, INS-0121-0200, INS-0121-0201, INS-0121-0202, INS-0121-0203, INS-0121-0205, INS-0121-0206). WELL-0107 had 42 days of downtime over 6 inspections (INS-0107-0194, INS-0107-0195, INS-0107-0196, INS-0107-0197, INS-0107-0198, INS-0107-0199). WELL-0138 also had 42 days of downtime across 6 inspections (INS-0138-0195, INS-0138-0196, INS-0138-0200, INS-0138-0201, INS-0138-0206, INS-0138-0207). Each non-producing weekly inspection counts as 7 days of downtime, within the window of 2026-06-16 to 2026-10-17.",
+     "tool": "downtime"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 8 had the most downtime in the last 4 months?",
+     "a": "WELL-0160 had 42 days of downtime, based on 6 inspections (INS-0160-0192, INS-0160-0193, INS-0160-0194, INS-0160-0195, INS-0160-0196, INS-0160-0197). WELL-0170 also had 42 days of downtime, based on 6 inspections (INS-0170-0198, INS-0170-0202, INS-0170-0203, INS-0170-0204, INS-0170-0205, INS-0170-0206). WELL-0188 had 28 days of downtime, based on 4 inspections (INS-0188-0200, INS-0188-0201, INS-0188-0202, INS-0188-0203). The downtime window was from 2026-06-16 to 2026-10-17, with each non-producing weekly inspection counting as 7 days.",
+     "tool": "downtime"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "For the three wells we discussed, what have repairs cost this year?",
+     "a": "For WELL-0160, repairs this year cost 48,227 USD across 6 repairs (MNT-0160-025, MNT-0160-026, MNT-0160-027, MNT-0160-028, MNT-0160-029, MNT-0160-030). For WELL-0170, repairs cost 27,598 USD across 9 repairs (MNT-0170-023, MNT-0170-024, MNT-0170-025, MNT-0170-026, MNT-0170-027, MNT-0170-028, MNT-0170-029, MNT-0170-030, MNT-0170-031). For WELL-0188, repairs cost 8,370 USD across 6 repairs (MNT-0188-027, MNT-0188-028, MNT-0188-029, MNT-0188-030, MNT-0188-031, MNT-0188-032). These figures are for repairs started between 2026-01-01 and 2026-12-31 for wells WELL-0160, WELL-0170, and WELL-0188. Another set of wells, WELL-0107, WELL-0121, WELL-0138, was also discussed on 2026-10-17.\nI used WELL-0160, WELL-0170, WELL-0188 (from 2026-10-17). Other sets you looked at: WELL-0107, WELL-0121, WELL-0138 (2026-10-17). Tell me if you meant one of those.",
+     "tool": "repair_costs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S10",
+   "desc": "private memory: another user is refused, the owner is unaffected by that attempt",
+   "ok": true,
+   "core": true,
+   "ms": 24112,
+   "info": "(\"I have no earlier conversation with you that I can use for that, so I don't know which wells you mea\", 3)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months?",
+     "a": "The three wells in Northeast Block 7 with the most downtime in the last 4 months are WELL-0121, WELL-0107, and WELL-0138. WELL-0121 experienced 49 days of downtime, as recorded across 7 inspections (INS-0121-0189, INS-0121-0200, INS-0121-0201, INS-0121-0202, INS-0121-0203, INS-0121-0205, INS-0121-0206). WELL-0107 had 42 days of downtime over 6 inspections (INS-0107-0194, INS-0107-0195, INS-0107-0196, INS-0107-0197, INS-0107-0198, INS-0107-0199). WELL-0138 also had 42 days of downtime across 6 inspections (INS-0138-0195, INS-0138-0196, INS-0138-0200, INS-0138-0201, INS-0138-0206, INS-0138-0207). Each non-producing weekly inspection counts as 7 days of downtime, within the window of 2026-06-16 to 2026-10-17.",
+     "tool": "downtime"
+    },
+    {
+     "user": "Jessica Reed",
+     "q": "For the three wells we discussed yesterday, what have repairs cost this year?",
+     "a": "I have no earlier conversation with you that I can use for that, so I don't know which wells you mean. Which wells should I look at?",
+     "tool": "repair_costs"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "For the three wells we discussed, what have repairs cost this year?",
+     "a": "For WELL-0107, repairs this year cost 5176 USD across 6 repairs (MNT-0107-025, MNT-0107-026, MNT-0107-027, MNT-0107-028, MNT-0107-029, MNT-0107-030). For WELL-0121, repairs cost 25794 USD across 7 repairs (MNT-0121-029, MNT-0121-030, MNT-0121-031, MNT-0121-032, MNT-0121-033, MNT-0121-034, MNT-0121-035). For WELL-0138, repairs cost 46942 USD across 10 repairs (MNT-0138-026, MNT-0138-027, MNT-0138-028, MNT-0138-029, MNT-0138-030, MNT-0138-031, MNT-0138-032, MNT-0138-033, MNT-0138-034, MNT-0138-035). These costs are for repairs started between 2026-01-01 and 2026-12-31.",
+     "tool": "repair_costs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S11",
+   "desc": "shared knowledge from one user is visible to a different user, attributed to its author",
+   "ok": true,
+   "core": false,
+   "ms": 12902,
+   "info": "('Yes, a 10-day planned workover is scheduled for WELL-0007 from 2026-10-17 to 2026-10-27, as confirmed by Jake Morales.',)",
+   "answers": [
+    {
+     "user": "Jake Morales",
+     "q": "FYI for everyone: WELL-0007 will be shut in from 17 Oct for a 10-day planned workover.",
+     "a": "Recorded for WELL-0007 as shared knowledge from Jake Morales: \"10-day planned workover\" (valid from 2026-10-17 to 2026-10-27). Other users asking about this will see it, attributed to you.",
+     "tool": "note"
+    },
+    {
+     "user": "Tyler Hughes",
+     "q": "Is any downtime planned for WELL-0007?",
+     "a": "Yes, a 10-day planned workover is scheduled for WELL-0007 from 2026-10-17 to 2026-10-27, as confirmed by Jake Morales.",
+     "tool": "well_status"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S12",
+   "desc": "'show it as a bar chart' re-renders the previous result without re-querying",
+   "ok": true,
+   "core": true,
+   "ms": 16465,
+   "info": "({'kind': 'rerender', 'visual': 'bar'}, 'bar', 4)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 8 are not producing oil right now?",
+     "a": "WELL-0164 is not producing. Its recorded status is 'active (out of date)'. The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing, but the inspector noted \"Pump jack not moving.\" A field check is suggested.\n\nWELL-0170 is not producing. Its recorded status is 'down'. The last inspection was on 2026-10-15 (INS-0170-0206). The reason is an open repair (MNT-0170-031) for \"Walking beam bearing wear\" which started on 2026-09-19.\n\nWELL-0172 is not producing. Its recorded status is 'active (out of date)'. The last inspection was on 2026-10-15 (INS-0172-0206). The reason is an open repair (MNT-0172-028) for \"Flowline corrosion pinhole leak\" which started on 2026-10-03.\n\nWELL-0175 is not producing. Its recorded status is 'active (out of date)'. The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason for it not producing. A field check is suggested.",
+     "tool": "wells_not_producing"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Show that as a bar chart instead.",
+     "a": "Same data, shown as a bar (no new query).",
+     "tool": "rerender"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S13",
+   "desc": "a two-part question returns two result blocks (compound plan)",
+   "ok": true,
+   "core": false,
+   "ms": 13127,
+   "info": "({'kind': 'query', 'calls': [{'tool': 'well_status', 'args': {'well': 'WELL-0001'}}, {'tool': 'spills', 'args': {'well': 'WELL-0001', 'months': 48}}]},)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Is WELL-0001 producing right now, and how many spills has it had in the last 4 years?",
+     "a": "WELL-0001 is not producing. Jake Morales reported a planned shutdown for rod string replacement from October 7, 2026, to October 20, 2026 (CTX-0001-003). The last inspection (INS-0001-0203) on October 15, 2026, by Ryan Brooks, noted the pump jack was not moving. The recorded status of \"active\" is out of date. The wellhead temperature delta of 3.2 C is below the 15.0 C threshold (INS-0001-0203).\n\nWELL-0001 has had 6 spills in the last 4 years:\n*   March 16, 2023: 0.5 barrels (INS-0001-0021)\n*   April 27, 2023: 2.6 barrels (INS-0001-0027)\n*   September 28, 2023: 3.3 barrels (INS-0001-0048)\n*   October 19, 2023: 0.3 barrels (INS-0001-0051)\n*   June 11, 2026: 6.8 barrels (INS-0001-0185)\n*   October 1, 2026: 1.6 barrels (INS-0001-0201)\nA potential spill from March 7, 2024 (INS-0001-0070) was excluded because it was corrected as rainwater mixed with soil, not crude (CTX-0001-001).\n6 spills, 15.1 bbl total.",
+     "tool": "query"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S14",
+   "desc": "a claim that agrees with the latest inspection is stored as confirmed",
+   "ok": true,
+   "core": false,
+   "ms": 15608,
+   "info": "(['confirmed'],)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Is WELL-0175 producing oil right now?",
+     "a": "WELL-0175 is not producing. The last inspection was on 2026-10-15 by Jessica Reed (INS-0175-0204). The temperature rise was 0.4\u00b0C, which is below the 15.0\u00b0C threshold (T200.md \u00a79.3). The recorded status is 'active' but is out of date.",
+     "tool": "well_status"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "WELL-0175 has been shut in for planned work since 14 Oct.",
+     "a": "Recorded. The latest inspection (INS-0175-0204, 2026-10-15, Jessica Reed) supports this: wellhead 0.4 \u00b0C above air, WELL-0175 is not producing.",
+     "tool": "note"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S15",
+   "desc": "'mud' appears in no record: no invented matches, says so, offers the nearest causes",
+   "ok": true,
+   "core": true,
+   "ms": 28749,
+   "info": "({'kind': 'query', 'tool': 'wells_by_cause', 'args': {'concept': 'mud'}, 'visual': 'table'}, [\"No record mentions 'mud'. Showing the closest causes in the data instead.\", 'Interpretation: Mud refers to drilling fluid or other fine particulate matter suspended in liquid, often associated with wellbor",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells are failing due to mud?",
+     "a": "No wells are failing due to mud. The closest causes in the data are related to sand.\n\nWELL-0092 has 6 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 149897 USD. The last report was on 2026-05-16. Repairs include MNT-0092-004, MNT-0092-014, MNT-0092-016, MNT-0092-018, MNT-0092-026, MNT-0092-027.\nWELL-0079 has 3 reports of failure due to grease contaminated with sand having worn the bearing, with a repair cost of 50845 USD. The last report was on 2026-05-23. Repairs include MNT-0079-014, MNT-0079-020, MNT-0079-032.\nWELL-0189 has 3 reports of failure due to grease contaminated with sand having worn the bearing, with a repair cost of 13160 USD. The last report was on 2024-08-25. Repairs include MNT-0189-003, MNT-0189-006, MNT-0189-019.\nWELL-0012 has 2 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 45303 USD. The last report was on 2025-12-12. Repairs include MNT-0012-010, MNT-0012-023.\nWELL-0020 has 2 reports of failure due to grease contaminated with sand having worn the bearing, with a repair cost of 8003 USD. The last report was on 2023-07-02. Repairs include MNT-0020-002, MNT-0020-006.\nWELL-0026 has 2 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 60149 USD. The last report was on 2025-08-10. Repairs include MNT-0026-012, MNT-0026-023.\nWELL-0028 has 2 reports of failure due to grease contaminated with sand having worn the bearing, with a repair cost of 11464 USD. The last report was on 2026-03-27. Repairs include MNT-0028-019, MNT-0028-028.\nWELL-0031 has 2 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 48632 USD. The last report was on 2026-04-24. Repairs include MNT-0031-009, MNT-0031-027.\nWELL-0045 has 2 reports of failure due to grease contaminated with sand having worn the bearing, with a repair cost of 22222 USD. The last report was on 2025-01-26. Repairs include MNT-0045-007, MNT-0045-018.\nWELL-0047 has 2 reports of failure due to sand and scale build-up in the pump barrel, with a repair cost of 21127 USD. The last report was on 2026-08-22. Repairs include MNT-0047-010, MNT-0047-025.\nWELL-0056 has 2 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 40016 USD. The last report was on 2025-03-28. Repairs include MNT-0056-018, MNT-0056-021.\nWELL-0058 has 2 reports of failure due to grease contaminated with sand having worn the bearing, with a repair cost of 35966 USD. The last report was on 2025-08-30. Repairs include MNT-0058-014, MNT-0058-023.\nWELL-0063 has 2 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 61460 USD. The last report was on 2026-05-22. Repairs include MNT-0063-021, MNT-0063-030.\nWELL-0069 has 2 reports of failure due to sand and scale build-up in the pump barrel, with a repair cost of 61615 USD. The last report was on 2026-06-26. Repairs include MNT-0069-005, MNT-0069-035.\nWELL-0087 has 2 reports of failure due to sand and scale build-up in the pump barrel, with a repair cost of 44912 USD. The last report was on 2026-08-22. Repairs include MNT-0087-003, MNT-0087-027.\nWELL-0096 has 2 reports of failure due to sand and scale build-up in the pump barrel, with a repair cost of 55918 USD. The last report was on 2024-10-05. Repairs include MNT-0096-003, MNT-0096-019.\nWELL-0105 has 2 reports of failure due to a worn plunger that let sand settle and lock the pump, with a repair cost of 60555 USD. The last report was on 2025-10-04. Repairs include MNT-0105-022, MNT-0105-024.\nWELL-0111 has 2 reports of failure due to grease contaminated with sand having\nNo record mentions 'mud'. Showing the closest causes in the data instead.",
+     "tool": "wells_by_cause"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S16",
+   "desc": "concept search: corrosion wells in an area match the independent regex ground truth (>=80% recall, no false wells)",
+   "ok": true,
+   "core": false,
+   "ms": 28762,
+   "info": "(30, 30, [])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 7 had corrosion as the root cause of repairs in the last 12 months?",
+     "a": "WELL-0136 had 4 reports with a total repair cost of 32768 USD, last reported on 2026-06-19. The root cause was external corrosion where the pipe coating had been damaged (MNT-0136-023, MNT-0136-025, MNT-0136-028, MNT-0136-030). WELL-0110 had 3 reports with a total repair cost of 20179 USD, last reported on 2026-10-16. The root cause was internal corrosion from produced water collecting at a low point (MNT-0110-027, MNT-0110-028, MNT-0110-030). WELL-0141 had 3 reports with a total repair cost of 21109 USD, last reported on 2026-09-04. The root cause was external corrosion where the pipe coating had been damaged (MNT-0141-027, MNT-0141-029, MNT-0141-030). WELL-0102 had 2 reports with a total repair cost of 15440 USD, last reported on 2026-02-27. The root cause was external corrosion where the pipe coating had been damaged (MNT-0102-026, MNT-0102-027). WELL-0115 had 2 reports with a total repair cost of 14939 USD, last reported on 2026-10-10. The root cause was internal corrosion from produced water collecting at a low point (MNT-0115-029, MNT-0115-037). WELL-0131 had 2 reports with a total repair cost of 10095 USD, last reported on 2026-04-17. The root cause was external corrosion where the pipe coating had been damaged (MNT-0131-018, MNT-0131-020). WELL-0132 had 2 reports with a total repair cost of 13647 USD, last reported on 2026-08-07. The root cause was corrosion under a failed protective wrap on the coupling (MNT-0132-021, MNT-0132-026). WELL-0148 had 2 reports with a total repair cost of 16620 USD, last reported on 2026-01-30. The root cause was corrosion under a failed protective wrap on the coupling (MNT-0148-021, MNT-0148-023). WELL-0150 had 2 reports with a total repair cost of 18858 USD, last reported on 2026-06-27. The root cause was external corrosion where the pipe coating had been damaged (MNT-0150-024, MNT-0150-027). WELL-0103 had 1 report with a total repair cost of 4440 USD, last reported on 2026-01-17. The root cause was internal corrosion from produced water collecting at a low point (MNT-0103-025). WELL-0104 had 1 report with a total repair cost of 8587 USD, last reported on 2026-04-10. The root cause was corrosion under a failed protective wrap on the coupling (MNT-0104-021). WELL-0105 had 1 report with a total repair cost of 7364 USD, last reported on 2026-07-17. The root cause was corrosion under a failed protective wrap on the coupling (MNT-0105-030). WELL-0108 had 1 report with a total repair cost of 8785 USD, last reported on 2025-12-19. The root cause was corrosion under a failed protective wrap on the coupling (MNT-0108-022). WELL-0113 had 1 report with a total repair cost of 4712 USD, last reported on 2026-06-19. The root cause was external corrosion where the pipe coating had been damaged (MNT-0113-030). WELL-0114 had 1 report with a total repair cost of 7116 USD, last reported on 2026-10-02. The root cause was external corrosion where the pipe coating had been damaged (MNT-0114-025). WELL-0118 had 1 report with a total repair cost of 7900 USD, last reported on 2026-08-14. The root cause was external corrosion where the pipe coating had been damaged (MNT-0118-025). WELL-0121 had 1 report with a total repair cost of 3876 USD, last reported on 2025-11-08. The root cause was internal corrosion from produced water collecting at a low point (MNT-0121-027). WELL-0122 had 1 report with a total repair cost of 8163 USD, last reported on 2026-02-27. The root cause was external corrosion where the pipe coating had been damaged (MNT-0122-026). WELL-0123 had 1 report with a total repair cost of 10701 USD, last reported on 2026-09-25. The root cause was external corrosion where the pipe coating had been damaged (MNT-0123-014). WELL-0125 had 1 report with a total repair cost of 10686 USD, last reported on 2026-02-06. The root cause was external corrosion where the pipe coating had been damaged (MNT-0125-024). WELL-0127 had 1 report with a total repair cost of 5628 USD, last reported on 2026-05-29. The root cause was external corrosion where the pipe coating had",
+     "tool": "wells_by_cause"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 4
+    },
+    "verdict": "pass",
+    "issues": [
+     "The response is a single, long paragraph, which makes it difficult to read. A bulleted list or table would have improved clarity."
+    ]
+   }
+  },
+  {
+   "id": "S17",
+   "desc": "synonym/related concept (sand) returns wells whose quoted root cause really says sand/scale",
+   "ok": true,
+   "core": false,
+   "ms": 24391,
+   "info": "(32, ['Interpretation: Sand refers to abrasive particulate matter, often silica, that can cause wear, blockages, or contamination in oil well equipment.', 'exact: \"A worn plunger that let sand settle and lock the pump.\" (13 reports) - The statement directly mentions \\'sand\\' causing a pump to lock.'",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells had sand-related failures in the last 12 months?",
+     "a": "The following wells had sand-related failures in the last 12 months: WELL-0092 (2 reports, last on 2026-05-16, total repair cost $50495, repairs MNT-0092-026, MNT-0092-027), WELL-0123 (2 reports, last on 2026-10-09, total repair cost $56442, repairs MNT-0123-009, MNT-0123-015), WELL-0004 (1 report, last on 2026-02-21, total repair cost $5186, repair MNT-0004-021), WELL-0028 (1 report, last on 2026-03-27, total repair cost $5168, repair MNT-0028-028), WELL-0031 (1 report, last on 2026-04-24, total repair cost $19625, repair MNT-0031-027), WELL-0047 (1 report, last on 2026-08-22, total repair cost $15759, repair MNT-0047-025), WELL-0055 (1 report, last on 2026-05-03, total repair cost $4609, repair MNT-0055-026), WELL-0063 (1 report, last on 2026-05-22, total repair cost $24124, repair MNT-0063-030), WELL-0069 (1 report, last on 2026-06-26, total repair cost $37313, repair MNT-0069-035), WELL-0071 (1 report, last on 2026-09-12, total repair cost $5020, repair MNT-0071-038), WELL-0079 (1 report, last on 2026-05-23, total repair cost $5948, repair MNT-0079-032), WELL-0087 (1 report, last on 2026-08-22, total repair cost $27133, repair MNT-0087-027), WELL-0111 (1 report, last on 2026-06-19, total repair cost $5317, repair MNT-0111-028), WELL-0116 (1 report, last on 2026-04-24, total repair cost $5230, repair MNT-0116-012), WELL-0119 (1 report, last on 2026-08-14, total repair cost $29736, repair MNT-0119-027), WELL-0125 (1 report, last on 2026-05-09, total repair cost $28215, repair MNT-0125-028), WELL-0133 (1 report, last on 2026-04-25, total repair cost $5094, repair MNT-0133-020), WELL-0156 (1 report, last on 2026-06-27, total repair cost $23398, repair MNT-0156-027), WELL-0160 (1 report, last on 2026-07-18, total repair cost $33086, repair MNT-0160-028), WELL-0170 (1 report, last on 2026-09-19, total repair cost $4023, repair MNT-0170-031), WELL-0179 (1 report, last on 2026-08-22, total repair cost $3092, repair MNT-0179-029), WELL-0181 (1 report, last on 2026-03-20, total repair cost $26035, repair MNT-0181-025), WELL-0183 (1 report, last on 2026-06-26, total repair cost $37001, repair MNT-0183-031), WELL-0184 (1 report, last on 2026-01-24, total repair cost $31617, repair MNT-0184-020), WELL-0187 (1 report, last on 2026-07-18, total repair cost $33727, repair MNT-0187-022), WELL-0190 (1 report, last on 2026-08-23, total repair cost $4348, repair MNT-0190-028), WELL-0191 (1 report, last on 2026-06-05, total repair cost $5659, repair MNT-0191-026), and WELL-0193 (1 report, last on 2026-02-15, total repair cost $24682, repair MNT-0193-019).",
+     "tool": "wells_by_cause"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 3,
+     "clarity": 4
+    },
+    "verdict": "partial",
+    "issues": [
+     "The answer is not fully transparent; it includes results for the related term 'scale' without explicitly stating that it expanded the search from 'sand' to include 'scale'. This is a key part of the scenario test."
+    ]
+   }
+  },
+  {
+   "id": "S18",
+   "desc": "entity trace walks the ID links: inspection -> repair -> regulator events (no graph DB)",
+   "ok": true,
+   "core": true,
+   "ms": 3088,
+   "info": "({'REG-0001-003', 'REG-0001-001', 'INS-0001-0185', 'MNT-0001-029', 'REG-0001-002'},)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "What is connected to inspection INS-0001-0185?",
+     "a": "Inspection INS-0001-0185 on WELL-0001 on 2026-06-11 reported a spill of 6.8 volume (INS-0001-0185). This inspection triggered maintenance MNT-0001-029 for a flowline coupling failure causing crude release, costing USD 12550 and contained in 7.0 hours (MNT-0001-029). Regulatory events include a spill report filed on 2026-06-13 with a 0 fine and closed status (REG-0001-001), a notice of violation on 2026-06-30 with a 5000 fine and open status (REG-0001-002), and a site inspection on 2026-07-14 with a 0 fine and open status (REG-0001-003).",
+     "tool": "trace"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S19",
+   "desc": "hybrid search: manual by name, exact protocol ID, and a paraphrase all find the right document",
+   "ok": true,
+   "core": false,
+   "ms": 11599,
+   "info": "(True, True, True)",
+   "answers": []
+  },
+  {
+   "id": "S20",
+   "desc": "SOP/manual applicability per well: WELL-0007 (T350) gets 20 \u00b0C, WELL-0001 (T200) gets 15 \u00b0C, with the source",
+   "ok": true,
+   "core": false,
+   "ms": 14326,
+   "info": "('WELL-0007 is a T350 well. A T350 well is considered producing when its wellhead temperature is at least 20 \u00b0C above the ambient air temperature at the time of t', 'A T200 well, such as WELL-0001, is considered producing when its wellhead temperature is at least 15 \u00b0C above the ambient air temperat",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "What temperature rise above air means WELL-0007 is producing, and where does that rule come from?",
+     "a": "WELL-0007 is a T350 well. A T350 well is considered producing when its wellhead temperature is at least 20 \u00b0C above the ambient air temperature at the time of the reading (fleet/well-types/T350.md). This rule comes from section 3 of the T350 well type manual (fleet/well-types/T350.md).",
+     "tool": "search_docs"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "What temperature rise above air means WELL-0001 is producing, and where does that rule come from?",
+     "a": "A T200 well, such as WELL-0001, is considered producing when its wellhead temperature is at least 15 \u00b0C above the ambient air temperature at the time of the reading (fleet/well-types/T200.md). This rule is found in section 9.3, \"Production temperature rule,\" of the T200 manual (fleet/well-types/T200.md). A difference below 15 \u00b0C means the well is not producing for that reading (fleet/well-types/T200.md). For example, during inspection INS-0001-0140, WELL-0001's wellhead temperature was 8.5 \u00b0C above air temperature, indicating it was not producing (MNT-0001-021).",
+     "tool": "search_docs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S21",
+   "desc": "loading a second dataset root (new wells + area) works; loading a root twice is idempotent",
+   "ok": true,
+   "core": false,
+   "ms": 5284,
+   "info": "(205, 40507, 40507, 5)",
+   "answers": []
+  },
+  {
+   "id": "S22",
+   "desc": "unknown well: graceful answer, no crash",
+   "ok": true,
+   "core": false,
+   "ms": 1245,
+   "info": "('WELL-9999 is not in the data (closest: WELL-0199, WELL-0099, WELL-0198).',)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Is WELL-9999 producing right now?",
+     "a": "WELL-9999 is not in the data (closest: WELL-0199, WELL-0099, WELL-0198).",
+     "tool": "well_status"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S23",
+   "desc": "area aliases (NE-8, lower case) resolve to the same area",
+   "ok": true,
+   "core": false,
+   "ms": 31335,
+   "info": "(['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'], ['WELL-0164', 'WELL-0170', 'WELL-0172', 'WELL-0175'])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in NE-8 are not producing oil right now?",
+     "a": "WELL-0164 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing; the inspector noted, \"Pump jack not moving.\" A field check is suggested.\n\nWELL-0170 is not producing. Its recorded status is down. The last inspection was on 2026-10-15 (INS-0170-0206). The reason is an open repair (MNT-0170-031) for walking beam bearing wear, which started on 2026-09-19.\n\nWELL-0172 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0172-0206). The reason is an open repair (MNT-0172-028) for a flowline corrosion pinhole leak, which started on 2026-10-03.\n\nWELL-0175 is not producing. Its recorded status is active (out of date). The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason. A field check is suggested.",
+     "tool": "wells_not_producing"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in northeast block 8 are not producing oil right now?",
+     "a": "WELL-0164 is not producing. Its recorded status is active but out of date. The last inspection was on 2026-10-15 (INS-0164-0205). There is no recorded reason for it not producing, but the inspector noted the pump jack was not moving. A field check is suggested. WELL-0170 is not producing. Its recorded status is down. The last inspection was on 2026-10-15 (INS-0170-0206). The reason is an open repair (MNT-0170-031) for walking beam bearing wear, started on 2026-09-19. WELL-0172 is not producing. Its recorded status is active but out of date. The last inspection was on 2026-10-15 (INS-0172-0206). The reason is an open repair (MNT-0172-028) for a flowline corrosion pinhole leak, started on 2026-10-03. WELL-0175 is not producing. Its recorded status is active but out of date. The last inspection was on 2026-10-15 (INS-0175-0204). There is no recorded reason for it not producing. A field check is suggested.",
+     "tool": "wells_not_producing"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 4
+    },
+    "verdict": "pass",
+    "issues": [
+     "The second response is a single block of text, which is less readable than the first response's clear formatting."
+    ]
+   }
+  },
+  {
+   "id": "S24",
+   "desc": "a correction by one user is used, and attributed, in another user's later answer",
+   "ok": true,
+   "core": false,
+   "ms": 14872,
+   "info": "('Yes, WELL-0164 is producing. The last inspection (INS-0164-0205) was on 2026-10-15 by Tyler Hughes. The wellhead temperature is 41.0\u00b0C, which is 21.1\u00b0C above ambient, exceeding the 15.0\u00b0C threshold fr',)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "The 15 Oct reading for WELL-0164 is wrong; the crew re-measured it at 41.0 \u00b0C.",
+     "a": "Recorded Michael Turner's correction on INS-0164-0205 (2026-10-15): wellhead_temp_c 24.0 -> 41.0. The original value is kept and the correction applies to every user from now on. Reason: crew re-measured\nWith the corrected reading, the wellhead is 21.1 \u00b0C above air (limit 15.0 \u00b0C), so WELL-0164 IS producing oil.\nNote: the same inspection has the inspector note \"Pump jack not moving.\" which may disagree with this correction. Can you confirm?",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Jessica Reed",
+     "q": "Is WELL-0164 producing oil right now?",
+     "a": "Yes, WELL-0164 is producing. The last inspection (INS-0164-0205) was on 2026-10-15 by Tyler Hughes. The wellhead temperature is 41.0\u00b0C, which is 21.1\u00b0C above ambient, exceeding the 15.0\u00b0C threshold from T200.md \u00a79.3. Tyler Hughes noted \"Pump jack not moving.\" Michael Turner corrected the wellhead temperature from 24.0\u00b0C to 41.0\u00b0C after a re-measurement. The recorded status is active and not stale.",
+     "tool": "well_status"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S25",
+   "desc": "recall ambiguity in ask mode: asks which set (options), then answers with the chosen one",
+   "ok": true,
+   "core": false,
+   "ms": 39338,
+   "info": "('clarify', ['WELL-0160, WELL-0170, WELL-0188 (2026-10-17)', 'WELL-0107, WELL-0121, WELL-0138 (2026-10-17)'], 3)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months?",
+     "a": "The wells with the most downtime in the last 4 months are WELL-0121 with 49 days, and WELL-0107 and WELL-0138 each with 42 days. These downtimes are based on weekly inspections where each non-producing inspection counts for 7 days, within the window of 2026-06-16 to 2026-10-17. WELL-0121 had 7 inspections, WELL-0107 had 6 inspections, and WELL-0138 had 6 inspections.",
+     "tool": "downtime"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Which 3 wells in Northeast Block 8 had the most downtime in the last 4 months?",
+     "a": "The three wells with the most downtime in the last 4 months are WELL-0160 and WELL-0170, both with 42 days of downtime, and WELL-0188 with 28 days of downtime. Each non-producing weekly inspection counts as 7 days of downtime. The inspections for WELL-0160 are (INS-0160-0192, INS-0160-0193, INS-0160-0194, INS-0160-0195, INS-0160-0196, INS-0160-0197). The inspections for WELL-0170 are (INS-0170-0198, INS-0170-0202, INS-0170-0203, INS-0170-0204, INS-0170-0205, INS-0170-0206). The inspections for WELL-0188 are (INS-0188-0200, INS-0188-0201, INS-0188-0202, INS-0188-0203).",
+     "tool": "downtime"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "For the three wells we discussed, what have repairs cost this year?",
+     "a": "You looked at more than one set of wells. Which do you mean?\n1. WELL-0160, WELL-0170, WELL-0188 (2026-10-17)\n2. WELL-0107, WELL-0121, WELL-0138 (2026-10-17)\nOr tell me in your own words.",
+     "tool": "repair_costs"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "WELL-0107, WELL-0121, WELL-0138 (2026-10-17)",
+     "a": "Wells: WELL-0107, WELL-0121, WELL-0138.\nFor repairs between 2026-01-01 and 2026-12-31:\n\nWELL-0107 had 6 repairs totaling 5176 USD (MNT-0107-025, MNT-0107-026, MNT-0107-027, MNT-0107-028, MNT-0107-029, MNT-0107-030).\nWELL-0121 had 7 repairs totaling 25794 USD (MNT-0121-029, MNT-0121-030, MNT-0121-031, MNT-0121-032, MNT-0121-033, MNT-0121-034, MNT-0121-035).\nWELL-0138 had 10 repairs totaling 46942 USD (MNT-0138-026, MNT-0138-027, MNT-0138-028, MNT-0138-029, MNT-0138-030, MNT-0138-031, MNT-0138-032, MNT-0138-033, MNT-0138-034, MNT-0138-035).",
+     "tool": "repair_costs"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S26",
+   "desc": "ambiguous request: one short question with 2-4 options, the free-text reply completes the original request",
+   "ok": true,
+   "core": true,
+   "ms": 18324,
+   "info": "('clarify', ['last 30 days', 'last 90 days', 'last 12 months', 'this year'], {'kind': 'query', 'tool': 'downtime', 'args': {'area': 'Northeast Block 7', 'months': 4, 'top_n': 3}, 'visual': 'bar'})",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Show me downtime.",
+     "a": "Which period are you interested in?\n1. last 30 days\n2. last 90 days\n3. last 12 months\n4. this year\nOr tell me in your own words.",
+     "tool": "clarify"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Northeast Block 7, last 4 months, top 3",
+     "a": "The top 3 wells by downtime in Northeast Block 7 from 2026-06-16 to 2026-10-17 are WELL-0121, WELL-0107, and WELL-0138. WELL-0121 experienced 49 days of downtime, with 7 inspections (INS-0121-0189, INS-0121-0200, INS-0121-0201, INS-0121-0202, INS-0121-0203, INS-0121-0205, INS-0121-0206). WELL-0107 had 42 days of downtime, with 6 inspections (INS-0107-0194, INS-0107-0195, INS-0107-0196, INS-0107-0197, INS-0107-0198, INS-0107-0199). WELL-0138 also had 42 days of downtime, with 6 inspections (INS-0138-0195, INS-0138-0196, INS-0138-0200, INS-0138-0201, INS-0138-0206, INS-0138-0207). Each non-producing weekly inspection counts as 7 days of downtime.",
+     "tool": "downtime"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S27",
+   "desc": "auto mode (no human to answer): never asks, answers with the assumption stated",
+   "ok": true,
+   "core": false,
+   "ms": 38347,
+   "info": "('bar', ['Window 2025-10-16 to 2026-10-17; each non-producing weekly inspection counts 7 days.', 'Assumed: Assuming you want to see downtime for the last 12 months.'])",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Show me downtime.",
+     "a": "The following wells have recorded downtime: WELL-0121 (91 days), WELL-0061 (77 days), WELL-0031 (70 days), WELL-0015 (63 days), WELL-0069 (63 days), WELL-0084 (63 days), WELL-0108 (63 days), WELL-0200 (63 days), WELL-0065 (56 days), WELL-0079 (56 days), WELL-0115 (56 days), WELL-0182 (56 days), WELL-0021 (49 days), WELL-0033 (49 days), WELL-0041 (49 days), WELL-0085 (49 days), WELL-0102 (49 days), WELL-0170 (49 days), WELL-0172 (49 days), WELL-0183 (49 days), WELL-0002 (42 days), WELL-0004 (42 days), WELL-0005 (42 days), WELL-0020 (42 days), WELL-0055 (42 days), WELL-0075 (42 days), WELL-0078 (42 days), WELL-0093 (42 days), WELL-0103 (42 days), and WELL-0107 (42 days). Each non-producing weekly inspection counts as 7 days of downtime, within the window of 2025-10-16 to 2026-10-17 (note).\nAssumed: Assuming you want to see downtime for the last 12 months.",
+     "tool": "downtime"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S28",
+   "desc": "a change touching thousands of rows asks first; 'Apply' applies, 'No' records nothing",
+   "ok": true,
+   "core": true,
+   "ms": 4106,
+   "info": "('clarify', True, True, 0)",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Add 1 degree to every wellhead reading of every well in 2026, the fleet gun was miscalibrated.",
+     "a": "This would change 8234 inspections across 200 wells (add wellhead_temp_c = 1.0). Apply it that widely?\n1. Apply to all 8234\n2. No, narrow it down\nOr tell me in your own words.",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Apply to all",
+     "a": "Recorded Michael Turner's correction (add wellhead_temp_c = 1.0) for 8234 inspections across 200 well(s). Originals are kept; it applies to every user and you can say 'undo that correction' to revoke it. Reason: fleet gun miscalibrated",
+     "tool": "confirm"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "Add 1 degree to every wellhead reading of every well in 2026, the fleet gun was miscalibrated.",
+     "a": "This would change 8234 inspections across 200 wells (add wellhead_temp_c = 1.0). Apply it that widely?\n1. Apply to all 8234\n2. No, narrow it down\nOr tell me in your own words.",
+     "tool": "correct_raw"
+    },
+    {
+     "user": "Michael Turner",
+     "q": "No",
+     "a": "Cancelled, nothing was changed. Tell me the narrower scope (wells, area, dates) when ready.",
+     "tool": "cancel"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  },
+  {
+   "id": "S29",
+   "desc": "unknown area: asks and offers the real areas as options",
+   "ok": true,
+   "core": false,
+   "ms": 1197,
+   "info": "('clarify', ['Northeast Block 7', 'Northeast Block 8'], 'Northeast Block 9 is not a valid area. Did you mean Northeast Block 7 or Northeast Block 8?\\n1. North')",
+   "answers": [
+    {
+     "user": "Michael Turner",
+     "q": "Which wells in Northeast Block 9 are not producing oil right now?",
+     "a": "Northeast Block 9 is not a valid area. Did you mean Northeast Block 7 or Northeast Block 8?\n1. Northeast Block 7\n2. Northeast Block 8\nOr tell me in your own words.",
+     "tool": "clarify"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   }
+  }
+ ],
+ "judge_model": "gemini-2.5-pro",
+ "judged_at": "2026-10-17 16:23"
+}

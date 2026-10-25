@@ -1,0 +1,33 @@
+# The 18 given scenarios as a rehearsal for the final run. Format: User Name: question   ('--- new chat' starts a new chat)
+Michael Turner: Is WELL-0001 producing oil right now? When was it last inspected, and by whom?
+Michael Turner: Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a table.
+Michael Turner: Show a line chart of WELL-0001's wellhead temperature against air temperature for the last 13 weeks, and mark when it was not producing oil.
+Michael Turner: How many oil spills has WELL-0001 had in the last 4 years, and how much oil in total? List them in a table.
+Michael Turner: How many days was WELL-0001 down in 2025?
+Michael Turner: Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months? Show a bar chart.
+Michael Turner: Show on a map every well in Northeast Block 8 with a real spill in the last 90 days.
+Michael Turner: Show a heatmap of 2026 spills by geographic area and month.
+Michael Turner: Which rules has WELL-0001 broken in the last 12 months, and what is still open?
+Michael Turner: In Southwest Block 24, which spills in the last 90 days were not contained within the SOP time limit?
+--- new chat
+Michael Turner: For the three wells we discussed yesterday, what have repairs cost this year?
+--- new chat
+Michael Turner: The 15 Oct reading for WELL-0164 is wrong. The handheld thermal gun used in that inspection was faulty; the field crew re-measured the wellhead at 41.0 °C.
+Michael Turner: Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a table.
+--- new chat
+Michael Turner: The AI estimated the 24 Sep spill at WELL-0151 as 4.5 bbl. The field crew measured 5.4 bbl.
+--- new chat
+Michael Turner: Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?
+Michael Turner: Note for all T350 wells: our team now wants a pump jack root-cause analysis after 2 repairs, not 3.
+--- new chat
+Michael Turner: Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?
+--- new chat
+Jessica Reed: Is WELL-0164 producing oil right now?
+Laura Simmons: Which spills in Northeast Block 8 in the last 90 days needed a report to the regulator?
+Jake Morales: FYI for everyone: WELL-0007 will be shut in from 17 Oct for a 10-day planned workover.
+Michael Turner: Is any downtime planned for WELL-0007?
+Jessica Reed: For the three wells we discussed yesterday, what have repairs cost this year?
+Michael Turner: WELL-0175 has been shut in for planned work since 14 Oct.
+Tyler Hughes: WELL-0175 is running fine.
+Jake Morales: WELL-0001 is back online since 14 Oct.
+Tyler Hughes: Was the 20 Aug spill at WELL-0101 real oil?

@@ -1,0 +1,58 @@
+{
+ "suite": "blocks",
+ "ran_at": "2026-10-17 15:47",
+ "passed": 10,
+ "total": 10,
+ "items": [
+  {
+   "id": "V1",
+   "desc": "V1 well status: card + callouts + trend + scatter + timeline + map (>=6 distinct types)",
+   "ok": true
+  },
+  {
+   "id": "V2",
+   "desc": "V2 area list: KPIs + table + callout + bar + map",
+   "ok": true
+  },
+  {
+   "id": "V3",
+   "desc": "V3 downtime ranking: KPIs + bar + donut + table; bar has the 3 expected wells",
+   "ok": true
+  },
+  {
+   "id": "V4",
+   "desc": "V4 spills: KPIs + table + map + donut + bar, 4 pins",
+   "ok": true
+  },
+  {
+   "id": "V5",
+   "desc": "V5 heatmap answer: KPIs + heatmap + bar + line; totals match Q8",
+   "ok": true
+  },
+  {
+   "id": "V6",
+   "desc": "V6 compliance: KPIs + breaches table + open actions table + donut",
+   "ok": true
+  },
+  {
+   "id": "V7",
+   "desc": "V7 trace: timeline + table",
+   "ok": true
+  },
+  {
+   "id": "V8",
+   "desc": "V8 trend: KPIs + line (red points flagged) + callout + scatter + table",
+   "ok": true
+  },
+  {
+   "id": "V9",
+   "desc": "V9 compound question: blocks of BOTH parts in one response",
+   "ok": true
+  },
+  {
+   "id": "V10",
+   "desc": "V10 re-render: same data as a table, no re-query",
+   "ok": true
+  }
+ ]
+}

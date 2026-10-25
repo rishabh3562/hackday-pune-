@@ -1,0 +1,4300 @@
+[
+ {
+  "n": 1,
+  "user": "Michael Turner",
+  "chat": 1,
+  "question": "All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.",
+  "answer": {
+   "visual": "text",
+   "rows": [],
+   "citations": [],
+   "notes": [
+    "No reservoir pressure data exists: inspections record only wellhead and ambient temperature, spill fields and notes (125,198 inspections, 600 wells); pressure columns found: none; notes mentioning reservoir/bottom-hole pressure: 0. A reservoir pressure map cannot be built from this data. Nearest honest alternative: wellhead-to-air temperature difference by area."
+   ],
+   "blocks": [
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "No reservoir pressure data exists: inspections record only wellhead and ambient temperature, spill fields and notes (125,198 inspections, 600 wells); pressure columns found: none; notes mentioning reservoir/bottom-hole pressure: 0. A reservoir pressure map cannot be built from this data. Nearest honest alternative: wellhead-to-air temperature difference by area.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "No reservoir pressure data exists in the provided records. Inspections only record wellhead and ambient temperature, spill fields, and notes (125,198 inspections, 600 wells). There are no pressure columns found, and no notes mention reservoir or bottom-hole pressure. Therefore, a reservoir pressure map cannot be built from this data. The nearest alternative would be to map the wellhead-to-air temperature difference by area.",
+   "plan": {
+    "kind": "query",
+    "tool": "data_gap",
+    "args": {
+     "topic": "pressure"
+    }
+   }
+  }
+ },
+ {
+  "n": 2,
+  "user": "Robert Hayes",
+  "chat": 2,
+  "question": "Which well produced the most oil in 2026?",
+  "answer": {
+   "visual": "text",
+   "rows": [
+    {
+     "Well": "WELL-0008",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0016",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0017",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0024",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0044",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0050",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0051",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0106",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0144",
+     "Weekly inspections showing producing in 2026": 55
+    },
+    {
+     "Well": "WELL-0207",
+     "Weekly inspections showing producing in 2026": 55
+    }
+   ],
+   "citations": [],
+   "notes": [
+    "No oil production volumes exist in this dataset: only a weekly producing / not-producing reading per well (temperature rule). So 'most oil produced in 2026' cannot be answered; the closest proxy is the number of weekly inspections showing the well producing (45 wells tie at 55). That is uptime, not barrels."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Weekly inspections showing producing in 2026"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0008",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0016",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0017",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0024",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0044",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0050",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0051",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0106",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0144",
+       "Weekly inspections showing producing in 2026": 55
+      },
+      {
+       "Well": "WELL-0207",
+       "Weekly inspections showing producing in 2026": 55
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "No oil production volumes exist in this dataset: only a weekly producing / not-producing reading per well (temperature rule). So 'most oil produced in 2026' cannot be answered; the closest proxy is the number of weekly inspections showing the well producing (45 wells tie at 55). That is uptime, not barrels.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "No oil production volumes exist in this dataset; only a weekly producing/not-producing reading per well (temperature rule). Therefore, the question \"Which well produced the most oil in 2026?\" cannot be answered. The closest proxy is the number of weekly inspections showing the well producing, with 45 wells tying at 55. Wells WELL-0008, WELL-0016, WELL-0017, WELL-0024, WELL-0044, WELL-0050, WELL-0051, WELL-0106, WELL-0144, and WELL-0207 all had 55 weekly inspections showing them producing in 2026.",
+   "plan": {
+    "kind": "query",
+    "tool": "data_gap",
+    "args": {
+     "topic": "production"
+    }
+   }
+  }
+ },
+ {
+  "n": 3,
+  "user": "Laura Simmons",
+  "chat": 3,
+  "question": "Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0163",
+     "Area": "Northeast Block 8",
+     "Reported at": "2026-11-03 20:55",
+     "Response": "MNT-0163-019 at 2026-11-14 08:00",
+     "Hours to response": 251.1,
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0149",
+     "Area": "Northeast Block 7",
+     "Reported at": "2026-11-06 18:20",
+     "Response": "MNT-0149-029 at 2026-11-07 08:00",
+     "Hours to response": 13.7,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0165",
+     "Area": "Northeast Block 8",
+     "Reported at": "2026-11-13 20:35",
+     "Response": "MNT-0165-031 at 2026-11-14 08:00",
+     "Hours to response": 11.4,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0341",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-11-19 07:40",
+     "Response": "INS-0341-0109 at 2026-12-17 13:30",
+     "Hours to response": 677.8,
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0091",
+     "Area": "Southwest Block 24",
+     "Reported at": "2026-11-27 22:25",
+     "Response": "MNT-0091-019 at 2026-11-28 08:00",
+     "Hours to response": 9.6,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0423",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-03 05:25",
+     "Response": "INS-0423-0213 at 2026-12-03 09:15",
+     "Hours to response": 3.8,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0059",
+     "Area": "Southwest Block 24",
+     "Reported at": "2026-12-03 06:10",
+     "Response": "INS-0059-0213 at 2026-12-03 12:15",
+     "Hours to response": 6.1,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0332",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-03 12:10",
+     "Response": "none",
+     "Hours to response": "-",
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0401",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-05 13:50",
+     "Response": "MNT-0401-033 at 2026-12-11 08:00",
+     "Hours to response": 138.2,
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0189",
+     "Area": "Northeast Block 8",
+     "Reported at": "2026-12-10 12:35",
+     "Response": "MNT-0189-037 at 2026-12-11 08:00",
+     "Hours to response": 19.4,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0403",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-10 21:15",
+     "Response": "MNT-0403-024 at 2026-12-11 08:00",
+     "Hours to response": 10.8,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0244",
+     "Area": "Southeast Block 31",
+     "Reported at": "2026-12-11 05:25",
+     "Response": "MNT-0244-026 at 2026-12-11 08:00",
+     "Hours to response": 2.6,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0040",
+     "Area": "Southwest Block 23",
+     "Reported at": "2026-12-12 01:55",
+     "Response": "MNT-0040-029 at 2026-12-12 08:00",
+     "Hours to response": 6.1,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0228",
+     "Area": "Southeast Block 31",
+     "Reported at": "2026-12-16 19:50",
+     "Response": "INS-0228-0144 at 2026-12-17 12:45",
+     "Hours to response": 16.9,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0052",
+     "Area": "Southwest Block 24",
+     "Reported at": "2026-12-18 06:45",
+     "Response": "none",
+     "Hours to response": "-",
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0370",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-21 12:45",
+     "Response": "MNT-0370-028 at 2026-12-22 08:00",
+     "Hours to response": 19.2,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0362",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-24 00:15",
+     "Response": "MNT-0362-030 at 2026-12-25 08:00",
+     "Hours to response": 31.8,
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0161",
+     "Area": "Northeast Block 8",
+     "Reported at": "2026-12-25 15:45",
+     "Response": "INS-0161-0168 at 2027-01-14 11:00",
+     "Hours to response": 475.2,
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0135",
+     "Area": "Northeast Block 7",
+     "Reported at": "2026-12-27 03:50",
+     "Response": "MNT-0135-034 at 2026-12-27 08:00",
+     "Hours to response": 4.2,
+     "Deadline": "24 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0324",
+     "Area": "Northwest Block 12",
+     "Reported at": "2027-01-01 22:40",
+     "Response": "MNT-0324-036 at 2027-01-02 08:00",
+     "Hours to response": 9.3,
+     "Deadline": "12 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0330",
+     "Area": "Northwest Block 12",
+     "Reported at": "2027-01-02 21:40",
+     "Response": "MNT-0330-030 at 2027-01-03 08:00",
+     "Hours to response": 10.3,
+     "Deadline": "12 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0599",
+     "Area": "Southeast Block 32",
+     "Reported at": "2027-01-06 17:20",
+     "Response": "INS-0599-0196 at 2027-01-07 09:45",
+     "Hours to response": 16.4,
+     "Deadline": "12 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0516",
+     "Area": "Southeast Block 32",
+     "Reported at": "2027-01-06 21:15",
+     "Response": "INS-0516-0215 at 2027-01-07 12:15",
+     "Hours to response": 15.0,
+     "Deadline": "12 h",
+     "Met/Missed": "Missed"
+    },
+    {
+     "Well": "WELL-0425",
+     "Area": "Northwest Block 12",
+     "Reported at": "2027-01-07 05:20",
+     "Response": "INS-0425-0218 at 2027-01-07 09:00",
+     "Hours to response": 3.7,
+     "Deadline": "12 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0465",
+     "Area": "Southeast Block 32",
+     "Reported at": "2027-01-08 23:35",
+     "Response": "MNT-0465-031 at 2027-01-09 08:00",
+     "Hours to response": 8.4,
+     "Deadline": "12 h",
+     "Met/Missed": "Met"
+    },
+    {
+     "Well": "WELL-0137",
+     "Area": "Northeast Block 7",
+     "Reported at": "2027-01-10 23:30",
+     "Response": "MNT-0137-032 at 2027-01-11 08:00",
+     "Hours to response": 8.5,
+     "Deadline": "12 h",
+     "Met/Missed": "Met"
+    }
+   ],
+   "citations": [
+    "CTX-0040-002",
+    "CTX-0052-003",
+    "CTX-0059-002",
+    "CTX-0091-001",
+    "CTX-0135-009",
+    "CTX-0137-004",
+    "CTX-0149-004",
+    "CTX-0161-006",
+    "CTX-0163-002",
+    "CTX-0165-001",
+    "CTX-0189-003",
+    "CTX-0228-004",
+    "CTX-0244-002",
+    "CTX-0324-001",
+    "CTX-0330-003",
+    "CTX-0332-004",
+    "CTX-0341-002",
+    "CTX-0362-002",
+    "CTX-0370-005",
+    "CTX-0401-002",
+    "CTX-0403-004",
+    "CTX-0423-002",
+    "CTX-0425-006",
+    "CTX-0465-005",
+    "CTX-0516-002",
+    "CTX-0599-003",
+    "INS-0059-0213",
+    "INS-0161-0168",
+    "INS-0228-0144",
+    "INS-0341-0109",
+    "INS-0423-0213",
+    "INS-0425-0218",
+    "INS-0516-0215",
+    "INS-0599-0196",
+    "MNT-0040-029",
+    "MNT-0091-019",
+    "MNT-0135-034",
+    "MNT-0137-032",
+    "MNT-0149-029",
+    "MNT-0163-019",
+    "MNT-0165-031",
+    "MNT-0189-037",
+    "MNT-0244-026",
+    "MNT-0324-036",
+    "MNT-0330-030",
+    "MNT-0362-030",
+    "MNT-0370-028",
+    "MNT-0401-033",
+    "MNT-0403-024",
+    "MNT-0465-031"
+   ],
+   "notes": [
+    "26 gas-odor notes since 2026-11-01; 9 missed. OPS-1: response = a maintenance job starting, or a MANUAL inspection (drone does not count), after the note within 24 h (notes before 01 Jan 2027) / 12 h (from then)."
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "title": null,
+     "items": [
+      {
+       "label": "Rows",
+       "value": 26
+      },
+      {
+       "label": "Problems",
+       "value": 9
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Reported at",
+      "Response",
+      "Hours to response",
+      "Deadline",
+      "Met/Missed"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0163",
+       "Area": "Northeast Block 8",
+       "Reported at": "2026-11-03 20:55",
+       "Response": "MNT-0163-019 at 2026-11-14 08:00",
+       "Hours to response": 251.1,
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0149",
+       "Area": "Northeast Block 7",
+       "Reported at": "2026-11-06 18:20",
+       "Response": "MNT-0149-029 at 2026-11-07 08:00",
+       "Hours to response": 13.7,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0165",
+       "Area": "Northeast Block 8",
+       "Reported at": "2026-11-13 20:35",
+       "Response": "MNT-0165-031 at 2026-11-14 08:00",
+       "Hours to response": 11.4,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0341",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-11-19 07:40",
+       "Response": "INS-0341-0109 at 2026-12-17 13:30",
+       "Hours to response": 677.8,
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0091",
+       "Area": "Southwest Block 24",
+       "Reported at": "2026-11-27 22:25",
+       "Response": "MNT-0091-019 at 2026-11-28 08:00",
+       "Hours to response": 9.6,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0423",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-03 05:25",
+       "Response": "INS-0423-0213 at 2026-12-03 09:15",
+       "Hours to response": 3.8,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0059",
+       "Area": "Southwest Block 24",
+       "Reported at": "2026-12-03 06:10",
+       "Response": "INS-0059-0213 at 2026-12-03 12:15",
+       "Hours to response": 6.1,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0332",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-03 12:10",
+       "Response": "none",
+       "Hours to response": "-",
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0401",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-05 13:50",
+       "Response": "MNT-0401-033 at 2026-12-11 08:00",
+       "Hours to response": 138.2,
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0189",
+       "Area": "Northeast Block 8",
+       "Reported at": "2026-12-10 12:35",
+       "Response": "MNT-0189-037 at 2026-12-11 08:00",
+       "Hours to response": 19.4,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0403",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-10 21:15",
+       "Response": "MNT-0403-024 at 2026-12-11 08:00",
+       "Hours to response": 10.8,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0244",
+       "Area": "Southeast Block 31",
+       "Reported at": "2026-12-11 05:25",
+       "Response": "MNT-0244-026 at 2026-12-11 08:00",
+       "Hours to response": 2.6,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0040",
+       "Area": "Southwest Block 23",
+       "Reported at": "2026-12-12 01:55",
+       "Response": "MNT-0040-029 at 2026-12-12 08:00",
+       "Hours to response": 6.1,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0228",
+       "Area": "Southeast Block 31",
+       "Reported at": "2026-12-16 19:50",
+       "Response": "INS-0228-0144 at 2026-12-17 12:45",
+       "Hours to response": 16.9,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0052",
+       "Area": "Southwest Block 24",
+       "Reported at": "2026-12-18 06:45",
+       "Response": "none",
+       "Hours to response": "-",
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0370",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-21 12:45",
+       "Response": "MNT-0370-028 at 2026-12-22 08:00",
+       "Hours to response": 19.2,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0362",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-24 00:15",
+       "Response": "MNT-0362-030 at 2026-12-25 08:00",
+       "Hours to response": 31.8,
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0161",
+       "Area": "Northeast Block 8",
+       "Reported at": "2026-12-25 15:45",
+       "Response": "INS-0161-0168 at 2027-01-14 11:00",
+       "Hours to response": 475.2,
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0135",
+       "Area": "Northeast Block 7",
+       "Reported at": "2026-12-27 03:50",
+       "Response": "MNT-0135-034 at 2026-12-27 08:00",
+       "Hours to response": 4.2,
+       "Deadline": "24 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0324",
+       "Area": "Northwest Block 12",
+       "Reported at": "2027-01-01 22:40",
+       "Response": "MNT-0324-036 at 2027-01-02 08:00",
+       "Hours to response": 9.3,
+       "Deadline": "12 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0330",
+       "Area": "Northwest Block 12",
+       "Reported at": "2027-01-02 21:40",
+       "Response": "MNT-0330-030 at 2027-01-03 08:00",
+       "Hours to response": 10.3,
+       "Deadline": "12 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0599",
+       "Area": "Southeast Block 32",
+       "Reported at": "2027-01-06 17:20",
+       "Response": "INS-0599-0196 at 2027-01-07 09:45",
+       "Hours to response": 16.4,
+       "Deadline": "12 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0516",
+       "Area": "Southeast Block 32",
+       "Reported at": "2027-01-06 21:15",
+       "Response": "INS-0516-0215 at 2027-01-07 12:15",
+       "Hours to response": 15.0,
+       "Deadline": "12 h",
+       "Met/Missed": "Missed"
+      },
+      {
+       "Well": "WELL-0425",
+       "Area": "Northwest Block 12",
+       "Reported at": "2027-01-07 05:20",
+       "Response": "INS-0425-0218 at 2027-01-07 09:00",
+       "Hours to response": 3.7,
+       "Deadline": "12 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0465",
+       "Area": "Southeast Block 32",
+       "Reported at": "2027-01-08 23:35",
+       "Response": "MNT-0465-031 at 2027-01-09 08:00",
+       "Hours to response": 8.4,
+       "Deadline": "12 h",
+       "Met/Missed": "Met"
+      },
+      {
+       "Well": "WELL-0137",
+       "Area": "Northeast Block 7",
+       "Reported at": "2027-01-10 23:30",
+       "Response": "MNT-0137-032 at 2027-01-11 08:00",
+       "Hours to response": 8.5,
+       "Deadline": "12 h",
+       "Met/Missed": "Met"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "26 gas-odor notes since 2026-11-01; 9 missed. OPS-1: response = a maintenance job starting, or a MANUAL inspection (drone does not count), after the note within 24 h (notes before 01 Jan 2027) / 12 h (from then).",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "26 gas-odor notes since 2026-11-01; 9 missed. OPS-1: response = a maintenance job starting, or a MANUAL inspection (drone does not count), after the note within 24 h (notes before 01 Jan 2027) / 12 h (from then).\nProblems: WELL-0163 (Missed), 251.1 h; WELL-0341 (Missed), 677.8 h; WELL-0332 (Missed); WELL-0401 (Missed), 138.2 h; WELL-0052 (Missed); WELL-0362 (Missed), 31.8 h; WELL-0161 (Missed), 475.2 h; WELL-0599 (Missed), 16.4 h; WELL-0516 (Missed), 15.0 h.",
+   "plan": {
+    "kind": "query",
+    "tool": "gas_response",
+    "args": {
+     "since": "2026-11-01"
+    },
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 4,
+  "user": "Chris Dalton",
+  "chat": 4,
+  "question": "Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0087",
+     "Area": "Southwest Block 24",
+     "Bypass in": "2026-12-02 11:15",
+     "Bypass out": "2027-01-06 13:20",
+     "Approval": "MOC-2026-036",
+     "Approval valid until": "2026-12-15",
+     "Status": "Expired"
+    },
+    {
+     "Well": "WELL-0158",
+     "Area": "Northeast Block 8",
+     "Bypass in": "2026-11-20 15:20",
+     "Bypass out": "2026-12-28 10:35",
+     "Approval": "MOC-2026-036",
+     "Approval valid until": "2026-12-15",
+     "Status": "Expired"
+    },
+    {
+     "Well": "WELL-0249",
+     "Area": "Southeast Block 31",
+     "Bypass in": "2026-11-25 10:25",
+     "Bypass out": "still in",
+     "Approval": "MOC-2026-036",
+     "Approval valid until": "2026-12-15",
+     "Status": "Expired"
+    },
+    {
+     "Well": "WELL-0405",
+     "Area": "Northwest Block 12",
+     "Bypass in": "2026-12-20 10:15",
+     "Bypass out": "still in",
+     "Approval": "none",
+     "Approval valid until": "-",
+     "Status": "Not approved"
+    },
+    {
+     "Well": "WELL-0561",
+     "Area": "Southeast Block 32",
+     "Bypass in": "2026-12-08 08:25",
+     "Bypass out": "2026-12-19 08:55",
+     "Approval": "none",
+     "Approval valid until": "-",
+     "Status": "Not approved"
+    },
+    {
+     "Well": "WELL-0013",
+     "Area": "Southwest Block 23",
+     "Bypass in": "2026-11-10 13:15",
+     "Bypass out": "2027-01-08 14:45",
+     "Approval": "MOC-2026-044",
+     "Approval valid until": "2027-02-28",
+     "Status": "Allowed"
+    },
+    {
+     "Well": "WELL-0062",
+     "Area": "Southwest Block 24",
+     "Bypass in": "2026-11-02 11:45",
+     "Bypass out": "2026-11-27 09:20",
+     "Approval": "MOC-2026-044",
+     "Approval valid until": "2027-02-28",
+     "Status": "Allowed"
+    },
+    {
+     "Well": "WELL-0248",
+     "Area": "Southeast Block 31",
+     "Bypass in": "2026-11-05 13:30",
+     "Bypass out": "still in",
+     "Approval": "MOC-2026-044",
+     "Approval valid until": "2027-02-28",
+     "Status": "Allowed"
+    },
+    {
+     "Well": "WELL-0284",
+     "Area": "Southwest Block 24",
+     "Bypass in": "2026-11-12 10:55",
+     "Bypass out": "2026-12-10 15:20",
+     "Approval": "MOC-2026-036",
+     "Approval valid until": "2026-12-15",
+     "Status": "Allowed"
+    },
+    {
+     "Well": "WELL-0356",
+     "Area": "Northwest Block 12",
+     "Bypass in": "2026-11-18 09:20",
+     "Bypass out": "2026-12-05 12:15",
+     "Approval": "MOC-2026-036",
+     "Approval valid until": "2026-12-15",
+     "Status": "Allowed"
+    },
+    {
+     "Well": "WELL-0461",
+     "Area": "Southeast Block 32",
+     "Bypass in": "2026-11-14 09:50",
+     "Bypass out": "2026-12-12 15:40",
+     "Approval": "MOC-2026-036",
+     "Approval valid until": "2026-12-15",
+     "Status": "Allowed"
+    },
+    {
+     "Well": "WELL-0476",
+     "Area": "Southeast Block 32",
+     "Bypass in": "2026-10-22 15:50",
+     "Bypass out": "2026-11-18 14:10",
+     "Approval": "MOC-2026-044",
+     "Approval valid until": "2027-02-28",
+     "Status": "Allowed"
+    }
+   ],
+   "citations": [
+    "CTX-0013-002",
+    "CTX-0013-005",
+    "CTX-0062-002",
+    "CTX-0062-005",
+    "CTX-0087-001",
+    "CTX-0087-004",
+    "CTX-0158-003",
+    "CTX-0158-005",
+    "CTX-0248-002",
+    "CTX-0249-002",
+    "CTX-0284-002",
+    "CTX-0284-003",
+    "CTX-0356-002",
+    "CTX-0356-003",
+    "CTX-0405-003",
+    "CTX-0461-002",
+    "CTX-0461-003",
+    "CTX-0476-002",
+    "CTX-0476-003",
+    "CTX-0561-004",
+    "CTX-0561-005",
+    "MOC-2026-031",
+    "MOC-2026-036",
+    "MOC-2026-044"
+   ],
+   "notes": [
+    "12 bypass periods found in operator notes; 5 are not allowed (OPS-2). Expiry runs to the end of the memo's date; an extension memo replaces the earlier expiry."
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "title": null,
+     "items": [
+      {
+       "label": "Rows",
+       "value": 12
+      },
+      {
+       "label": "Problems",
+       "value": 5
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Bypass in",
+      "Bypass out",
+      "Approval",
+      "Approval valid until",
+      "Status"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0087",
+       "Area": "Southwest Block 24",
+       "Bypass in": "2026-12-02 11:15",
+       "Bypass out": "2027-01-06 13:20",
+       "Approval": "MOC-2026-036",
+       "Approval valid until": "2026-12-15",
+       "Status": "Expired"
+      },
+      {
+       "Well": "WELL-0158",
+       "Area": "Northeast Block 8",
+       "Bypass in": "2026-11-20 15:20",
+       "Bypass out": "2026-12-28 10:35",
+       "Approval": "MOC-2026-036",
+       "Approval valid until": "2026-12-15",
+       "Status": "Expired"
+      },
+      {
+       "Well": "WELL-0249",
+       "Area": "Southeast Block 31",
+       "Bypass in": "2026-11-25 10:25",
+       "Bypass out": "still in",
+       "Approval": "MOC-2026-036",
+       "Approval valid until": "2026-12-15",
+       "Status": "Expired"
+      },
+      {
+       "Well": "WELL-0405",
+       "Area": "Northwest Block 12",
+       "Bypass in": "2026-12-20 10:15",
+       "Bypass out": "still in",
+       "Approval": "none",
+       "Approval valid until": "-",
+       "Status": "Not approved"
+      },
+      {
+       "Well": "WELL-0561",
+       "Area": "Southeast Block 32",
+       "Bypass in": "2026-12-08 08:25",
+       "Bypass out": "2026-12-19 08:55",
+       "Approval": "none",
+       "Approval valid until": "-",
+       "Status": "Not approved"
+      },
+      {
+       "Well": "WELL-0013",
+       "Area": "Southwest Block 23",
+       "Bypass in": "2026-11-10 13:15",
+       "Bypass out": "2027-01-08 14:45",
+       "Approval": "MOC-2026-044",
+       "Approval valid until": "2027-02-28",
+       "Status": "Allowed"
+      },
+      {
+       "Well": "WELL-0062",
+       "Area": "Southwest Block 24",
+       "Bypass in": "2026-11-02 11:45",
+       "Bypass out": "2026-11-27 09:20",
+       "Approval": "MOC-2026-044",
+       "Approval valid until": "2027-02-28",
+       "Status": "Allowed"
+      },
+      {
+       "Well": "WELL-0248",
+       "Area": "Southeast Block 31",
+       "Bypass in": "2026-11-05 13:30",
+       "Bypass out": "still in",
+       "Approval": "MOC-2026-044",
+       "Approval valid until": "2027-02-28",
+       "Status": "Allowed"
+      },
+      {
+       "Well": "WELL-0284",
+       "Area": "Southwest Block 24",
+       "Bypass in": "2026-11-12 10:55",
+       "Bypass out": "2026-12-10 15:20",
+       "Approval": "MOC-2026-036",
+       "Approval valid until": "2026-12-15",
+       "Status": "Allowed"
+      },
+      {
+       "Well": "WELL-0356",
+       "Area": "Northwest Block 12",
+       "Bypass in": "2026-11-18 09:20",
+       "Bypass out": "2026-12-05 12:15",
+       "Approval": "MOC-2026-036",
+       "Approval valid until": "2026-12-15",
+       "Status": "Allowed"
+      },
+      {
+       "Well": "WELL-0461",
+       "Area": "Southeast Block 32",
+       "Bypass in": "2026-11-14 09:50",
+       "Bypass out": "2026-12-12 15:40",
+       "Approval": "MOC-2026-036",
+       "Approval valid until": "2026-12-15",
+       "Status": "Allowed"
+      },
+      {
+       "Well": "WELL-0476",
+       "Area": "Southeast Block 32",
+       "Bypass in": "2026-10-22 15:50",
+       "Bypass out": "2026-11-18 14:10",
+       "Approval": "MOC-2026-044",
+       "Approval valid until": "2027-02-28",
+       "Status": "Allowed"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "12 bypass periods found in operator notes; 5 are not allowed (OPS-2). Expiry runs to the end of the memo's date; an extension memo replaces the earlier expiry.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "12 bypass periods found in operator notes; 5 are not allowed (OPS-2). Expiry runs to the end of the memo's date; an extension memo replaces the earlier expiry.\nProblems: WELL-0087 (Expired); WELL-0158 (Expired); WELL-0249 (Expired); WELL-0405 (Not approved); WELL-0561 (Not approved).\nIn place right now: WELL-0249 (Expired, MOC-2026-036); WELL-0405 (Not approved, none); WELL-0248 (Allowed, MOC-2026-044).",
+   "plan": {
+    "kind": "query",
+    "tool": "bypass_audit",
+    "args": {},
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 5,
+  "user": "Michael Turner",
+  "chat": 5,
+  "question": "The State Oil & Gas Commission wrote to us in November 2026 about spills. Which of our spills does the letter cover, and on which ones are we not compliant? Show me a table.",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0168",
+     "Area": "Northeast Block 8",
+     "Inspection": "INS-0168-0190, 2026-06-11",
+     "Volume": "5.6 bbl",
+     "Clean-up job": "MNT-0168-024",
+     "Compliant?": "Yes: report says soil samples were sent to the lab"
+    },
+    {
+     "Well": "WELL-0123",
+     "Area": "Northeast Block 7",
+     "Inspection": "INS-0123-0093, 2026-09-24",
+     "Volume": "6 bbl",
+     "Clean-up job": "MNT-0123-014",
+     "Compliant?": "No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)"
+    },
+    {
+     "Well": "WELL-0277",
+     "Area": "Northeast Block 7",
+     "Inspection": "INS-0277-0205, 2026-10-01",
+     "Volume": "6.2 bbl",
+     "Clean-up job": "MNT-0277-031",
+     "Compliant?": "Yes: report says soil samples were sent to the lab"
+    },
+    {
+     "Well": "WELL-0119",
+     "Area": "Northeast Block 7",
+     "Inspection": "INS-0119-0209, 2026-11-05",
+     "Volume": "6 bbl",
+     "Clean-up job": "MNT-0119-029",
+     "Compliant?": "Yes: report says soil samples were sent to the lab"
+    },
+    {
+     "Well": "WELL-0182",
+     "Area": "Northeast Block 8",
+     "Inspection": "INS-0182-0208, 2026-12-03",
+     "Volume": "5.2 bbl",
+     "Clean-up job": "MNT-0182-028",
+     "Compliant?": "No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)"
+    },
+    {
+     "Well": "WELL-0262",
+     "Area": "Northeast Block 8",
+     "Inspection": "INS-0262-0218, 2027-01-07",
+     "Volume": "6.1 bbl",
+     "Clean-up job": "MNT-0262-029",
+     "Compliant?": "No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)"
+    }
+   ],
+   "citations": [
+    "INS-0119-0209",
+    "INS-0123-0093",
+    "INS-0168-0190",
+    "INS-0182-0208",
+    "INS-0262-0218",
+    "INS-0277-0205",
+    "MNT-0119-029",
+    "MNT-0123-014",
+    "MNT-0168-024",
+    "MNT-0182-028",
+    "MNT-0262-029",
+    "MNT-0277-031",
+    "regulator-letter-2026-11-20.md"
+   ],
+   "notes": [
+    "6 spills of at least 5 bbl in Northeast Block 7/8 since 01 Jun 2026 (volumes after corrections; spills corrected to not-a-spill are excluded); 3 not compliant; results were due 15 Jan 2027."
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "title": null,
+     "items": [
+      {
+       "label": "Rows",
+       "value": 6
+      },
+      {
+       "label": "Problems",
+       "value": 3
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Inspection",
+      "Volume",
+      "Clean-up job",
+      "Compliant?"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0168",
+       "Area": "Northeast Block 8",
+       "Inspection": "INS-0168-0190, 2026-06-11",
+       "Volume": "5.6 bbl",
+       "Clean-up job": "MNT-0168-024",
+       "Compliant?": "Yes: report says soil samples were sent to the lab"
+      },
+      {
+       "Well": "WELL-0123",
+       "Area": "Northeast Block 7",
+       "Inspection": "INS-0123-0093, 2026-09-24",
+       "Volume": "6 bbl",
+       "Clean-up job": "MNT-0123-014",
+       "Compliant?": "No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)"
+      },
+      {
+       "Well": "WELL-0277",
+       "Area": "Northeast Block 7",
+       "Inspection": "INS-0277-0205, 2026-10-01",
+       "Volume": "6.2 bbl",
+       "Clean-up job": "MNT-0277-031",
+       "Compliant?": "Yes: report says soil samples were sent to the lab"
+      },
+      {
+       "Well": "WELL-0119",
+       "Area": "Northeast Block 7",
+       "Inspection": "INS-0119-0209, 2026-11-05",
+       "Volume": "6 bbl",
+       "Clean-up job": "MNT-0119-029",
+       "Compliant?": "Yes: report says soil samples were sent to the lab"
+      },
+      {
+       "Well": "WELL-0182",
+       "Area": "Northeast Block 8",
+       "Inspection": "INS-0182-0208, 2026-12-03",
+       "Volume": "5.2 bbl",
+       "Clean-up job": "MNT-0182-028",
+       "Compliant?": "No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)"
+      },
+      {
+       "Well": "WELL-0262",
+       "Area": "Northeast Block 8",
+       "Inspection": "INS-0262-0218, 2027-01-07",
+       "Volume": "6.1 bbl",
+       "Clean-up job": "MNT-0262-029",
+       "Compliant?": "No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "6 spills of at least 5 bbl in Northeast Block 7/8 since 01 Jun 2026 (volumes after corrections; spills corrected to not-a-spill are excluded); 3 not compliant; results were due 15 Jan 2027.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "6 spills of at least 5 bbl in Northeast Block 7/8 since 01 Jun 2026 (volumes after corrections; spills corrected to not-a-spill are excluded); 3 not compliant; results were due 15 Jan 2027.\nProblems: WELL-0123 (No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)); WELL-0182 (No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)); WELL-0262 (No: clean-up section lacks 'Soil samples sent to the lab.' (field soil readings only)).",
+   "plan": {
+    "kind": "query",
+    "tool": "spill_letter_audit",
+    "args": {},
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 6,
+  "user": "Nathan Pierce",
+  "chat": 6,
+  "question": "Across the whole field, not just my area, for which wells do the latest inspection and the operator notes disagree about whether the well is producing oil? For each one, what is its real status right now, and why?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0026",
+     "Area": "Southwest Block 23",
+     "Latest inspection": "INS-0026-0216, 2027-01-14, not producing",
+     "Latest operator note": "2027-01-15 10:25, restarted: WELL-0026 put back on production after the repair crew finished.",
+     "Status now": "Producing oil (unconfirmed)"
+    },
+    {
+     "Well": "WELL-0032",
+     "Area": "Southwest Block 23",
+     "Latest inspection": "INS-0032-0219, 2027-01-14, not producing",
+     "Latest operator note": "2027-01-15 10:25, restarted: Brought WELL-0032 back online after the pump change.",
+     "Status now": "Producing oil (unconfirmed)"
+    },
+    {
+     "Well": "WELL-0033",
+     "Area": "Southwest Block 23",
+     "Latest inspection": "INS-0033-0222, 2027-01-14, not producing",
+     "Latest operator note": "2027-01-15 10:25, restarted: Restarted WELL-0033, unit running smooth.",
+     "Status now": "Producing oil (unconfirmed)"
+    },
+    {
+     "Well": "WELL-0044",
+     "Area": "Southwest Block 23",
+     "Latest inspection": "INS-0044-0218, 2027-01-14, producing",
+     "Latest operator note": "2027-01-14 13:05, shut in: Shut in WELL-0044 at the wellhead, flowline leak suspected.",
+     "Status now": "Not producing oil"
+    },
+    {
+     "Well": "WELL-0046",
+     "Area": "Southwest Block 23",
+     "Latest inspection": "INS-0046-0220, 2027-01-14, not producing",
+     "Latest operator note": "2027-01-15 10:25, restarted: WELL-0046 put back on production after the repair crew finished.",
+     "Status now": "Producing oil (unconfirmed)"
+    },
+    {
+     "Well": "WELL-0323",
+     "Area": "Northwest Block 12",
+     "Latest inspection": "INS-0323-0219, 2027-01-14, producing",
+     "Latest operator note": "2027-01-14 19:20, shut in: Shut-in WELL-0323 after the pumper reported a stuffing box leak.",
+     "Status now": "Not producing oil"
+    },
+    {
+     "Well": "WELL-0355",
+     "Area": "Northwest Block 12",
+     "Latest inspection": "INS-0355-0213, 2027-01-14, producing",
+     "Latest operator note": "2027-01-14 19:05, shut in: Found WELL-0355 leaking at the stuffing box, shut the well in.",
+     "Status now": "Not producing oil"
+    },
+    {
+     "Well": "WELL-0422",
+     "Area": "Northwest Block 12",
+     "Latest inspection": "INS-0422-0215, 2027-01-14, producing",
+     "Latest operator note": "2027-01-14 21:35, shut in: Shut in WELL-0422 for the night, high pressure alarm on the separator.",
+     "Status now": "Not producing oil"
+    },
+    {
+     "Well": "WELL-0479",
+     "Area": "Southeast Block 32",
+     "Latest inspection": "INS-0479-0213, 2027-01-14, producing",
+     "Latest operator note": "2027-01-14 15:35, shut in: Found WELL-0479 leaking at the stuffing box, shut the well in.",
+     "Status now": "Not producing oil"
+    },
+    {
+     "Well": "WELL-0481",
+     "Area": "Southeast Block 32",
+     "Latest inspection": "INS-0481-0220, 2027-01-14, producing",
+     "Latest operator note": "2027-01-14 18:50, shut in: Shut in WELL-0481 for the night, high pressure alarm on the separator.",
+     "Status now": "Not producing oil"
+    }
+   ],
+   "citations": [
+    "INS-0026-0216",
+    "CTX-0026-001",
+    "INS-0032-0219",
+    "CTX-0032-006",
+    "INS-0033-0222",
+    "CTX-0033-003",
+    "INS-0044-0218",
+    "CTX-0044-008",
+    "INS-0046-0220",
+    "CTX-0046-004",
+    "INS-0323-0219",
+    "CTX-0323-002",
+    "INS-0355-0213",
+    "CTX-0355-004",
+    "INS-0422-0215",
+    "CTX-0422-003",
+    "INS-0479-0213",
+    "CTX-0479-004",
+    "INS-0481-0220",
+    "CTX-0481-006"
+   ],
+   "notes": [
+    "10 wells where a newer shut-in/restart operator note overrides the latest inspection (OPS-3). Plugged-and-abandoned wells are excluded; 'unconfirmed' = restart note, no inspection since."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Latest inspection",
+      "Latest operator note",
+      "Status now"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0026",
+       "Area": "Southwest Block 23",
+       "Latest inspection": "INS-0026-0216, 2027-01-14, not producing",
+       "Latest operator note": "2027-01-15 10:25, restarted: WELL-0026 put back on production after the repair crew finished.",
+       "Status now": "Producing oil (unconfirmed)"
+      },
+      {
+       "Well": "WELL-0032",
+       "Area": "Southwest Block 23",
+       "Latest inspection": "INS-0032-0219, 2027-01-14, not producing",
+       "Latest operator note": "2027-01-15 10:25, restarted: Brought WELL-0032 back online after the pump change.",
+       "Status now": "Producing oil (unconfirmed)"
+      },
+      {
+       "Well": "WELL-0033",
+       "Area": "Southwest Block 23",
+       "Latest inspection": "INS-0033-0222, 2027-01-14, not producing",
+       "Latest operator note": "2027-01-15 10:25, restarted: Restarted WELL-0033, unit running smooth.",
+       "Status now": "Producing oil (unconfirmed)"
+      },
+      {
+       "Well": "WELL-0044",
+       "Area": "Southwest Block 23",
+       "Latest inspection": "INS-0044-0218, 2027-01-14, producing",
+       "Latest operator note": "2027-01-14 13:05, shut in: Shut in WELL-0044 at the wellhead, flowline leak suspected.",
+       "Status now": "Not producing oil"
+      },
+      {
+       "Well": "WELL-0046",
+       "Area": "Southwest Block 23",
+       "Latest inspection": "INS-0046-0220, 2027-01-14, not producing",
+       "Latest operator note": "2027-01-15 10:25, restarted: WELL-0046 put back on production after the repair crew finished.",
+       "Status now": "Producing oil (unconfirmed)"
+      },
+      {
+       "Well": "WELL-0323",
+       "Area": "Northwest Block 12",
+       "Latest inspection": "INS-0323-0219, 2027-01-14, producing",
+       "Latest operator note": "2027-01-14 19:20, shut in: Shut-in WELL-0323 after the pumper reported a stuffing box leak.",
+       "Status now": "Not producing oil"
+      },
+      {
+       "Well": "WELL-0355",
+       "Area": "Northwest Block 12",
+       "Latest inspection": "INS-0355-0213, 2027-01-14, producing",
+       "Latest operator note": "2027-01-14 19:05, shut in: Found WELL-0355 leaking at the stuffing box, shut the well in.",
+       "Status now": "Not producing oil"
+      },
+      {
+       "Well": "WELL-0422",
+       "Area": "Northwest Block 12",
+       "Latest inspection": "INS-0422-0215, 2027-01-14, producing",
+       "Latest operator note": "2027-01-14 21:35, shut in: Shut in WELL-0422 for the night, high pressure alarm on the separator.",
+       "Status now": "Not producing oil"
+      },
+      {
+       "Well": "WELL-0479",
+       "Area": "Southeast Block 32",
+       "Latest inspection": "INS-0479-0213, 2027-01-14, producing",
+       "Latest operator note": "2027-01-14 15:35, shut in: Found WELL-0479 leaking at the stuffing box, shut the well in.",
+       "Status now": "Not producing oil"
+      },
+      {
+       "Well": "WELL-0481",
+       "Area": "Southeast Block 32",
+       "Latest inspection": "INS-0481-0220, 2027-01-14, producing",
+       "Latest operator note": "2027-01-14 18:50, shut in: Shut in WELL-0481 for the night, high pressure alarm on the separator.",
+       "Status now": "Not producing oil"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "10 wells where a newer shut-in/restart operator note overrides the latest inspection (OPS-3). Plugged-and-abandoned wells are excluded; 'unconfirmed' = restart note, no inspection since.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "10 wells where a newer shut-in/restart operator note overrides the latest inspection (OPS-3). Plugged-and-abandoned wells are excluded; 'unconfirmed' = restart note, no inspection since.\nWELL-0026: Producing oil (unconfirmed). Why: the operator note (2027-01-15 10:25) is newer than inspection INS-0026-0216 and says the well was restarted; an inspection has not confirmed it yet.\nWELL-0032: Producing oil (unconfirmed). Why: the operator note (2027-01-15 10:25) is newer than inspection INS-0032-0219 and says the well was restarted; an inspection has not confirmed it yet.\nWELL-0033: Producing oil (unconfirmed). Why: the operator note (2027-01-15 10:25) is newer than inspection INS-0033-0222 and says the well was restarted; an inspection has not confirmed it yet.\nWELL-0044: Not producing oil. Why: the operator note (2027-01-14 13:05) is newer than inspection INS-0044-0218 and says the well was shut in; an inspection has not confirmed it.\nWELL-0046: Producing oil (unconfirmed). Why: the operator note (2027-01-15 10:25) is newer than inspection INS-0046-0220 and says the well was restarted; an inspection has not confirmed it yet.\nWELL-0323: Not producing oil. Why: the operator note (2027-01-14 19:20) is newer than inspection INS-0323-0219 and says the well was shut in; an inspection has not confirmed it.\nWELL-0355: Not producing oil. Why: the operator note (2027-01-14 19:05) is newer than inspection INS-0355-0213 and says the well was shut in; an inspection has not confirmed it.\nWELL-0422: Not producing oil. Why: the operator note (2027-01-14 21:35) is newer than inspection INS-0422-0215 and says the well was shut in; an inspection has not confirmed it.\nWELL-0479: Not producing oil. Why: the operator note (2027-01-14 15:35) is newer than inspection INS-0479-0213 and says the well was shut in; an inspection has not confirmed it.\nWELL-0481: Not producing oil. Why: the operator note (2027-01-14 18:50) is newer than inspection INS-0481-0220 and says the well was shut in; an inspection has not confirmed it.",
+   "plan": {
+    "kind": "query",
+    "tool": "status_conflicts",
+    "args": {},
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 7,
+  "user": "Robert Hayes",
+  "chat": 7,
+  "question": "Over the last month the operators have written notes about wells that sound or behave wrong. Which of those wells haven't had a repair since? Rank the 10 most likely to need a repair in the next 90 days, other than a spill clean-up, and quote the notes as evidence.",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Rank": 1,
+     "_score": 11,
+     "Well": "WELL-0197",
+     "Area": "Northeast Block 8",
+     "Operator-note evidence": "\"Pumper reports rattling at WELL-0197 pump jack, keep an eye on it.\" (CTX-0197-002, 04 Jan); \"Heard fluid pound on WELL-0197, unit still running.\" (CTX-0197-003, 08 Jan); \"Heard fluid pound on WELL-0197, unit still running.\" (CTX-0197-004, 12 Jan)",
+     "Other warning signs": "latest inspection: not producing; 3 non-producing weekly inspections in the last 12 weeks; 2 corrective repairs in 12 months",
+     "Last repair": "MNT-0197-029, 2027-01-01 (Sucker rod parted)"
+    },
+    {
+     "Rank": 2,
+     "_score": 11,
+     "Well": "WELL-0281",
+     "Area": "Northeast Block 7",
+     "Operator-note evidence": "\"Found WELL-0281 leaking at the stuffing box, shut the well in.\" (CTX-0281-004, 14 Jan)",
+     "Other warning signs": "latest inspection: not producing; 3 non-producing weekly inspections in the last 12 weeks; 4 corrective repairs in 12 months",
+     "Last repair": "MNT-0281-031, 2027-01-02 (Flowline corrosion pinhole leak)"
+    },
+    {
+     "Rank": 3,
+     "_score": 11,
+     "Well": "WELL-0498",
+     "Area": "Southeast Block 32",
+     "Operator-note evidence": "\"WELL-0498 drive tripping on and off overnight, reset it each time.\" (CTX-0498-004, 09 Jan); \"WELL-0498 drive tripping on underload, restarted from the panel.\" (CTX-0498-005, 11 Jan); \"WELL-0498 drive tripping on underload, restarted from the panel.\" (CTX-0498-006, 12 Jan)",
+     "Other warning signs": "2 non-producing weekly inspections in the last 12 weeks",
+     "Last repair": "MNT-0498-031, 2027-01-03 (Separator level controller fault)"
+    },
+    {
+     "Rank": 4,
+     "_score": 10,
+     "Well": "WELL-0219",
+     "Area": "Southeast Block 31",
+     "Operator-note evidence": "\"WELL-0219 drive tripping on underload, restarted from the panel.\" (CTX-0219-006, 05 Jan); \"Drive on WELL-0219 showing amps hunting between 38 and 44 A.\" (CTX-0219-007, 13 Jan)",
+     "Other warning signs": "latest inspection: not producing; 1 non-producing weekly inspections in the last 12 weeks; 2 corrective repairs in 12 months",
+     "Last repair": "MNT-0219-022, 2026-11-24 (Scheduled wellhead valve service)"
+    },
+    {
+     "Rank": 5,
+     "_score": 9,
+     "Well": "WELL-0010",
+     "Area": "Southwest Block 23",
+     "Operator-note evidence": "\"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-005, 10 Jan); \"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-006, 13 Jan); \"Heard fluid pound on WELL-0010, unit still running.\" (CTX-0010-007, 14 Jan)",
+     "Other warning signs": "latest inspection: not producing; 2 non-producing weekly inspections in the last 12 weeks; 4 corrective repairs in 12 months",
+     "Last repair": "MNT-0010-031, 2027-01-08 (Flowline leak causing spill)"
+    },
+    {
+     "Rank": 6,
+     "_score": 9,
+     "Well": "WELL-0175",
+     "Area": "Northeast Block 8",
+     "Operator-note evidence": "\"Heard fluid pound on WELL-0175, unit still running.\" (CTX-0175-003, 17 Dec); \"Rod squeal at WELL-0175 stuffing box, greased the polished rod.\" (CTX-0175-006, 21 Dec); \"WELL-0175 tagging bottom on the downstroke, adjust spacing next visit.\" (CTX-0175-007, 26 Dec)",
+     "Other warning signs": "latest inspection: not producing; 1 non-producing weekly inspections in the last 12 weeks; 3 corrective repairs in 12 months",
+     "Last repair": "MNT-0175-035, 2026-11-28 (Scheduled wellhead valve service)"
+    },
+    {
+     "Rank": 7,
+     "_score": 9,
+     "Well": "WELL-0182",
+     "Area": "Northeast Block 8",
+     "Operator-note evidence": "\"Pumper reports rattling at WELL-0182 pump jack, keep an eye on it.\" (CTX-0182-005, 27 Dec); \"WELL-0182 tagging bottom on the downstroke, adjust spacing next visit.\" (CTX-0182-007, 30 Dec); \"Heard fluid pound on WELL-0182, unit still running.\" (CTX-0182-008, 05 Jan)",
+     "Other warning signs": "4 non-producing weekly inspections in the last 12 weeks; 6 corrective repairs in 12 months",
+     "Last repair": "MNT-0182-029, 2026-12-26 (Walking beam bearing wear)"
+    },
+    {
+     "Rank": 8,
+     "_score": 9,
+     "Well": "WELL-0203",
+     "Area": "Southeast Block 31",
+     "Operator-note evidence": "\"Found WELL-0203 leaking at the stuffing box, shut the well in.\" (CTX-0203-003, 14 Jan)",
+     "Other warning signs": "latest inspection: not producing; 1 non-producing weekly inspections in the last 12 weeks; 3 corrective repairs in 12 months",
+     "Last repair": "MNT-0203-031, 2027-01-10 (Scheduled wellhead valve service)"
+    },
+    {
+     "Rank": 9,
+     "_score": 9,
+     "Well": "WELL-0249",
+     "Area": "Southeast Block 31",
+     "Operator-note evidence": "\"WELL-0249 drive tripping on underload, restarted from the panel.\" (CTX-0249-004, 13 Jan)",
+     "Other warning signs": "latest inspection: not producing; 2 non-producing weekly inspections in the last 12 weeks; 3 corrective repairs in 12 months",
+     "Last repair": "MNT-0249-018, 2027-01-09 (ESP motor burnout)"
+    },
+    {
+     "Rank": 10,
+     "_score": 9,
+     "Well": "WELL-0481",
+     "Area": "Southeast Block 32",
+     "Operator-note evidence": "\"Rod squeal at WELL-0481 stuffing box, greased the polished rod.\" (CTX-0481-004, 06 Jan); \"Pumper reports rattling at WELL-0481 pump jack, keep an eye on it.\" (CTX-0481-005, 08 Jan); \"Shut in WELL-0481 for the night, high pressure alarm on the separator.\" (CTX-0481-006, 14 Jan)",
+     "Other warning signs": "2 non-producing weekly inspections in the last 12 weeks; 2 corrective repairs in 12 months",
+     "Last repair": "MNT-0481-025, 2026-12-14 (Scheduled lubrication and belt inspection)"
+    }
+   ],
+   "citations": [
+    "CTX-0423-003",
+    "CTX-0423-004",
+    "CTX-0118-003",
+    "CTX-0118-004",
+    "CTX-0118-006",
+    "CTX-0342-003",
+    "CTX-0493-003",
+    "CTX-0493-004",
+    "CTX-0196-005",
+    "CTX-0196-007",
+    "CTX-0130-001",
+    "CTX-0130-002",
+    "CTX-0076-005",
+    "CTX-0076-006",
+    "CTX-0076-008",
+    "CTX-0175-003",
+    "CTX-0175-006",
+    "CTX-0175-007",
+    "CTX-0030-001",
+    "CTX-0030-002",
+    "CTX-0030-004",
+    "CTX-0434-002",
+    "CTX-0434-003",
+    "CTX-0469-004",
+    "CTX-0469-005",
+    "CTX-0478-001",
+    "CTX-0401-003",
+    "CTX-0401-004",
+    "CTX-0538-004",
+    "CTX-0349-001",
+    "CTX-0349-002",
+    "CTX-0554-003",
+    "CTX-0554-004",
+    "CTX-0463-004",
+    "CTX-0413-002",
+    "CTX-0413-003",
+    "CTX-0392-002",
+    "CTX-0392-003",
+    "CTX-0536-003",
+    "CTX-0286-002",
+    "CTX-0286-004",
+    "CTX-0286-005",
+    "CTX-0520-002",
+    "CTX-0520-003",
+    "CTX-0042-001",
+    "CTX-0042-003",
+    "CTX-0344-002",
+    "CTX-0344-003",
+    "CTX-0344-004",
+    "CTX-0311-003",
+    "CTX-0311-004",
+    "CTX-0220-001",
+    "CTX-0220-002",
+    "CTX-0442-003",
+    "CTX-0442-005",
+    "CTX-0253-007",
+    "CTX-0253-008",
+    "CTX-0184-004",
+    "CTX-0184-005",
+    "CTX-0218-007",
+    "CTX-0098-004",
+    "CTX-0098-005",
+    "CTX-0098-006",
+    "CTX-0600-005",
+    "CTX-0600-006",
+    "CTX-0211-004",
+    "CTX-0336-003",
+    "CTX-0336-004",
+    "CTX-0336-005",
+    "CTX-0051-003",
+    "CTX-0005-004",
+    "CTX-0005-005",
+    "CTX-0005-006",
+    "CTX-0260-004",
+    "CTX-0260-005",
+    "CTX-0425-005",
+    "CTX-0425-007",
+    "CTX-0411-003",
+    "CTX-0411-004",
+    "CTX-0511-001",
+    "CTX-0511-002",
+    "CTX-0380-004",
+    "CTX-0380-005",
+    "CTX-0380-006",
+    "CTX-0061-004",
+    "CTX-0061-005",
+    "CTX-0231-003",
+    "CTX-0329-002",
+    "CTX-0329-003",
+    "CTX-0171-002",
+    "CTX-0548-002",
+    "CTX-0548-003",
+    "CTX-0122-005",
+    "CTX-0122-006",
+    "CTX-0372-001",
+    "CTX-0372-002",
+    "CTX-0023-003",
+    "CTX-0023-004",
+    "CTX-0023-005",
+    "CTX-0388-004",
+    "CTX-0348-003",
+    "CTX-0256-003",
+    "CTX-0182-005",
+    "CTX-0182-007",
+    "CTX-0182-008",
+    "CTX-0561-006",
+    "CTX-0561-007",
+    "CTX-0561-008",
+    "CTX-0101-006",
+    "CTX-0101-007",
+    "CTX-0202-004",
+    "CTX-0054-006",
+    "CTX-0043-004",
+    "CTX-0043-005",
+    "CTX-0043-006",
+    "CTX-0592-001",
+    "CTX-0065-004",
+    "CTX-0140-002",
+    "CTX-0140-004",
+    "CTX-0364-002",
+    "CTX-0364-003",
+    "CTX-0364-004",
+    "CTX-0236-004",
+    "CTX-0062-006",
+    "CTX-0419-002",
+    "CTX-0530-004",
+    "CTX-0240-006",
+    "CTX-0240-007",
+    "CTX-0240-008",
+    "CTX-0332-005",
+    "CTX-0332-006",
+    "CTX-0020-006",
+    "CTX-0020-007",
+    "CTX-0020-008",
+    "CTX-0428-002",
+    "CTX-0428-003",
+    "CTX-0261-004",
+    "CTX-0261-005",
+    "CTX-0025-002",
+    "CTX-0025-003",
+    "CTX-0044-006",
+    "CTX-0044-007",
+    "CTX-0044-008",
+    "CTX-0325-004",
+    "CTX-0325-005",
+    "CTX-0148-002",
+    "CTX-0370-006",
+    "CTX-0370-007",
+    "CTX-0244-006",
+    "CTX-0244-007",
+    "CTX-0207-002",
+    "CTX-0080-005",
+    "CTX-0515-002",
+    "CTX-0197-002",
+    "CTX-0197-003",
+    "CTX-0197-004",
+    "CTX-0376-001",
+    "CTX-0229-004",
+    "CTX-0219-006",
+    "CTX-0219-007",
+    "CTX-0495-003",
+    "CTX-0445-003",
+    "CTX-0481-004",
+    "CTX-0481-005",
+    "CTX-0481-006",
+    "CTX-0316-003",
+    "CTX-0021-005",
+    "CTX-0527-002",
+    "CTX-0152-005",
+    "CTX-0477-003",
+    "CTX-0505-002",
+    "CTX-0505-003",
+    "CTX-0287-005",
+    "CTX-0396-005",
+    "CTX-0430-004",
+    "CTX-0502-003",
+    "CTX-0090-005",
+    "CTX-0090-007",
+    "CTX-0297-003",
+    "CTX-0297-004",
+    "CTX-0485-002",
+    "CTX-0457-003",
+    "CTX-0498-004",
+    "CTX-0498-005",
+    "CTX-0498-006",
+    "CTX-0352-003",
+    "CTX-0097-002",
+    "CTX-0097-003",
+    "CTX-0210-004",
+    "CTX-0069-005",
+    "CTX-0010-005",
+    "CTX-0010-006",
+    "CTX-0010-007",
+    "CTX-0595-004",
+    "CTX-0595-005",
+    "CTX-0350-003",
+    "CTX-0263-004",
+    "CTX-0263-005",
+    "CTX-0460-002",
+    "CTX-0136-005",
+    "CTX-0136-006",
+    "CTX-0262-008",
+    "CTX-0305-004",
+    "CTX-0094-006",
+    "CTX-0089-001",
+    "CTX-0418-002",
+    "CTX-0249-004",
+    "CTX-0407-005",
+    "CTX-0083-004",
+    "CTX-0217-011",
+    "CTX-0356-005",
+    "CTX-0436-003",
+    "CTX-0433-005",
+    "CTX-0203-003",
+    "CTX-0281-004",
+    "CTX-0479-004",
+    "CTX-0269-004",
+    "CTX-0032-005",
+    "CTX-0355-004",
+    "CTX-0323-002",
+    "CTX-0422-003",
+    "CTX-0456-002",
+    "CTX-0581-002",
+    "CTX-0302-004",
+    "CTX-0579-003"
+   ],
+   "notes": [
+    "Operator notes from the last 30 days that describe something sounding or behaving wrong (leak, tripping drive, hunting amps, tagging bottom, rattling, squeal, fluid pound), on wells with no repair job started since the note. Ranking = severity weight of the notes + non-producing readings + repeat corrective repairs; it is a heuristic, not a prediction model."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Rank",
+      "Well",
+      "Area",
+      "Operator-note evidence",
+      "Other warning signs",
+      "Last repair"
+     ],
+     "rows": [
+      {
+       "Rank": 1,
+       "Well": "WELL-0197",
+       "Area": "Northeast Block 8",
+       "Operator-note evidence": "\"Pumper reports rattling at WELL-0197 pump jack, keep an eye on it.\" (CTX-0197-002, 04 Jan); \"Heard fluid pound on WELL-0197, unit still running.\" (CTX-0197-003, 08 Jan); \"Heard fluid pound on WELL-0197, unit still running.\" (CTX-0197-004, 12 Jan)",
+       "Other warning signs": "latest inspection: not producing; 3 non-producing weekly inspections in the last 12 weeks; 2 corrective repairs in 12 months",
+       "Last repair": "MNT-0197-029, 2027-01-01 (Sucker rod parted)"
+      },
+      {
+       "Rank": 2,
+       "Well": "WELL-0281",
+       "Area": "Northeast Block 7",
+       "Operator-note evidence": "\"Found WELL-0281 leaking at the stuffing box, shut the well in.\" (CTX-0281-004, 14 Jan)",
+       "Other warning signs": "latest inspection: not producing; 3 non-producing weekly inspections in the last 12 weeks; 4 corrective repairs in 12 months",
+       "Last repair": "MNT-0281-031, 2027-01-02 (Flowline corrosion pinhole leak)"
+      },
+      {
+       "Rank": 3,
+       "Well": "WELL-0498",
+       "Area": "Southeast Block 32",
+       "Operator-note evidence": "\"WELL-0498 drive tripping on and off overnight, reset it each time.\" (CTX-0498-004, 09 Jan); \"WELL-0498 drive tripping on underload, restarted from the panel.\" (CTX-0498-005, 11 Jan); \"WELL-0498 drive tripping on underload, restarted from the panel.\" (CTX-0498-006, 12 Jan)",
+       "Other warning signs": "2 non-producing weekly inspections in the last 12 weeks",
+       "Last repair": "MNT-0498-031, 2027-01-03 (Separator level controller fault)"
+      },
+      {
+       "Rank": 4,
+       "Well": "WELL-0219",
+       "Area": "Southeast Block 31",
+       "Operator-note evidence": "\"WELL-0219 drive tripping on underload, restarted from the panel.\" (CTX-0219-006, 05 Jan); \"Drive on WELL-0219 showing amps hunting between 38 and 44 A.\" (CTX-0219-007, 13 Jan)",
+       "Other warning signs": "latest inspection: not producing; 1 non-producing weekly inspections in the last 12 weeks; 2 corrective repairs in 12 months",
+       "Last repair": "MNT-0219-022, 2026-11-24 (Scheduled wellhead valve service)"
+      },
+      {
+       "Rank": 5,
+       "Well": "WELL-0010",
+       "Area": "Southwest Block 23",
+       "Operator-note evidence": "\"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-005, 10 Jan); \"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-006, 13 Jan); \"Heard fluid pound on WELL-0010, unit still running.\" (CTX-0010-007, 14 Jan)",
+       "Other warning signs": "latest inspection: not producing; 2 non-producing weekly inspections in the last 12 weeks; 4 corrective repairs in 12 months",
+       "Last repair": "MNT-0010-031, 2027-01-08 (Flowline leak causing spill)"
+      },
+      {
+       "Rank": 6,
+       "Well": "WELL-0175",
+       "Area": "Northeast Block 8",
+       "Operator-note evidence": "\"Heard fluid pound on WELL-0175, unit still running.\" (CTX-0175-003, 17 Dec); \"Rod squeal at WELL-0175 stuffing box, greased the polished rod.\" (CTX-0175-006, 21 Dec); \"WELL-0175 tagging bottom on the downstroke, adjust spacing next visit.\" (CTX-0175-007, 26 Dec)",
+       "Other warning signs": "latest inspection: not producing; 1 non-producing weekly inspections in the last 12 weeks; 3 corrective repairs in 12 months",
+       "Last repair": "MNT-0175-035, 2026-11-28 (Scheduled wellhead valve service)"
+      },
+      {
+       "Rank": 7,
+       "Well": "WELL-0182",
+       "Area": "Northeast Block 8",
+       "Operator-note evidence": "\"Pumper reports rattling at WELL-0182 pump jack, keep an eye on it.\" (CTX-0182-005, 27 Dec); \"WELL-0182 tagging bottom on the downstroke, adjust spacing next visit.\" (CTX-0182-007, 30 Dec); \"Heard fluid pound on WELL-0182, unit still running.\" (CTX-0182-008, 05 Jan)",
+       "Other warning signs": "4 non-producing weekly inspections in the last 12 weeks; 6 corrective repairs in 12 months",
+       "Last repair": "MNT-0182-029, 2026-12-26 (Walking beam bearing wear)"
+      },
+      {
+       "Rank": 8,
+       "Well": "WELL-0203",
+       "Area": "Southeast Block 31",
+       "Operator-note evidence": "\"Found WELL-0203 leaking at the stuffing box, shut the well in.\" (CTX-0203-003, 14 Jan)",
+       "Other warning signs": "latest inspection: not producing; 1 non-producing weekly inspections in the last 12 weeks; 3 corrective repairs in 12 months",
+       "Last repair": "MNT-0203-031, 2027-01-10 (Scheduled wellhead valve service)"
+      },
+      {
+       "Rank": 9,
+       "Well": "WELL-0249",
+       "Area": "Southeast Block 31",
+       "Operator-note evidence": "\"WELL-0249 drive tripping on underload, restarted from the panel.\" (CTX-0249-004, 13 Jan)",
+       "Other warning signs": "latest inspection: not producing; 2 non-producing weekly inspections in the last 12 weeks; 3 corrective repairs in 12 months",
+       "Last repair": "MNT-0249-018, 2027-01-09 (ESP motor burnout)"
+      },
+      {
+       "Rank": 10,
+       "Well": "WELL-0481",
+       "Area": "Southeast Block 32",
+       "Operator-note evidence": "\"Rod squeal at WELL-0481 stuffing box, greased the polished rod.\" (CTX-0481-004, 06 Jan); \"Pumper reports rattling at WELL-0481 pump jack, keep an eye on it.\" (CTX-0481-005, 08 Jan); \"Shut in WELL-0481 for the night, high pressure alarm on the separator.\" (CTX-0481-006, 14 Jan)",
+       "Other warning signs": "2 non-producing weekly inspections in the last 12 weeks; 2 corrective repairs in 12 months",
+       "Last repair": "MNT-0481-025, 2026-12-14 (Scheduled lubrication and belt inspection)"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Operator notes from the last 30 days that describe something sounding or behaving wrong (leak, tripping drive, hunting amps, tagging bottom, rattling, squeal, fluid pound), on wells with no repair job started since the note. Ranking = severity weight of the notes + non-producing readings + repeat corrective repairs; it is a heuristic, not a prediction model.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "Wells: WELL-0197, WELL-0281, WELL-0498, WELL-0219, WELL-0010, WELL-0175, WELL-0182, WELL-0203, WELL-0249, WELL-0481.\nHere are the 10 wells most likely to need a repair in the next 90 days, excluding spill clean-ups, based on operator notes and lack of subsequent repair. The ranking is a heuristic, not a prediction model, calculated from the severity weight of the notes, non-producing readings, and repeat corrective repairs.\n\n1.  **WELL-0197** in Northeast Block 8. Notes include: \"Pumper reports rattling at WELL-0197 pump jack, keep an eye on it.\" (CTX-0197-002, 04 Jan); \"Heard fluid pound on WELL-0197, unit still running.\" (CTX-0197-003, 08 Jan); \"Heard fluid pound on WELL-0197, unit still running.\" (CTX-0197-004, 12 Jan). The last repair was MNT-0197-029 on 2027-01-01 for a parted sucker rod.\n2.  **WELL-0281** in Northeast Block 7. The note states: \"Found WELL-0281 leaking at the stuffing box, shut the well in.\" (CTX-0281-004, 14 Jan). The last repair was MNT-0281-031 on 2027-01-02 for a flowline corrosion pinhole leak.\n3.  **WELL-0498** in Southeast Block 32. Notes include: \"WELL-0498 drive tripping on and off overnight, reset it each time.\" (CTX-0498-004, 09 Jan); \"WELL-0498 drive tripping on underload, restarted from the panel.\" (CTX-0498-005, 11 Jan); \"WELL-0498 drive tripping on underload, restarted from the panel.\" (CTX-0498-006, 12 Jan). The last repair was MNT-0498-031 on 2027-01-03 for a separator level controller fault.\n4.  **WELL-0219** in Southeast Block 31. Notes include: \"WELL-0219 drive tripping on underload, restarted from the panel.\" (CTX-0219-006, 05 Jan); \"Drive on WELL-0219 showing amps hunting between 38 and 44 A.\" (CTX-0219-007, 13 Jan). The last repair was MNT-0219-022 on 2026-11-24 for scheduled wellhead valve service.\n5.  **WELL-0010** in Southwest Block 23. Notes include: \"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-005, 10 Jan); \"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-006, 13 Jan); \"Heard fluid pound on WELL-0010, unit still running.\" (CTX-0010-007, 14 Jan). The last repair was MNT-0010-031 on 2027-01-08 for a flowline leak causing a spill.\n6.  **WELL-0175** in Northeast Block 8. Notes include: \"Heard fluid pound on WELL-0175, unit still running.\" (CTX-0175-003, 17 Dec); \"Rod squeal at WELL-0175 stuffing box, greased the polished rod.\" (CTX-0175-006, 21 Dec); \"WELL-0175 tagging bottom on the downstroke, adjust spacing next visit.\" (CTX-0175-007, 26 Dec). The last repair was MNT-0175-035 on 2026-11-28 for scheduled wellhead valve service.\n7.  **WELL-0182** in Northeast Block 8. Notes include: \"Pumper reports rattling at WELL-0182 pump jack, keep an eye on it.\" (CTX-0182-005, 27 Dec); \"WELL-0182 tagging bottom on the downstroke, adjust spacing next visit.\" (CTX-0182-007, 30 Dec); \"Heard fluid pound on WELL-0182, unit still running.\" (CTX-0182-008, 05 Jan). The last repair was MNT-0182-029 on 2026-12-26 for walking beam bearing wear.\n8.  **WELL-0203** in Southeast Block 31. The note states: \"Found WELL-0203 leaking at the stuffing box, shut the well in.\" (CTX-0203-003, 14 Jan). The last repair was MNT-0203-031 on 2027-01-10 for scheduled wellhead valve service.\n9.  **WELL-0249** in Southeast Block 31. The note states: \"WELL-0249 drive tripping on underload, restarted from the panel.\" (CTX-0249-004, 13 Jan). The last repair was MNT-0249-018 on 2027-01-09 for ESP motor burnout.\n10. **WELL-0481** in Southeast Block 32. Notes include: \"Rod squeal at WELL-0481 stuffing box, greased the polished rod.\" (CTX-0481-004, 06 Jan); \"Pumper reports rattling at WELL-0481 pump jack, keep an eye on it.\" (CTX-0481-005, 08 Jan); \"Shut in WELL-0481 for the night, high pressure alarm on the separator.\" (CTX-0481-006, 14 Jan). The last repair was MNT-0481-025 on 2026-12-14 for scheduled lubrication and belt inspection.",
+   "plan": {
+    "kind": "query",
+    "tool": "note_watchlist",
+    "args": {
+     "days": 30,
+     "top_n": 10
+    }
+   }
+  }
+ },
+ {
+  "n": 8,
+  "user": "Robert Hayes",
+  "chat": 7,
+  "question": "Which three would you send a crew to first this week, and why?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Rank": 1,
+     "Well": "WELL-0197",
+     "Area": "Northeast Block 8",
+     "Score": 5.5,
+     "Why": "operator notes sound wrong: \"Pumper reports rattling at WELL-0197 pump jack, keep an eye on it.\" (CTX-0197-002, 04 Jan); \"Heard fluid pound on WELL-0197, unit still run"
+    },
+    {
+     "Rank": 2,
+     "Well": "WELL-0281",
+     "Area": "Northeast Block 7",
+     "Score": 5.5,
+     "Why": "operator notes sound wrong: \"Found WELL-0281 leaking at the stuffing box, shut the well in.\" (CTX-0281-004, 14 Jan)"
+    },
+    {
+     "Rank": 3,
+     "Well": "WELL-0498",
+     "Area": "Southeast Block 32",
+     "Score": 5.5,
+     "Why": "operator notes sound wrong: \"WELL-0498 drive tripping on and off overnight, reset it each time.\" (CTX-0498-004, 09 Jan); \"WELL-0498 drive tripping on underload, restart"
+    },
+    {
+     "Rank": 4,
+     "Well": "WELL-0219",
+     "Area": "Southeast Block 31",
+     "Score": 5.0,
+     "Why": "operator notes sound wrong: \"WELL-0219 drive tripping on underload, restarted from the panel.\" (CTX-0219-006, 05 Jan); \"Drive on WELL-0219 showing amps hunting between "
+    },
+    {
+     "Rank": 5,
+     "Well": "WELL-0010",
+     "Area": "Southwest Block 23",
+     "Score": 4.5,
+     "Why": "operator notes sound wrong: \"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-005, 10 Jan); \"Rod squeal at WELL-0010 stuffing box, greased the"
+    },
+    {
+     "Rank": 6,
+     "Well": "WELL-0175",
+     "Area": "Northeast Block 8",
+     "Score": 4.5,
+     "Why": "operator notes sound wrong: \"Heard fluid pound on WELL-0175, unit still running.\" (CTX-0175-003, 17 Dec); \"Rod squeal at WELL-0175 stuffing box, greased the polished ro"
+    },
+    {
+     "Rank": 7,
+     "Well": "WELL-0182",
+     "Area": "Northeast Block 8",
+     "Score": 4.5,
+     "Why": "operator notes sound wrong: \"Pumper reports rattling at WELL-0182 pump jack, keep an eye on it.\" (CTX-0182-005, 27 Dec); \"WELL-0182 tagging bottom on the downstroke, ad"
+    },
+    {
+     "Rank": 8,
+     "Well": "WELL-0203",
+     "Area": "Southeast Block 31",
+     "Score": 4.5,
+     "Why": "operator notes sound wrong: \"Found WELL-0203 leaking at the stuffing box, shut the well in.\" (CTX-0203-003, 14 Jan)"
+    },
+    {
+     "Rank": 9,
+     "Well": "WELL-0249",
+     "Area": "Southeast Block 31",
+     "Score": 4.5,
+     "Why": "operator notes sound wrong: \"WELL-0249 drive tripping on underload, restarted from the panel.\" (CTX-0249-004, 13 Jan)"
+    },
+    {
+     "Rank": 10,
+     "Well": "WELL-0481",
+     "Area": "Southeast Block 32",
+     "Score": 4.5,
+     "Why": "operator notes sound wrong: \"Rod squeal at WELL-0481 stuffing box, greased the polished rod.\" (CTX-0481-004, 06 Jan); \"Pumper reports rattling at WELL-0481 pump jack, k"
+    }
+   ],
+   "citations": [],
+   "notes": [
+    "Priority = safety (unanswered gas report) > recalled pump in a well not producing > recalled pump > operator-note warning > missed heat-trace check. Weights are a judgement stated here, not a company rule."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Rank",
+      "Well",
+      "Area",
+      "Score",
+      "Why"
+     ],
+     "rows": [
+      {
+       "Rank": 1,
+       "Well": "WELL-0197",
+       "Area": "Northeast Block 8",
+       "Score": 5.5,
+       "Why": "operator notes sound wrong: \"Pumper reports rattling at WELL-0197 pump jack, keep an eye on it.\" (CTX-0197-002, 04 Jan); \"Heard fluid pound on WELL-0197, unit still run"
+      },
+      {
+       "Rank": 2,
+       "Well": "WELL-0281",
+       "Area": "Northeast Block 7",
+       "Score": 5.5,
+       "Why": "operator notes sound wrong: \"Found WELL-0281 leaking at the stuffing box, shut the well in.\" (CTX-0281-004, 14 Jan)"
+      },
+      {
+       "Rank": 3,
+       "Well": "WELL-0498",
+       "Area": "Southeast Block 32",
+       "Score": 5.5,
+       "Why": "operator notes sound wrong: \"WELL-0498 drive tripping on and off overnight, reset it each time.\" (CTX-0498-004, 09 Jan); \"WELL-0498 drive tripping on underload, restart"
+      },
+      {
+       "Rank": 4,
+       "Well": "WELL-0219",
+       "Area": "Southeast Block 31",
+       "Score": 5.0,
+       "Why": "operator notes sound wrong: \"WELL-0219 drive tripping on underload, restarted from the panel.\" (CTX-0219-006, 05 Jan); \"Drive on WELL-0219 showing amps hunting between "
+      },
+      {
+       "Rank": 5,
+       "Well": "WELL-0010",
+       "Area": "Southwest Block 23",
+       "Score": 4.5,
+       "Why": "operator notes sound wrong: \"Rod squeal at WELL-0010 stuffing box, greased the polished rod.\" (CTX-0010-005, 10 Jan); \"Rod squeal at WELL-0010 stuffing box, greased the"
+      },
+      {
+       "Rank": 6,
+       "Well": "WELL-0175",
+       "Area": "Northeast Block 8",
+       "Score": 4.5,
+       "Why": "operator notes sound wrong: \"Heard fluid pound on WELL-0175, unit still running.\" (CTX-0175-003, 17 Dec); \"Rod squeal at WELL-0175 stuffing box, greased the polished ro"
+      },
+      {
+       "Rank": 7,
+       "Well": "WELL-0182",
+       "Area": "Northeast Block 8",
+       "Score": 4.5,
+       "Why": "operator notes sound wrong: \"Pumper reports rattling at WELL-0182 pump jack, keep an eye on it.\" (CTX-0182-005, 27 Dec); \"WELL-0182 tagging bottom on the downstroke, ad"
+      },
+      {
+       "Rank": 8,
+       "Well": "WELL-0203",
+       "Area": "Southeast Block 31",
+       "Score": 4.5,
+       "Why": "operator notes sound wrong: \"Found WELL-0203 leaking at the stuffing box, shut the well in.\" (CTX-0203-003, 14 Jan)"
+      },
+      {
+       "Rank": 9,
+       "Well": "WELL-0249",
+       "Area": "Southeast Block 31",
+       "Score": 4.5,
+       "Why": "operator notes sound wrong: \"WELL-0249 drive tripping on underload, restarted from the panel.\" (CTX-0249-004, 13 Jan)"
+      },
+      {
+       "Rank": 10,
+       "Well": "WELL-0481",
+       "Area": "Southeast Block 32",
+       "Score": 4.5,
+       "Why": "operator notes sound wrong: \"Rod squeal at WELL-0481 stuffing box, greased the polished rod.\" (CTX-0481-004, 06 Jan); \"Pumper reports rattling at WELL-0481 pump jack, k"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Priority = safety (unanswered gas report) > recalled pump in a well not producing > recalled pump > operator-note warning > missed heat-trace check. Weights are a judgement stated here, not a company rule.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "You should send a crew to WELL-0197, WELL-0281, and WELL-0498 first this week. WELL-0197 in Northeast Block 8 is ranked first because operator notes sound wrong, specifically reporting rattling at the pump jack on January 4th (CTX-0197-002). WELL-0281 in Northeast Block 7 is ranked second because operator notes sound wrong, indicating a leak at the stuffing box and the well being shut in on January 14th (CTX-0281-004). WELL-0498 in Southeast Block 32 is ranked third because operator notes sound wrong, with the drive tripping on and off overnight on January 9th (CTX-0498-004).",
+   "plan": {
+    "kind": "query",
+    "tool": "prioritize",
+    "args": {
+     "wells_ref": "previous"
+    }
+   }
+  }
+ },
+ {
+  "n": 9,
+  "user": "Nathan Pierce",
+  "chat": 8,
+  "question": "WELL-0333's recalled pump was swapped out yesterday. The work order isn't in the system yet. Please count it as replaced from now on.",
+  "answer": {
+   "text": "Recorded for WELL-0333 as shared knowledge from Nathan Pierce: \"Recalled pump was swapped out yesterday.\" (valid from 2027-01-14). Other users asking about this will see it, attributed to you.\nFrom now on WELL-0333's recalled pump counts as replaced in the recall list. Source: Nathan Pierce's own statement, no work order in the system yet; I will say so wherever I use it.",
+   "visual": "text",
+   "rows": [],
+   "citations": [],
+   "plan": {
+    "kind": "note",
+    "well": "WELL-0333",
+    "text": "Recalled pump was swapped out yesterday.",
+    "asserts": null,
+    "valid_from": "2027-01-14"
+   }
+  }
+ },
+ {
+  "n": 10,
+  "user": "Nathan Pierce",
+  "chat": 8,
+  "question": "Also, just for me: whenever you list wells, sort them by area and then by well ID, and show costs in thousands of dollars.",
+  "answer": {
+   "text": "Saved for Nathan Pierce only (a personal preference, not shared with other users): sort wells by area, then well ID and show costs in thousands of dollars. It applies to every list I show you from now on, and I will say so each time.",
+   "visual": "text",
+   "rows": [],
+   "citations": [],
+   "plan": {
+    "kind": "preference",
+    "sort": "area_well",
+    "cost_unit": "thousands",
+    "text": "whenever you list wells, sort them by area and then by well ID, and show costs in thousands of dollars."
+   }
+  }
+ },
+ {
+  "n": 11,
+  "user": "Robert Hayes",
+  "chat": 9,
+  "question": "Which recalled pumps are still in the ground right now?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0031",
+     "Area": "Southwest Block 23",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-664877",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-04-24",
+     "Install job": "MNT-0031-027",
+     "Install cost (USD)": 19625,
+     "Producing now": "Producing",
+     "Last repaired": "2027-01-02 (MNT-0031-033, corrective: Stuffing box packing leak)",
+     "Source": "MNT-0031-027 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0156",
+     "Area": "Northeast Block 8",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-952958",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-06-27",
+     "Install job": "MNT-0156-027",
+     "Install cost (USD)": 23398,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-04 (MNT-0156-030, corrective: Flowline leak causing spill)",
+     "Source": "MNT-0156-027 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0160",
+     "Area": "Northeast Block 8",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-429965",
+     "Lot": "LOT-2409-C",
+     "Installed": "2026-07-18",
+     "Install job": "MNT-0160-028",
+     "Install cost (USD)": 33086,
+     "Producing now": "Not producing",
+     "Last repaired": "2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service)",
+     "Source": "MNT-0160-028 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0263",
+     "Area": "Southwest Block 23",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-187332",
+     "Lot": "LOT-2410-B",
+     "Installed": "2026-10-16",
+     "Install job": "MNT-0263-033",
+     "Install cost (USD)": 17254,
+     "Producing now": "Not producing",
+     "Last repaired": "2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak)",
+     "Source": "MNT-0263-033 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0305",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-978137",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-10-16",
+     "Install job": "MNT-0305-032",
+     "Install cost (USD)": 24528,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0305-032 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0426",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-880271",
+     "Lot": "LOT-2409-C",
+     "Installed": "2026-06-19",
+     "Install job": "MNT-0426-030",
+     "Install cost (USD)": 24044,
+     "Producing now": "Producing",
+     "Last repaired": "2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service)",
+     "Source": "MNT-0426-030 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0428",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-708611",
+     "Lot": "LOT-2410-B",
+     "Installed": "2026-03-07",
+     "Install job": "MNT-0428-022",
+     "Install cost (USD)": 27074,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0428-022 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0577",
+     "Area": "Southeast Block 32",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-757468",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-07-31",
+     "Install job": "MNT-0577-028",
+     "Install cost (USD)": 25500,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-07 (MNT-0577-033, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0577-028 report (Parts installed line)"
+    }
+   ],
+   "citations": [
+    "MNT-0031-027",
+    "MNT-0156-027",
+    "MNT-0160-028",
+    "MNT-0263-033",
+    "MNT-0305-032",
+    "MNT-0426-030",
+    "MNT-0428-022",
+    "MNT-0577-028",
+    "supplier-recall-notice-2026-12-01.md"
+   ],
+   "notes": [
+    "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 8 still in the ground.",
+    "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+    "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Pump",
+      "Serial",
+      "Lot",
+      "Installed",
+      "Install job",
+      "Install cost (USD)",
+      "Producing now",
+      "Last repaired",
+      "Source"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0031",
+       "Area": "Southwest Block 23",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-664877",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-04-24",
+       "Install job": "MNT-0031-027",
+       "Install cost (USD)": 19625,
+       "Producing now": "Producing",
+       "Last repaired": "2027-01-02 (MNT-0031-033, corrective: Stuffing box packing leak)",
+       "Source": "MNT-0031-027 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0156",
+       "Area": "Northeast Block 8",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-952958",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-06-27",
+       "Install job": "MNT-0156-027",
+       "Install cost (USD)": 23398,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-04 (MNT-0156-030, corrective: Flowline leak causing spill)",
+       "Source": "MNT-0156-027 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0160",
+       "Area": "Northeast Block 8",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-429965",
+       "Lot": "LOT-2409-C",
+       "Installed": "2026-07-18",
+       "Install job": "MNT-0160-028",
+       "Install cost (USD)": 33086,
+       "Producing now": "Not producing",
+       "Last repaired": "2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service)",
+       "Source": "MNT-0160-028 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0263",
+       "Area": "Southwest Block 23",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-187332",
+       "Lot": "LOT-2410-B",
+       "Installed": "2026-10-16",
+       "Install job": "MNT-0263-033",
+       "Install cost (USD)": 17254,
+       "Producing now": "Not producing",
+       "Last repaired": "2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak)",
+       "Source": "MNT-0263-033 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0305",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-978137",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-10-16",
+       "Install job": "MNT-0305-032",
+       "Install cost (USD)": 24528,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0305-032 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0426",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-880271",
+       "Lot": "LOT-2409-C",
+       "Installed": "2026-06-19",
+       "Install job": "MNT-0426-030",
+       "Install cost (USD)": 24044,
+       "Producing now": "Producing",
+       "Last repaired": "2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service)",
+       "Source": "MNT-0426-030 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0428",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-708611",
+       "Lot": "LOT-2410-B",
+       "Installed": "2026-03-07",
+       "Install job": "MNT-0428-022",
+       "Install cost (USD)": 27074,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0428-022 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0577",
+       "Area": "Southeast Block 32",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-757468",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-07-31",
+       "Install job": "MNT-0577-028",
+       "Install cost (USD)": 25500,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-07 (MNT-0577-033, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0577-028 report (Parts installed line)"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 8 still in the ground.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 8 still in the ground.\nFacts come from the maintenance reports' 'Parts installed' lines and the supplier notice.\nCounted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)\n8 wells: Northeast Block 8: WELL-0156, WELL-0160; Northwest Block 12: WELL-0305, WELL-0426, WELL-0428; Southeast Block 32: WELL-0577; Southwest Block 23: WELL-0031, WELL-0263.\nWELL-0031: producing; last repaired 2027-01-02 (MNT-0031-033, corrective: Stuffing box packing leak); installed 2026-04-24 (MNT-0031-027, lot LOT-2409-A).\nWELL-0156: producing; last repaired 2026-12-04 (MNT-0156-030, corrective: Flowline leak causing spill); installed 2026-06-27 (MNT-0156-027, lot LOT-2409-A).\nWELL-0160: not producing; last repaired 2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service); installed 2026-07-18 (MNT-0160-028, lot LOT-2409-C).\nWELL-0263: not producing; last repaired 2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak); installed 2026-10-16 (MNT-0263-033, lot LOT-2410-B).\nWELL-0305: producing; last repaired 2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection); installed 2026-10-16 (MNT-0305-032, lot LOT-2409-A).\nWELL-0426: producing; last repaired 2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service); installed 2026-06-19 (MNT-0426-030, lot LOT-2409-C).\nWELL-0428: producing; last repaired 2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection); installed 2026-03-07 (MNT-0428-022, lot LOT-2410-B).\nWELL-0577: producing; last repaired 2026-12-07 (MNT-0577-033, scheduled: Scheduled lubrication and belt inspection); installed 2026-07-31 (MNT-0577-028, lot LOT-2409-A).",
+   "plan": {
+    "kind": "query",
+    "tool": "recalled_pumps",
+    "args": {},
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 12,
+  "user": "Olivia Grant",
+  "chat": 10,
+  "question": "Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.",
+  "answer": {
+   "text": "Recorded as second-hand and UNVERIFIED: Olivia Grant is relaying what someone else said, and there is no work order or inspection for it yet. I did NOT apply it (for example, a recalled pump stays on the recall list) until the person who did the work, or a record, confirms it.",
+   "visual": "text",
+   "rows": [],
+   "citations": [],
+   "plan": {
+    "kind": "note",
+    "well": "WELL-0577",
+    "text": "Recalled pump HPC-RN-2026-07 was swapped.",
+    "asserts": null,
+    "second_hand": true
+   }
+  }
+ },
+ {
+  "n": 13,
+  "user": "Nathan Pierce",
+  "chat": 11,
+  "question": "Show me the recalled pumps that are still in the ground in my area, and what it cost to install each one.",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0305",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-978137",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-10-16",
+     "Install job": "MNT-0305-032",
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0305-032 report (Parts installed line)",
+     "Install cost (USD thousands)": 24.5
+    },
+    {
+     "Well": "WELL-0426",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-880271",
+     "Lot": "LOT-2409-C",
+     "Installed": "2026-06-19",
+     "Install job": "MNT-0426-030",
+     "Producing now": "Producing",
+     "Last repaired": "2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service)",
+     "Source": "MNT-0426-030 report (Parts installed line)",
+     "Install cost (USD thousands)": 24.0
+    },
+    {
+     "Well": "WELL-0428",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-708611",
+     "Lot": "LOT-2410-B",
+     "Installed": "2026-03-07",
+     "Install job": "MNT-0428-022",
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0428-022 report (Parts installed line)",
+     "Install cost (USD thousands)": 27.1
+    }
+   ],
+   "citations": [
+    "MNT-0305-032",
+    "MNT-0426-030",
+    "MNT-0428-022",
+    "supplier-recall-notice-2026-12-01.md"
+   ],
+   "notes": [
+    "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 3 still in the ground.",
+    "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+    "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+    "WELL-0577: Olivia Grant's claim 'Recalled pump HPC-RN-2026-07 was swapped.' is unconfirmed and was NOT applied",
+    "Applied Nathan Pierce's own saved display preference (private to them): sorted by area, then well ID, costs in thousands of dollars."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Pump",
+      "Serial",
+      "Lot",
+      "Installed",
+      "Install job",
+      "Producing now",
+      "Last repaired",
+      "Source",
+      "Install cost (USD thousands)"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0305",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-978137",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-10-16",
+       "Install job": "MNT-0305-032",
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0305-032 report (Parts installed line)",
+       "Install cost (USD thousands)": 24.5
+      },
+      {
+       "Well": "WELL-0426",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-880271",
+       "Lot": "LOT-2409-C",
+       "Installed": "2026-06-19",
+       "Install job": "MNT-0426-030",
+       "Producing now": "Producing",
+       "Last repaired": "2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service)",
+       "Source": "MNT-0426-030 report (Parts installed line)",
+       "Install cost (USD thousands)": 24.0
+      },
+      {
+       "Well": "WELL-0428",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-708611",
+       "Lot": "LOT-2410-B",
+       "Installed": "2026-03-07",
+       "Install job": "MNT-0428-022",
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0428-022 report (Parts installed line)",
+       "Install cost (USD thousands)": 27.1
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 3 still in the ground.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 3 still in the ground.\nFacts come from the maintenance reports' 'Parts installed' lines and the supplier notice.\nCounted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)\nWELL-0577: Olivia Grant's claim 'Recalled pump HPC-RN-2026-07 was swapped.' is unconfirmed and was NOT applied\nApplied Nathan Pierce's own saved display preference (private to them): sorted by area, then well ID, costs in thousands of dollars.\n3 wells: Northwest Block 12: WELL-0305, WELL-0426, WELL-0428.\nWELL-0305: producing; last repaired 2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection); installed 2026-10-16 (MNT-0305-032, lot LOT-2409-A).\nWELL-0426: producing; last repaired 2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service); installed 2026-06-19 (MNT-0426-030, lot LOT-2409-C).\nWELL-0428: producing; last repaired 2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection); installed 2026-03-07 (MNT-0428-022, lot LOT-2410-B).",
+   "plan": {
+    "kind": "query",
+    "tool": "recalled_pumps",
+    "args": {
+     "area": "@mine"
+    },
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 14,
+  "user": "Robert Hayes",
+  "chat": 12,
+  "question": "How many recalled pumps are still in the ground, and in which areas?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0031",
+     "Area": "Southwest Block 23",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-664877",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-04-24",
+     "Install job": "MNT-0031-027",
+     "Install cost (USD)": 19625,
+     "Producing now": "Producing",
+     "Last repaired": "2027-01-02 (MNT-0031-033, corrective: Stuffing box packing leak)",
+     "Source": "MNT-0031-027 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0156",
+     "Area": "Northeast Block 8",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-952958",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-06-27",
+     "Install job": "MNT-0156-027",
+     "Install cost (USD)": 23398,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-04 (MNT-0156-030, corrective: Flowline leak causing spill)",
+     "Source": "MNT-0156-027 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0160",
+     "Area": "Northeast Block 8",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-429965",
+     "Lot": "LOT-2409-C",
+     "Installed": "2026-07-18",
+     "Install job": "MNT-0160-028",
+     "Install cost (USD)": 33086,
+     "Producing now": "Not producing",
+     "Last repaired": "2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service)",
+     "Source": "MNT-0160-028 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0263",
+     "Area": "Southwest Block 23",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-187332",
+     "Lot": "LOT-2410-B",
+     "Installed": "2026-10-16",
+     "Install job": "MNT-0263-033",
+     "Install cost (USD)": 17254,
+     "Producing now": "Not producing",
+     "Last repaired": "2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak)",
+     "Source": "MNT-0263-033 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0305",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-978137",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-10-16",
+     "Install job": "MNT-0305-032",
+     "Install cost (USD)": 24528,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0305-032 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0426",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-880271",
+     "Lot": "LOT-2409-C",
+     "Installed": "2026-06-19",
+     "Install job": "MNT-0426-030",
+     "Install cost (USD)": 24044,
+     "Producing now": "Producing",
+     "Last repaired": "2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service)",
+     "Source": "MNT-0426-030 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0428",
+     "Area": "Northwest Block 12",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-708611",
+     "Lot": "LOT-2410-B",
+     "Installed": "2026-03-07",
+     "Install job": "MNT-0428-022",
+     "Install cost (USD)": 27074,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0428-022 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0577",
+     "Area": "Southeast Block 32",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-757468",
+     "Lot": "LOT-2409-A",
+     "Installed": "2026-07-31",
+     "Install job": "MNT-0577-028",
+     "Install cost (USD)": 25500,
+     "Producing now": "Producing",
+     "Last repaired": "2026-12-07 (MNT-0577-033, scheduled: Scheduled lubrication and belt inspection)",
+     "Source": "MNT-0577-028 report (Parts installed line)"
+    }
+   ],
+   "citations": [
+    "MNT-0031-027",
+    "MNT-0156-027",
+    "MNT-0160-028",
+    "MNT-0263-033",
+    "MNT-0305-032",
+    "MNT-0426-030",
+    "MNT-0428-022",
+    "MNT-0577-028",
+    "supplier-recall-notice-2026-12-01.md"
+   ],
+   "notes": [
+    "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 8 still in the ground.",
+    "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+    "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+    "WELL-0577: Olivia Grant's claim 'Recalled pump HPC-RN-2026-07 was swapped.' is unconfirmed and was NOT applied"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Pump",
+      "Serial",
+      "Lot",
+      "Installed",
+      "Install job",
+      "Install cost (USD)",
+      "Producing now",
+      "Last repaired",
+      "Source"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0031",
+       "Area": "Southwest Block 23",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-664877",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-04-24",
+       "Install job": "MNT-0031-027",
+       "Install cost (USD)": 19625,
+       "Producing now": "Producing",
+       "Last repaired": "2027-01-02 (MNT-0031-033, corrective: Stuffing box packing leak)",
+       "Source": "MNT-0031-027 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0156",
+       "Area": "Northeast Block 8",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-952958",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-06-27",
+       "Install job": "MNT-0156-027",
+       "Install cost (USD)": 23398,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-04 (MNT-0156-030, corrective: Flowline leak causing spill)",
+       "Source": "MNT-0156-027 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0160",
+       "Area": "Northeast Block 8",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-429965",
+       "Lot": "LOT-2409-C",
+       "Installed": "2026-07-18",
+       "Install job": "MNT-0160-028",
+       "Install cost (USD)": 33086,
+       "Producing now": "Not producing",
+       "Last repaired": "2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service)",
+       "Source": "MNT-0160-028 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0263",
+       "Area": "Southwest Block 23",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-187332",
+       "Lot": "LOT-2410-B",
+       "Installed": "2026-10-16",
+       "Install job": "MNT-0263-033",
+       "Install cost (USD)": 17254,
+       "Producing now": "Not producing",
+       "Last repaired": "2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak)",
+       "Source": "MNT-0263-033 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0305",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-978137",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-10-16",
+       "Install job": "MNT-0305-032",
+       "Install cost (USD)": 24528,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0305-032 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0426",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-880271",
+       "Lot": "LOT-2409-C",
+       "Installed": "2026-06-19",
+       "Install job": "MNT-0426-030",
+       "Install cost (USD)": 24044,
+       "Producing now": "Producing",
+       "Last repaired": "2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service)",
+       "Source": "MNT-0426-030 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0428",
+       "Area": "Northwest Block 12",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-708611",
+       "Lot": "LOT-2410-B",
+       "Installed": "2026-03-07",
+       "Install job": "MNT-0428-022",
+       "Install cost (USD)": 27074,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0428-022 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0577",
+       "Area": "Southeast Block 32",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-757468",
+       "Lot": "LOT-2409-A",
+       "Installed": "2026-07-31",
+       "Install job": "MNT-0577-028",
+       "Install cost (USD)": 25500,
+       "Producing now": "Producing",
+       "Last repaired": "2026-12-07 (MNT-0577-033, scheduled: Scheduled lubrication and belt inspection)",
+       "Source": "MNT-0577-028 report (Parts installed line)"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 8 still in the ground.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 8 still in the ground.\nFacts come from the maintenance reports' 'Parts installed' lines and the supplier notice.\nCounted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)\nWELL-0577: Olivia Grant's claim 'Recalled pump HPC-RN-2026-07 was swapped.' is unconfirmed and was NOT applied\n8 wells: Northeast Block 8: WELL-0156, WELL-0160; Northwest Block 12: WELL-0305, WELL-0426, WELL-0428; Southeast Block 32: WELL-0577; Southwest Block 23: WELL-0031, WELL-0263.\nWELL-0031: producing; last repaired 2027-01-02 (MNT-0031-033, corrective: Stuffing box packing leak); installed 2026-04-24 (MNT-0031-027, lot LOT-2409-A).\nWELL-0156: producing; last repaired 2026-12-04 (MNT-0156-030, corrective: Flowline leak causing spill); installed 2026-06-27 (MNT-0156-027, lot LOT-2409-A).\nWELL-0160: not producing; last repaired 2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service); installed 2026-07-18 (MNT-0160-028, lot LOT-2409-C).\nWELL-0263: not producing; last repaired 2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak); installed 2026-10-16 (MNT-0263-033, lot LOT-2410-B).\nWELL-0305: producing; last repaired 2026-12-13 (MNT-0305-033, scheduled: Scheduled lubrication and belt inspection); installed 2026-10-16 (MNT-0305-032, lot LOT-2409-A).\nWELL-0426: producing; last repaired 2027-01-04 (MNT-0426-035, scheduled: Scheduled wellhead valve service); installed 2026-06-19 (MNT-0426-030, lot LOT-2409-C).\nWELL-0428: producing; last repaired 2026-12-19 (MNT-0428-028, scheduled: Scheduled lubrication and belt inspection); installed 2026-03-07 (MNT-0428-022, lot LOT-2410-B).\nWELL-0577: producing; last repaired 2026-12-07 (MNT-0577-033, scheduled: Scheduled lubrication and belt inspection); installed 2026-07-31 (MNT-0577-028, lot LOT-2409-A).",
+   "plan": {
+    "kind": "query",
+    "tool": "recalled_pumps",
+    "args": {},
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 15,
+  "user": "Robert Hayes",
+  "chat": 12,
+  "question": "Different topic. Who leads Northwest Production, and how many wells does that team run?",
+  "answer": {
+   "visual": "card",
+   "rows": [
+    {
+     "Team": "Northwest Production",
+     "Lead": "Nathan Pierce",
+     "Lead ID": "U-601",
+     "Wells": 150
+    }
+   ],
+   "citations": [
+    "TEAM-NW",
+    "U-601"
+   ],
+   "notes": [
+    "Northwest Production is led by Nathan Pierce; 150 active wells today (team_history applied; plugged-and-abandoned wells not counted)."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Team",
+      "Lead",
+      "Lead ID",
+      "Wells"
+     ],
+     "rows": [
+      {
+       "Team": "Northwest Production",
+       "Lead": "Nathan Pierce",
+       "Lead ID": "U-601",
+       "Wells": 150
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Northwest Production is led by Nathan Pierce; 150 active wells today (team_history applied; plugged-and-abandoned wells not counted).",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "Nathan Pierce (U-601) leads Northwest Production. This team runs 150 active wells; plugged-and-abandoned wells are not counted (TEAM-NW).",
+   "plan": {
+    "kind": "query",
+    "tool": "team_info",
+    "args": {
+     "team": "Northwest Production"
+    },
+    "visual": "card"
+   }
+  }
+ },
+ {
+  "n": 16,
+  "user": "Robert Hayes",
+  "chat": 12,
+  "question": "What does our operations SOP say about cold weather? Name one well that missed the check in December.",
+  "answer": {
+   "visual": "text",
+   "rows": [
+    {
+     "doc": "fleet/sops/operations-sop-rev2.md",
+     "kind": "manual/sop",
+     "section": "Operations SOP",
+     "snippet": "operations-sop-rev2 / Operations SOP\n# Operations SOP\n\n> Fictional SOP for the FlytBase Asset Copilot hackathon. Simplified; it is not real operating,\n> safety or regulatory guidance.\n\nDocument ID: SOP-OPS \u00b7 Revision 2 \u00b7 Effective 1 Oct 2026 \u00b7 Owner: Field Operations with Health, Safety & Environment (TEAM-HSE)"
+    },
+    {
+     "doc": "fleet/sops/field-work-sop.md",
+     "kind": "manual/sop",
+     "section": "Field Work Safety and Maintenance SOP",
+     "snippet": "field-work-sop / Field Work Safety and Maintenance SOP\n# Field Work Safety and Maintenance SOP\n\n> Fictional SOP for the FlytBase Asset Copilot hackathon. Simplified and modelled on common\n> US onshore practice and the public scope of industry documents named below. It is not a\n> copy of any standard and is not real safety, legal or regulatory guidance.\n\nDocument ID: SOP-WS \u00b7 Revision 2 \u00b7 Owner: Field Maintenance (TEAM-MX) with HSE (TEAM-HSE)"
+    },
+    {
+     "doc": "fleet/sops/spill-response-sop.md",
+     "kind": "manual/sop",
+     "section": "Spill Response SOP",
+     "snippet": "spill-response-sop / Spill Response SOP\n# Spill Response SOP\n\n> Fictional SOP for the FlytBase Asset Copilot hackathon. Simplified and modelled on\n> common US onshore practice. It is not a copy of any rule and is not legal or regulatory\n> guidance.\n\nDocument ID: SOP-SR \u00b7 Revision 5 \u00b7 Effective 1 Jan 2027 \u00b7 Owner: Health, Safety & Environment (TEAM-HSE)"
+    },
+    {
+     "doc": "fleet/sops/field-work-sop.md",
+     "kind": "manual/sop",
+     "section": "**WS-07** | Write the **maintenance report** within 3 days o",
+     "snippet": "field-work-sop / 3. Protocols: **WS-07** | Write the **maintenance report** within 3 days of finishing the work. Include what happened, root cause, work done, parts, safety steps, tests, waste and a compliance check against this SOP and the Spill Response SOP."
+    },
+    {
+     "doc": "fleet/sops/field-work-sop.md",
+     "kind": "manual/sop",
+     "section": "2. Background (industry references)",
+     "snippet": "field-work-sop / 2. Background (industry references)\n## 2. Background (industry references)\n\n| Topic | What industry practice says | How this SOP uses it |\n|---|---|---|\n| Crew safety on well servicing | API RP 54 (*Occupational Safety and Health for Oil and Gas Well Drilling and Servicing Operations*) covers well servicing rigs and special services. Pre-job safety meetings (job safety analysis briefings) are standard practice in OSHA's oil and gas safety guidance. | WS-01 |\n| Energy isolation | The federal lockout/tagout standard (OSHA 29 CFR 1910.147) lists oil and gas well drilling and servicing as outside its scope; the US Chemical Safety Board has recommended closing that gap. API RP 11G (*Installation, Maintenance and Lubrication of Pumping Units*) covers safe installation and servicing of beam pumping units, and the manufacturer's instructions take precedence. | WS-02 is our compa"
+    }
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "doc",
+      "kind",
+      "section",
+      "snippet"
+     ],
+     "rows": [
+      {
+       "doc": "fleet/sops/operations-sop-rev2.md",
+       "kind": "manual/sop",
+       "section": "Operations SOP",
+       "snippet": "operations-sop-rev2 / Operations SOP\n# Operations SOP\n\n> Fictional SOP for the FlytBase Asset Copilot hackathon. Simplified; it is not real operating,\n> safety or regulatory guidance.\n\nDocument ID: SOP-OPS \u00b7 Revision 2 \u00b7 Effective 1 Oct 2026 \u00b7 Owner: Field Operations with Health, Safety & Environment (TEAM-HSE)"
+      },
+      {
+       "doc": "fleet/sops/field-work-sop.md",
+       "kind": "manual/sop",
+       "section": "Field Work Safety and Maintenance SOP",
+       "snippet": "field-work-sop / Field Work Safety and Maintenance SOP\n# Field Work Safety and Maintenance SOP\n\n> Fictional SOP for the FlytBase Asset Copilot hackathon. Simplified and modelled on common\n> US onshore practice and the public scope of industry documents named below. It is not a\n> copy of any standard and is not real safety, legal or regulatory guidance.\n\nDocument ID: SOP-WS \u00b7 Revision 2 \u00b7 Owner: Field Maintenance (TEAM-MX) with HSE (TEAM-HSE)"
+      },
+      {
+       "doc": "fleet/sops/spill-response-sop.md",
+       "kind": "manual/sop",
+       "section": "Spill Response SOP",
+       "snippet": "spill-response-sop / Spill Response SOP\n# Spill Response SOP\n\n> Fictional SOP for the FlytBase Asset Copilot hackathon. Simplified and modelled on\n> common US onshore practice. It is not a copy of any rule and is not legal or regulatory\n> guidance.\n\nDocument ID: SOP-SR \u00b7 Revision 5 \u00b7 Effective 1 Jan 2027 \u00b7 Owner: Health, Safety & Environment (TEAM-HSE)"
+      },
+      {
+       "doc": "fleet/sops/field-work-sop.md",
+       "kind": "manual/sop",
+       "section": "**WS-07** | Write the **maintenance report** within 3 days o",
+       "snippet": "field-work-sop / 3. Protocols: **WS-07** | Write the **maintenance report** within 3 days of finishing the work. Include what happened, root cause, work done, parts, safety steps, tests, waste and a compliance check against this SOP and the Spill Response SOP."
+      },
+      {
+       "doc": "fleet/sops/field-work-sop.md",
+       "kind": "manual/sop",
+       "section": "2. Background (industry references)",
+       "snippet": "field-work-sop / 2. Background (industry references)\n## 2. Background (industry references)\n\n| Topic | What industry practice says | How this SOP uses it |\n|---|---|---|\n| Crew safety on well servicing | API RP 54 (*Occupational Safety and Health for Oil and Gas Well Drilling and Servicing Operations*) covers well servicing rigs and special services. Pre-job safety meetings (job safety analysis briefings) are standard practice in OSHA's oil and gas safety guidance. | WS-01 |\n| Energy isolation | The federal lockout/tagout standard (OSHA 29 CFR 1910.147) lists oil and gas well drilling and servicing as outside its scope; the US Chemical Safety Board has recommended closing that gap. API RP 11G (*Installation, Maintenance and Lubrication of Pumping Units*) covers safe installation and servicing of beam pumping units, and the manufacturer's instructions take precedence. | WS-02 is our compa"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "hybrid search: BM25 + text-embedding-005 vectors in chroma (6411 chunks)",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Inspection",
+      "Date",
+      "Ambient (\u00b0C)",
+      "Heat trace check within 7 days"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0310",
+       "Area": "Northwest Block 12",
+       "Inspection": "INS-0310-0213",
+       "Date": "2026-12-17",
+       "Ambient (\u00b0C)": -6.0,
+       "Heat trace check within 7 days": "none"
+      },
+      {
+       "Well": "WELL-0354",
+       "Area": "Northwest Block 12",
+       "Inspection": "INS-0354-0215",
+       "Date": "2026-12-17",
+       "Ambient (\u00b0C)": -11.4,
+       "Heat trace check within 7 days": "none"
+      },
+      {
+       "Well": "WELL-0486",
+       "Area": "Southeast Block 32",
+       "Inspection": "INS-0486-0219",
+       "Date": "2026-12-31",
+       "Ambient (\u00b0C)": -7.0,
+       "Heat trace check within 7 days": "none"
+      },
+      {
+       "Well": "WELL-0531",
+       "Area": "Southeast Block 32",
+       "Inspection": "INS-0531-0217",
+       "Date": "2026-12-31",
+       "Ambient (\u00b0C)": -5.3,
+       "Heat trace check within 7 days": "none"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "SOP (OPS-5, freeze protection): from 1 Dec to 28 Feb, any inspection with ambient at or below -5 \u00b0C on a well producing at that reading needs a maintenance job whose issue contains 'Heat trace check' on that well, starting within 7 days after the inspection; a cold reading on a non-producing well needs none.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "OPS-5 (1 Dec to 28 Feb, ambient <= -5 \u00b0C, producing well): 9 qualifying inspections in 2026-12-01..2026-12-31, 5 followed by a heat-trace job within 7 days, 4 missed.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "citations": [
+    "fleet/sops/operations-sop-rev2.md",
+    "fleet/sops/field-work-sop.md",
+    "fleet/sops/spill-response-sop.md",
+    "fleet/sops/field-work-sop.md",
+    "fleet/sops/field-work-sop.md",
+    "INS-0310-0213",
+    "INS-0354-0215",
+    "INS-0486-0219",
+    "INS-0531-0217",
+    "operations-sop-rev2.md \u00a7OPS-5"
+   ],
+   "notes": [
+    "hybrid search: BM25 + text-embedding-005 vectors in chroma (6411 chunks)",
+    "SOP (OPS-5, freeze protection): from 1 Dec to 28 Feb, any inspection with ambient at or below -5 \u00b0C on a well producing at that reading needs a maintenance job whose issue contains 'Heat trace check' on that well, starting within 7 days after the inspection; a cold reading on a non-producing well needs none.",
+    "OPS-5 (1 Dec to 28 Feb, ambient <= -5 \u00b0C, producing well): 9 qualifying inspections in 2026-12-01..2026-12-31, 5 followed by a heat-trace job within 7 days, 4 missed."
+   ],
+   "text": "The Operations SOP (SOP-OPS, Revision 2, effective 1 Oct 2026) states that from December 1st to February 28th, any inspection with an ambient temperature at or below -5 \u00b0C on a producing well requires a maintenance job with \"Heat trace check\" in its issue, starting within 7 days of the inspection (operations-sop-rev2.md \u00a7OPS-5). A cold reading on a non-producing well does not require this.\n\nFour wells missed the heat trace check in December 2026:\n*   WELL-0310 in Northwest Block 12, with an inspection (INS-0310-0213) on 2026-12-17 at -6.0 \u00b0C.\n*   WELL-0354 in Northwest Block 12, with an inspection (INS-0354-0215) on 2026-12-17 at -11.4 \u00b0C.\n*   WELL-0486 in Southeast Block 32, with an inspection (INS-0486-0219) on 2026-12-31 at -7.0 \u00b0C.\n*   WELL-0531 in Southeast Block 32, with an inspection (INS-0531-0217) on 2026-12-31 at -5.3 \u00b0C.",
+   "plan": {
+    "kind": "query",
+    "calls": [
+     {
+      "tool": "search_docs",
+      "args": {
+       "query": "operations SOP cold weather"
+      }
+     },
+     {
+      "tool": "cold_weather_check",
+      "args": {
+       "start": "2026-12-01",
+       "end": "2026-12-31"
+      }
+     }
+    ],
+    "visual": "text"
+   }
+  }
+ },
+ {
+  "n": 17,
+  "user": "Robert Hayes",
+  "chat": 12,
+  "question": "An operator reported a gas smell at WELL-0332 on 3 Dec. What was the H2S reading?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0332",
+     "Area": "Northwest Block 12",
+     "Reported at": "2026-12-03 12:10",
+     "Response": "none",
+     "Hours to response": "-",
+     "Deadline": "24 h",
+     "Met/Missed": "Missed"
+    }
+   ],
+   "citations": [
+    "CTX-0332-004"
+   ],
+   "notes": [
+    "1 gas-odor notes since 2026-12-03; 1 missed. OPS-1: response = a maintenance job starting, or a MANUAL inspection (drone does not count), after the note within 24 h (notes before 01 Jan 2027) / 12 h (from then).",
+    "No H2S reading is recorded for this report: the operator note only says gas was smelled, and H2S ppm values exist only in maintenance reports' safety sections (personal monitors) - no job followed the note. Inspections around it: INS-0332-0212 03 Dec 14:45 (drone, no gas measurement)."
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "title": null,
+     "items": [
+      {
+       "label": "Rows",
+       "value": 1
+      },
+      {
+       "label": "Problems",
+       "value": 1
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Reported at",
+      "Response",
+      "Hours to response",
+      "Deadline",
+      "Met/Missed"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0332",
+       "Area": "Northwest Block 12",
+       "Reported at": "2026-12-03 12:10",
+       "Response": "none",
+       "Hours to response": "-",
+       "Deadline": "24 h",
+       "Met/Missed": "Missed"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "1 gas-odor notes since 2026-12-03; 1 missed. OPS-1: response = a maintenance job starting, or a MANUAL inspection (drone does not count), after the note within 24 h (notes before 01 Jan 2027) / 12 h (from then).",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "No H2S reading is recorded for this report: the operator note only says gas was smelled, and H2S ppm values exist only in maintenance reports' safety sections (personal monitors) - no job followed the note. Inspections around it: INS-0332-0212 03 Dec 14:45 (drone, no gas measurement).",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "1 gas-odor notes since 2026-12-03; 1 missed. OPS-1: response = a maintenance job starting, or a MANUAL inspection (drone does not count), after the note within 24 h (notes before 01 Jan 2027) / 12 h (from then).\nNo H2S reading is recorded for this report: the operator note only says gas was smelled, and H2S ppm values exist only in maintenance reports' safety sections (personal monitors) - no job followed the note. Inspections around it: INS-0332-0212 03 Dec 14:45 (drone, no gas measurement).\nProblems: WELL-0332 (Missed).",
+   "plan": {
+    "kind": "query",
+    "tool": "gas_response",
+    "args": {
+     "well": "WELL-0332",
+     "since": "2026-12-03"
+    },
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 18,
+  "user": "Robert Hayes",
+  "chat": 12,
+  "question": "Back to the pumps from my first question: which of those wells are not producing oil right now, and when was each one last repaired?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Well": "WELL-0160",
+     "Area": "Northeast Block 8",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-429965",
+     "Lot": "LOT-2409-C",
+     "Installed": "2026-07-18",
+     "Install job": "MNT-0160-028",
+     "Install cost (USD)": 33086,
+     "Producing now": "Not producing",
+     "Last repaired": "2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service)",
+     "Source": "MNT-0160-028 report (Parts installed line)"
+    },
+    {
+     "Well": "WELL-0263",
+     "Area": "Southwest Block 23",
+     "Pump": "Highline RP-175",
+     "Serial": "SN-187332",
+     "Lot": "LOT-2410-B",
+     "Installed": "2026-10-16",
+     "Install job": "MNT-0263-033",
+     "Install cost (USD)": 17254,
+     "Producing now": "Not producing",
+     "Last repaired": "2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak)",
+     "Source": "MNT-0263-033 report (Parts installed line)"
+    }
+   ],
+   "citations": [
+    "MNT-0160-028",
+    "MNT-0263-033",
+    "supplier-recall-notice-2026-12-01.md"
+   ],
+   "notes": [
+    "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 2 still in the ground.",
+    "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+    "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+    "WELL-0577: Olivia Grant's claim 'Recalled pump HPC-RN-2026-07 was swapped.' is unconfirmed and was NOT applied"
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Well",
+      "Area",
+      "Pump",
+      "Serial",
+      "Lot",
+      "Installed",
+      "Install job",
+      "Install cost (USD)",
+      "Producing now",
+      "Last repaired",
+      "Source"
+     ],
+     "rows": [
+      {
+       "Well": "WELL-0160",
+       "Area": "Northeast Block 8",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-429965",
+       "Lot": "LOT-2409-C",
+       "Installed": "2026-07-18",
+       "Install job": "MNT-0160-028",
+       "Install cost (USD)": 33086,
+       "Producing now": "Not producing",
+       "Last repaired": "2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service)",
+       "Source": "MNT-0160-028 report (Parts installed line)"
+      },
+      {
+       "Well": "WELL-0263",
+       "Area": "Southwest Block 23",
+       "Pump": "Highline RP-175",
+       "Serial": "SN-187332",
+       "Lot": "LOT-2410-B",
+       "Installed": "2026-10-16",
+       "Install job": "MNT-0263-033",
+       "Install cost (USD)": 17254,
+       "Producing now": "Not producing",
+       "Last repaired": "2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak)",
+       "Source": "MNT-0263-033 report (Parts installed line)"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 2 still in the ground.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Facts come from the maintenance reports' 'Parts installed' lines and the supplier notice.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Counted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "Recalled lots (supplier notice HPC-RN-2026-07): LOT-2409-A, LOT-2409-C, LOT-2410-B; RP-175 rod pumps only, current pump only, ESP wells and plugged wells excluded. 2 still in the ground.\nFacts come from the maintenance reports' 'Parts installed' lines and the supplier notice.\nCounted as replaced by a user-reported swap (no work order yet): WELL-0333: swap recorded by Nathan Pierce (confirmed)\nWELL-0577: Olivia Grant's claim 'Recalled pump HPC-RN-2026-07 was swapped.' is unconfirmed and was NOT applied\n2 wells: Northeast Block 8: WELL-0160; Southwest Block 23: WELL-0263.\nWELL-0160: not producing; last repaired 2026-12-27 (MNT-0160-031, scheduled: Scheduled wellhead valve service); installed 2026-07-18 (MNT-0160-028, lot LOT-2409-C).\nWELL-0263: not producing; last repaired 2027-01-09 (MNT-0263-035, corrective: Flowline corrosion pinhole leak); installed 2026-10-16 (MNT-0263-033, lot LOT-2410-B).",
+   "plan": {
+    "kind": "query",
+    "tool": "recalled_pumps",
+    "args": {
+     "only_not_producing": true
+    },
+    "visual": "table"
+   }
+  }
+ },
+ {
+  "n": 19,
+  "user": "Robert Hayes",
+  "chat": 12,
+  "question": "Of all the wells we've talked about today, which one would you deal with first, and why?",
+  "answer": {
+   "visual": "table",
+   "rows": [
+    {
+     "Rank": 1,
+     "Well": "WELL-0332",
+     "Area": "Northwest Block 12",
+     "Score": 10.0,
+     "Why": "gas odor reported 2026-12-03 12:10 with no response in time (OPS-1 missed): safety first; operator notes sound wrong: \"Rod squeal at WELL-0332 stuffing box, greased the polished rod.\" (CTX-0332-005, 31 Dec); \"Pumper reports rattling at WELL-0332 pump jack, k"
+    },
+    {
+     "Rank": 2,
+     "Well": "WELL-0263",
+     "Area": "Southwest Block 23",
+     "Score": 9.0,
+     "Why": "recalled pump LOT-2410-B still in the ground, 15 days past the 31 Dec deadline; not producing; operator notes sound wrong: \"Heard fluid pound on WELL-0263, unit still running.\" (CTX-0263-004, 11 Jan); \"Rod squeal at WELL-0263 stuffing box, greased the polished ro"
+    },
+    {
+     "Rank": 3,
+     "Well": "WELL-0160",
+     "Area": "Northeast Block 8",
+     "Score": 5,
+     "Why": "recalled pump LOT-2409-C still in the ground, 15 days past the 31 Dec deadline; not producing"
+    },
+    {
+     "Rank": 4,
+     "Well": "WELL-0305",
+     "Area": "Northwest Block 12",
+     "Score": 4.5,
+     "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing; operator notes sound wrong: \"Pumper reports rattling at WELL-0305 pump jack, keep an eye on it.\" (CTX-0305-004, 11 Jan)"
+    },
+    {
+     "Rank": 5,
+     "Well": "WELL-0428",
+     "Area": "Northwest Block 12",
+     "Score": 4.5,
+     "Why": "recalled pump LOT-2410-B still in the ground, 15 days past the 31 Dec deadline; producing; operator notes sound wrong: \"Heard fluid pound on WELL-0428, unit still running.\" (CTX-0428-002, 01 Jan); \"Heard fluid pound on WELL-0428, unit still running.\" (CTX-042"
+    },
+    {
+     "Rank": 6,
+     "Well": "WELL-0031",
+     "Area": "Southwest Block 23",
+     "Score": 3,
+     "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing"
+    },
+    {
+     "Rank": 7,
+     "Well": "WELL-0156",
+     "Area": "Northeast Block 8",
+     "Score": 3,
+     "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing"
+    },
+    {
+     "Rank": 8,
+     "Well": "WELL-0426",
+     "Area": "Northwest Block 12",
+     "Score": 3,
+     "Why": "recalled pump LOT-2409-C still in the ground, 15 days past the 31 Dec deadline; producing"
+    },
+    {
+     "Rank": 9,
+     "Well": "WELL-0577",
+     "Area": "Southeast Block 32",
+     "Score": 3,
+     "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing"
+    }
+   ],
+   "citations": [],
+   "notes": [
+    "Priority = safety (unanswered gas report) > recalled pump in a well not producing > recalled pump > operator-note warning > missed heat-trace check. Weights are a judgement stated here, not a company rule."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Rank",
+      "Well",
+      "Area",
+      "Score",
+      "Why"
+     ],
+     "rows": [
+      {
+       "Rank": 1,
+       "Well": "WELL-0332",
+       "Area": "Northwest Block 12",
+       "Score": 10.0,
+       "Why": "gas odor reported 2026-12-03 12:10 with no response in time (OPS-1 missed): safety first; operator notes sound wrong: \"Rod squeal at WELL-0332 stuffing box, greased the polished rod.\" (CTX-0332-005, 31 Dec); \"Pumper reports rattling at WELL-0332 pump jack, k"
+      },
+      {
+       "Rank": 2,
+       "Well": "WELL-0263",
+       "Area": "Southwest Block 23",
+       "Score": 9.0,
+       "Why": "recalled pump LOT-2410-B still in the ground, 15 days past the 31 Dec deadline; not producing; operator notes sound wrong: \"Heard fluid pound on WELL-0263, unit still running.\" (CTX-0263-004, 11 Jan); \"Rod squeal at WELL-0263 stuffing box, greased the polished ro"
+      },
+      {
+       "Rank": 3,
+       "Well": "WELL-0160",
+       "Area": "Northeast Block 8",
+       "Score": 5,
+       "Why": "recalled pump LOT-2409-C still in the ground, 15 days past the 31 Dec deadline; not producing"
+      },
+      {
+       "Rank": 4,
+       "Well": "WELL-0305",
+       "Area": "Northwest Block 12",
+       "Score": 4.5,
+       "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing; operator notes sound wrong: \"Pumper reports rattling at WELL-0305 pump jack, keep an eye on it.\" (CTX-0305-004, 11 Jan)"
+      },
+      {
+       "Rank": 5,
+       "Well": "WELL-0428",
+       "Area": "Northwest Block 12",
+       "Score": 4.5,
+       "Why": "recalled pump LOT-2410-B still in the ground, 15 days past the 31 Dec deadline; producing; operator notes sound wrong: \"Heard fluid pound on WELL-0428, unit still running.\" (CTX-0428-002, 01 Jan); \"Heard fluid pound on WELL-0428, unit still running.\" (CTX-042"
+      },
+      {
+       "Rank": 6,
+       "Well": "WELL-0031",
+       "Area": "Southwest Block 23",
+       "Score": 3,
+       "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing"
+      },
+      {
+       "Rank": 7,
+       "Well": "WELL-0156",
+       "Area": "Northeast Block 8",
+       "Score": 3,
+       "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing"
+      },
+      {
+       "Rank": 8,
+       "Well": "WELL-0426",
+       "Area": "Northwest Block 12",
+       "Score": 3,
+       "Why": "recalled pump LOT-2409-C still in the ground, 15 days past the 31 Dec deadline; producing"
+      },
+      {
+       "Rank": 9,
+       "Well": "WELL-0577",
+       "Area": "Southeast Block 32",
+       "Score": 3,
+       "Why": "recalled pump LOT-2409-A still in the ground, 15 days past the 31 Dec deadline; producing"
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Priority = safety (unanswered gas report) > recalled pump in a well not producing > recalled pump > operator-note warning > missed heat-trace check. Weights are a judgement stated here, not a company rule.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "You should deal with WELL-0332 first because a gas odor was reported on 2026-12-03 12:10 with no response in time (OPS-1 missed), indicating a safety concern. Additionally, operator notes sound wrong: \"Rod squeal at WELL-0332 stuffing box, greased the polished rod.\" (CTX-0332-005, 31 Dec) and \"Pumper reports rattling at WELL-0332 pump jack, k\" (CTX-0332-005, 31 Dec).",
+   "plan": {
+    "kind": "query",
+    "tool": "prioritize",
+    "args": {
+     "wells_ref": "previous"
+    }
+   }
+  }
+ },
+ {
+  "n": 20,
+  "user": "Michael Turner",
+  "chat": 13,
+  "question": "When a well stays shut in longer than the repair itself, what are we usually waiting on: parts, crews, contractors or weather? Break it down by area for jobs started in 2026, with the typical number of extra days, and tell me if any area stands out.",
+  "answer": {
+   "visual": "bar",
+   "rows": [
+    {
+     "Area": "Northeast Block 7",
+     "Reason": "Contractor slot",
+     "Jobs": 15,
+     "Share of area's delayed jobs": "23%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Northeast Block 7",
+     "Reason": "Crew on spill response",
+     "Jobs": 11,
+     "Share of area's delayed jobs": "17%",
+     "Typical extra days": 16.0
+    },
+    {
+     "Area": "Northeast Block 7",
+     "Reason": "Parts back-ordered",
+     "Jobs": 15,
+     "Share of area's delayed jobs": "23%",
+     "Typical extra days": 15.0
+    },
+    {
+     "Area": "Northeast Block 7",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 15,
+     "Share of area's delayed jobs": "23%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Northeast Block 7",
+     "Reason": "Workover rig busy",
+     "Jobs": 8,
+     "Share of area's delayed jobs": "12%",
+     "Typical extra days": 12.0
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Reason": "Contractor slot",
+     "Jobs": 17,
+     "Share of area's delayed jobs": "21%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Reason": "Crew on spill response",
+     "Jobs": 19,
+     "Share of area's delayed jobs": "24%",
+     "Typical extra days": 14.0
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Reason": "Parts back-ordered",
+     "Jobs": 13,
+     "Share of area's delayed jobs": "16%",
+     "Typical extra days": 10.0
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 18,
+     "Share of area's delayed jobs": "22%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Reason": "Workover rig busy",
+     "Jobs": 13,
+     "Share of area's delayed jobs": "16%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Northwest Block 12",
+     "Reason": "Contractor slot",
+     "Jobs": 27,
+     "Share of area's delayed jobs": "16%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Northwest Block 12",
+     "Reason": "Crew on spill response",
+     "Jobs": 36,
+     "Share of area's delayed jobs": "21%",
+     "Typical extra days": 8.5
+    },
+    {
+     "Area": "Northwest Block 12",
+     "Reason": "Parts back-ordered",
+     "Jobs": 29,
+     "Share of area's delayed jobs": "17%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Northwest Block 12",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 36,
+     "Share of area's delayed jobs": "21%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Northwest Block 12",
+     "Reason": "Workover rig busy",
+     "Jobs": 43,
+     "Share of area's delayed jobs": "25%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Southeast Block 31",
+     "Reason": "Contractor slot",
+     "Jobs": 10,
+     "Share of area's delayed jobs": "25%",
+     "Typical extra days": 15.5
+    },
+    {
+     "Area": "Southeast Block 31",
+     "Reason": "Crew on spill response",
+     "Jobs": 3,
+     "Share of area's delayed jobs": "8%",
+     "Typical extra days": 2.0
+    },
+    {
+     "Area": "Southeast Block 31",
+     "Reason": "Parts back-ordered",
+     "Jobs": 6,
+     "Share of area's delayed jobs": "15%",
+     "Typical extra days": 8.5
+    },
+    {
+     "Area": "Southeast Block 31",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 8,
+     "Share of area's delayed jobs": "20%",
+     "Typical extra days": 12.5
+    },
+    {
+     "Area": "Southeast Block 31",
+     "Reason": "Workover rig busy",
+     "Jobs": 13,
+     "Share of area's delayed jobs": "32%",
+     "Typical extra days": 14.0
+    },
+    {
+     "Area": "Southeast Block 32",
+     "Reason": "Contractor slot",
+     "Jobs": 32,
+     "Share of area's delayed jobs": "23%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Southeast Block 32",
+     "Reason": "Crew on spill response",
+     "Jobs": 21,
+     "Share of area's delayed jobs": "15%",
+     "Typical extra days": 10.0
+    },
+    {
+     "Area": "Southeast Block 32",
+     "Reason": "Parts back-ordered",
+     "Jobs": 26,
+     "Share of area's delayed jobs": "19%",
+     "Typical extra days": 9.5
+    },
+    {
+     "Area": "Southeast Block 32",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 31,
+     "Share of area's delayed jobs": "22%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Southeast Block 32",
+     "Reason": "Workover rig busy",
+     "Jobs": 29,
+     "Share of area's delayed jobs": "21%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Southwest Block 23",
+     "Reason": "Contractor slot",
+     "Jobs": 12,
+     "Share of area's delayed jobs": "17%",
+     "Typical extra days": 12.5
+    },
+    {
+     "Area": "Southwest Block 23",
+     "Reason": "Crew on spill response",
+     "Jobs": 14,
+     "Share of area's delayed jobs": "19%",
+     "Typical extra days": 7.0
+    },
+    {
+     "Area": "Southwest Block 23",
+     "Reason": "Parts back-ordered",
+     "Jobs": 16,
+     "Share of area's delayed jobs": "22%",
+     "Typical extra days": 12.5
+    },
+    {
+     "Area": "Southwest Block 23",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 16,
+     "Share of area's delayed jobs": "22%",
+     "Typical extra days": 9.0
+    },
+    {
+     "Area": "Southwest Block 23",
+     "Reason": "Workover rig busy",
+     "Jobs": 14,
+     "Share of area's delayed jobs": "19%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Reason": "Contractor slot",
+     "Jobs": 17,
+     "Share of area's delayed jobs": "26%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Reason": "Crew on spill response",
+     "Jobs": 8,
+     "Share of area's delayed jobs": "12%",
+     "Typical extra days": 12.0
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Reason": "Parts back-ordered",
+     "Jobs": 12,
+     "Share of area's delayed jobs": "18%",
+     "Typical extra days": 8.0
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Reason": "Weather (road impassable)",
+     "Jobs": 15,
+     "Share of area's delayed jobs": "23%",
+     "Typical extra days": 10.0
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Reason": "Workover rig busy",
+     "Jobs": 14,
+     "Share of area's delayed jobs": "21%",
+     "Typical extra days": 13.5
+    }
+   ],
+   "citations": [
+    "MNT-0001-028",
+    "MNT-0001-033",
+    "MNT-0002-018",
+    "MNT-0002-020",
+    "MNT-0004-021",
+    "MNT-0004-026",
+    "MNT-0005-031",
+    "MNT-0006-023",
+    "MNT-0006-025",
+    "MNT-0006-026",
+    "MNT-0007-031",
+    "MNT-0009-026"
+   ],
+   "notes": [
+    "498 of 4360 jobs started in 2026 had a well shut in longer than the repair itself (report sentence 'stayed shut in for about N days longer\u2026'); 'Workover rig busy' is a separate waiting sentence in reports and is listed on its own.",
+    "Area with the highest share of jobs hit by a post-repair delay: Northeast Block 8 (15% of its jobs); lowest: Southeast Block 31 (8%).",
+    "Most common reason per area: Northeast Block 7: Contractor slot (15 jobs); Northeast Block 8: Crew on spill response (19 jobs); Northwest Block 12: Workover rig busy (43 jobs); Southeast Block 31: Workover rig busy (13 jobs); Southeast Block 32: Contractor slot (32 jobs); Southwest Block 23: Weather (road impassable) (16 jobs); Southwest Block 24: Contractor slot (17 jobs)."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Area",
+      "Reason",
+      "Jobs",
+      "Share of area's delayed jobs",
+      "Typical extra days"
+     ],
+     "rows": [
+      {
+       "Area": "Northeast Block 7",
+       "Reason": "Contractor slot",
+       "Jobs": 15,
+       "Share of area's delayed jobs": "23%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Northeast Block 7",
+       "Reason": "Crew on spill response",
+       "Jobs": 11,
+       "Share of area's delayed jobs": "17%",
+       "Typical extra days": 16.0
+      },
+      {
+       "Area": "Northeast Block 7",
+       "Reason": "Parts back-ordered",
+       "Jobs": 15,
+       "Share of area's delayed jobs": "23%",
+       "Typical extra days": 15.0
+      },
+      {
+       "Area": "Northeast Block 7",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 15,
+       "Share of area's delayed jobs": "23%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Northeast Block 7",
+       "Reason": "Workover rig busy",
+       "Jobs": 8,
+       "Share of area's delayed jobs": "12%",
+       "Typical extra days": 12.0
+      },
+      {
+       "Area": "Northeast Block 8",
+       "Reason": "Contractor slot",
+       "Jobs": 17,
+       "Share of area's delayed jobs": "21%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Northeast Block 8",
+       "Reason": "Crew on spill response",
+       "Jobs": 19,
+       "Share of area's delayed jobs": "24%",
+       "Typical extra days": 14.0
+      },
+      {
+       "Area": "Northeast Block 8",
+       "Reason": "Parts back-ordered",
+       "Jobs": 13,
+       "Share of area's delayed jobs": "16%",
+       "Typical extra days": 10.0
+      },
+      {
+       "Area": "Northeast Block 8",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 18,
+       "Share of area's delayed jobs": "22%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Northeast Block 8",
+       "Reason": "Workover rig busy",
+       "Jobs": 13,
+       "Share of area's delayed jobs": "16%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Northwest Block 12",
+       "Reason": "Contractor slot",
+       "Jobs": 27,
+       "Share of area's delayed jobs": "16%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Northwest Block 12",
+       "Reason": "Crew on spill response",
+       "Jobs": 36,
+       "Share of area's delayed jobs": "21%",
+       "Typical extra days": 8.5
+      },
+      {
+       "Area": "Northwest Block 12",
+       "Reason": "Parts back-ordered",
+       "Jobs": 29,
+       "Share of area's delayed jobs": "17%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Northwest Block 12",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 36,
+       "Share of area's delayed jobs": "21%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Northwest Block 12",
+       "Reason": "Workover rig busy",
+       "Jobs": 43,
+       "Share of area's delayed jobs": "25%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Southeast Block 31",
+       "Reason": "Contractor slot",
+       "Jobs": 10,
+       "Share of area's delayed jobs": "25%",
+       "Typical extra days": 15.5
+      },
+      {
+       "Area": "Southeast Block 31",
+       "Reason": "Crew on spill response",
+       "Jobs": 3,
+       "Share of area's delayed jobs": "8%",
+       "Typical extra days": 2.0
+      },
+      {
+       "Area": "Southeast Block 31",
+       "Reason": "Parts back-ordered",
+       "Jobs": 6,
+       "Share of area's delayed jobs": "15%",
+       "Typical extra days": 8.5
+      },
+      {
+       "Area": "Southeast Block 31",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 8,
+       "Share of area's delayed jobs": "20%",
+       "Typical extra days": 12.5
+      },
+      {
+       "Area": "Southeast Block 31",
+       "Reason": "Workover rig busy",
+       "Jobs": 13,
+       "Share of area's delayed jobs": "32%",
+       "Typical extra days": 14.0
+      },
+      {
+       "Area": "Southeast Block 32",
+       "Reason": "Contractor slot",
+       "Jobs": 32,
+       "Share of area's delayed jobs": "23%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Southeast Block 32",
+       "Reason": "Crew on spill response",
+       "Jobs": 21,
+       "Share of area's delayed jobs": "15%",
+       "Typical extra days": 10.0
+      },
+      {
+       "Area": "Southeast Block 32",
+       "Reason": "Parts back-ordered",
+       "Jobs": 26,
+       "Share of area's delayed jobs": "19%",
+       "Typical extra days": 9.5
+      },
+      {
+       "Area": "Southeast Block 32",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 31,
+       "Share of area's delayed jobs": "22%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Southeast Block 32",
+       "Reason": "Workover rig busy",
+       "Jobs": 29,
+       "Share of area's delayed jobs": "21%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Southwest Block 23",
+       "Reason": "Contractor slot",
+       "Jobs": 12,
+       "Share of area's delayed jobs": "17%",
+       "Typical extra days": 12.5
+      },
+      {
+       "Area": "Southwest Block 23",
+       "Reason": "Crew on spill response",
+       "Jobs": 14,
+       "Share of area's delayed jobs": "19%",
+       "Typical extra days": 7.0
+      },
+      {
+       "Area": "Southwest Block 23",
+       "Reason": "Parts back-ordered",
+       "Jobs": 16,
+       "Share of area's delayed jobs": "22%",
+       "Typical extra days": 12.5
+      },
+      {
+       "Area": "Southwest Block 23",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 16,
+       "Share of area's delayed jobs": "22%",
+       "Typical extra days": 9.0
+      },
+      {
+       "Area": "Southwest Block 23",
+       "Reason": "Workover rig busy",
+       "Jobs": 14,
+       "Share of area's delayed jobs": "19%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Southwest Block 24",
+       "Reason": "Contractor slot",
+       "Jobs": 17,
+       "Share of area's delayed jobs": "26%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Southwest Block 24",
+       "Reason": "Crew on spill response",
+       "Jobs": 8,
+       "Share of area's delayed jobs": "12%",
+       "Typical extra days": 12.0
+      },
+      {
+       "Area": "Southwest Block 24",
+       "Reason": "Parts back-ordered",
+       "Jobs": 12,
+       "Share of area's delayed jobs": "18%",
+       "Typical extra days": 8.0
+      },
+      {
+       "Area": "Southwest Block 24",
+       "Reason": "Weather (road impassable)",
+       "Jobs": 15,
+       "Share of area's delayed jobs": "23%",
+       "Typical extra days": 10.0
+      },
+      {
+       "Area": "Southwest Block 24",
+       "Reason": "Workover rig busy",
+       "Jobs": 14,
+       "Share of area's delayed jobs": "21%",
+       "Typical extra days": 13.5
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "bar",
+     "title": null,
+     "labels": [
+      "Northeast Block 7",
+      "Northeast Block 8",
+      "Northwest Block 12",
+      "Southeast Block 31",
+      "Southeast Block 32",
+      "Southwest Block 23",
+      "Southwest Block 24"
+     ],
+     "series": [
+      {
+       "name": "Contractor slot",
+       "values": [
+        15,
+        17,
+        27,
+        10,
+        32,
+        12,
+        17
+       ]
+      },
+      {
+       "name": "Crew on spill response",
+       "values": [
+        11,
+        19,
+        36,
+        3,
+        21,
+        14,
+        8
+       ]
+      },
+      {
+       "name": "Parts back-ordered",
+       "values": [
+        15,
+        13,
+        29,
+        6,
+        26,
+        16,
+        12
+       ]
+      },
+      {
+       "name": "Weather (road impassable)",
+       "values": [
+        15,
+        18,
+        36,
+        8,
+        31,
+        16,
+        15
+       ]
+      },
+      {
+       "name": "Workover rig busy",
+       "values": [
+        8,
+        13,
+        43,
+        13,
+        29,
+        14,
+        14
+       ]
+      }
+     ],
+     "unit": "",
+     "span": "full",
+     "stacked": true
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "498 of 4360 jobs started in 2026 had a well shut in longer than the repair itself (report sentence 'stayed shut in for about N days longer\u2026'); 'Workover rig busy' is a separate waiting sentence in reports and is listed on its own.",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Area with the highest share of jobs hit by a post-repair delay: Northeast Block 8 (15% of its jobs); lowest: Southeast Block 31 (8%).",
+     "text": "",
+     "span": "full"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "Most common reason per area: Northeast Block 7: Contractor slot (15 jobs); Northeast Block 8: Crew on spill response (19 jobs); Northwest Block 12: Workover rig busy (43 jobs); Southeast Block 31: Workover rig busy (13 jobs); Southeast Block 32: Contractor slot (32 jobs); Southwest Block 23: Weather (road impassable) (16 jobs); Southwest Block 24: Contractor slot (17 jobs).",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "498 of 4360 jobs started in 2026 had a well shut in longer than the repair itself (report sentence 'stayed shut in for about N days longer\u2026'); 'Workover rig busy' is a separate waiting sentence in reports and is listed on its own.\nArea with the highest share of jobs hit by a post-repair delay: Northeast Block 8 (15% of its jobs); lowest: Southeast Block 31 (8%).\nMost common reason per area: Northeast Block 7: Contractor slot (15 jobs); Northeast Block 8: Crew on spill response (19 jobs); Northwest Block 12: Workover rig busy (43 jobs); Southeast Block 31: Workover rig busy (13 jobs); Southeast Block 32: Contractor slot (32 jobs); Southwest Block 23: Weather (road impassable) (16 jobs); Southwest Block 24: Contractor slot (17 jobs).",
+   "plan": {
+    "kind": "query",
+    "tool": "delay_reasons",
+    "args": {
+     "year": 2026
+    },
+    "visual": "bar"
+   }
+  }
+ },
+ {
+  "n": 21,
+  "user": "Olivia Grant",
+  "chat": 14,
+  "question": "Which region of the field consistently runs hotter?",
+  "answer": {
+   "visual": "bar",
+   "rows": [
+    {
+     "Area": "Southeast Block 31",
+     "Avg wellhead (\u00b0C)": 53.0,
+     "Avg air (\u00b0C)": 21.6,
+     "Avg wellhead above air (\u00b0C)": 31.5,
+     "Readings": 2468
+    },
+    {
+     "Area": "Southeast Block 32",
+     "Avg wellhead (\u00b0C)": 50.5,
+     "Avg air (\u00b0C)": 21.7,
+     "Avg wellhead above air (\u00b0C)": 28.8,
+     "Readings": 7795
+    },
+    {
+     "Area": "Northwest Block 12",
+     "Avg wellhead (\u00b0C)": 50.1,
+     "Avg air (\u00b0C)": 21.8,
+     "Avg wellhead above air (\u00b0C)": 28.3,
+     "Readings": 7800
+    },
+    {
+     "Area": "Southwest Block 23",
+     "Avg wellhead (\u00b0C)": 48.8,
+     "Avg air (\u00b0C)": 21.8,
+     "Avg wellhead above air (\u00b0C)": 27.0,
+     "Readings": 3285
+    },
+    {
+     "Area": "Northeast Block 7",
+     "Avg wellhead (\u00b0C)": 48.8,
+     "Avg air (\u00b0C)": 21.7,
+     "Avg wellhead above air (\u00b0C)": 27.1,
+     "Readings": 3220
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Avg wellhead (\u00b0C)": 48.4,
+     "Avg air (\u00b0C)": 21.8,
+     "Avg wellhead above air (\u00b0C)": 26.6,
+     "Readings": 3263
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Avg wellhead (\u00b0C)": 48.2,
+     "Avg air (\u00b0C)": 21.8,
+     "Avg wellhead above air (\u00b0C)": 26.4,
+     "Readings": 3221
+    }
+   ],
+   "citations": [],
+   "notes": [
+    "'Hotter' read as average wellhead temperature over the last 12 months, with wellhead-above-air shown beside it because air temperature differs by area."
+   ],
+   "blocks": [
+    {
+     "type": "table",
+     "title": null,
+     "columns": [
+      "Area",
+      "Avg wellhead (\u00b0C)",
+      "Avg air (\u00b0C)",
+      "Avg wellhead above air (\u00b0C)",
+      "Readings"
+     ],
+     "rows": [
+      {
+       "Area": "Southeast Block 31",
+       "Avg wellhead (\u00b0C)": 53.0,
+       "Avg air (\u00b0C)": 21.6,
+       "Avg wellhead above air (\u00b0C)": 31.5,
+       "Readings": 2468
+      },
+      {
+       "Area": "Southeast Block 32",
+       "Avg wellhead (\u00b0C)": 50.5,
+       "Avg air (\u00b0C)": 21.7,
+       "Avg wellhead above air (\u00b0C)": 28.8,
+       "Readings": 7795
+      },
+      {
+       "Area": "Northwest Block 12",
+       "Avg wellhead (\u00b0C)": 50.1,
+       "Avg air (\u00b0C)": 21.8,
+       "Avg wellhead above air (\u00b0C)": 28.3,
+       "Readings": 7800
+      },
+      {
+       "Area": "Southwest Block 23",
+       "Avg wellhead (\u00b0C)": 48.8,
+       "Avg air (\u00b0C)": 21.8,
+       "Avg wellhead above air (\u00b0C)": 27.0,
+       "Readings": 3285
+      },
+      {
+       "Area": "Northeast Block 7",
+       "Avg wellhead (\u00b0C)": 48.8,
+       "Avg air (\u00b0C)": 21.7,
+       "Avg wellhead above air (\u00b0C)": 27.1,
+       "Readings": 3220
+      },
+      {
+       "Area": "Southwest Block 24",
+       "Avg wellhead (\u00b0C)": 48.4,
+       "Avg air (\u00b0C)": 21.8,
+       "Avg wellhead above air (\u00b0C)": 26.6,
+       "Readings": 3263
+      },
+      {
+       "Area": "Northeast Block 8",
+       "Avg wellhead (\u00b0C)": 48.2,
+       "Avg air (\u00b0C)": 21.8,
+       "Avg wellhead above air (\u00b0C)": 26.4,
+       "Readings": 3221
+      }
+     ],
+     "span": "full"
+    },
+    {
+     "type": "bar",
+     "title": null,
+     "labels": [
+      "Southeast Block 31",
+      "Southeast Block 32",
+      "Northwest Block 12",
+      "Southwest Block 23",
+      "Northeast Block 7",
+      "Southwest Block 24",
+      "Northeast Block 8"
+     ],
+     "series": [
+      {
+       "name": "Avg wellhead (\u00b0C)",
+       "values": [
+        53.0,
+        50.5,
+        50.1,
+        48.8,
+        48.8,
+        48.4,
+        48.2
+       ]
+      },
+      {
+       "name": "Avg wellhead above air (\u00b0C)",
+       "values": [
+        31.5,
+        28.8,
+        28.3,
+        27.0,
+        27.1,
+        26.6,
+        26.4
+       ]
+      }
+     ],
+     "unit": "",
+     "span": "half"
+    },
+    {
+     "type": "callout",
+     "tone": "info",
+     "title": "'Hotter' read as average wellhead temperature over the last 12 months, with wellhead-above-air shown beside it because air temperature differs by area.",
+     "text": "",
+     "span": "full"
+    }
+   ],
+   "text": "The Southeast Block 31 consistently runs hotter with an average wellhead temperature of 53.0\u00b0C and an average wellhead above air temperature of 31.5\u00b0C. Other areas and their average wellhead temperatures are: Southeast Block 32 (50.5\u00b0C), Northwest Block 12 (50.1\u00b0C), Southwest Block 23 (48.8\u00b0C), Northeast Block 7 (48.8\u00b0C), Southwest Block 24 (48.4\u00b0C), and Northeast Block 8 (48.2\u00b0C). This analysis is based on average wellhead temperature over the last 12 months, with wellhead-above-air shown beside it because air temperature differs by area.",
+   "plan": {
+    "kind": "query",
+    "tool": "temperature_by_area",
+    "visual": "bar"
+   }
+  }
+ }
+]

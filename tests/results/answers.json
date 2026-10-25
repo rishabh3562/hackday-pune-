@@ -1,0 +1,1572 @@
+{
+ "suite": "answers",
+ "ran_at": "2026-10-17 15:44",
+ "passed": 24,
+ "total": 26,
+ "items": [
+  {
+   "id": "Q1",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?",
+   "expected": "No, WELL-0001 is not producing. Latest inspection INS-0001-0203 on 15 Oct 2026 by drone, by Ryan Brooks; wellhead only 3.2 \u00b0C above air, below the T200 limit. Reason: note CTX-0001-003 by Jake Morales, planned shut-in from 7 Oct for rod string replacement, expected back around 20 Oct, not yet in the maintenance system. Recorded status 'active' is out of date.",
+   "actual": "WELL-0001 is not producing. It was last inspected on 2026-10-15 by Ryan Brooks (INS-0001-0203). The recorded status of \"active\" is out of date (INS-0001-0203). Jake Morales noted on 2026-10-07 that the well was shut in for planned rod string replacement, expected back online around 2026-10-20 (CTX-0001-003). The wellhead temperature is 25.6\u00b0C, which is 3.2\u00b0C above ambient, well below the 15.0\u00b0C threshold (INS-0001-0203). The inspector noted that the pump jack was not moving (INS-0001-0203).",
+   "tool": "well_status",
+   "visual": "card",
+   "blocks": [
+    "status",
+    "callout",
+    "callout",
+    "callout",
+    "line",
+    "scatter",
+    "timeline",
+    "map"
+   ],
+   "citations": [
+    "INS-0001-0203",
+    "T200.md \u00a79.3",
+    "CTX-0001-002",
+    "CTX-0001-003"
+   ],
+   "rows_preview": [
+    {
+     "well": "WELL-0001",
+     "name": "SW-23 Well 001",
+     "type": "T200",
+     "area": "Southwest Block 23",
+     "producing": false,
+     "inspection": "INS-0001-0203",
+     "inspected_at": "2026-10-15",
+     "inspected_by": "Ryan Brooks",
+     "method": "drone",
+     "wellhead_temp_c": 25.6,
+     "ambient_temp_c": 22.4,
+     "delta_c": 3.2,
+     "threshold_c": 15.0,
+     "threshold_source": "T200.md \u00a79.3",
+     "recorded_status": "active",
+     "inspector_note": "Pump jack not moving.",
+     "correction": null,
+     "original_wellhead_temp_c": 25.6,
+     "notes": [
+      {
+       "id": "CTX-0001-002",
+       "by": "Emily Carter",
+       "type": "operator_note",
+       "text": "Pump jack counterweights rebalanced. Expect slightly lower wellhead temperature (~3 C) from now on; this is normal.",
+       "valid_from": "2025-11-12",
+       "valid_to": null
+      },
+      {
+       "id": "CTX-0001-003",
+       "by": "Jake Morales",
+       "type": "operator_feedback",
+       "text": "Well shut in from 7 Oct for planned rod string replacement. Work order not yet in the maintenance system. Expected back online around 20 Oct.",
+       "valid_from": "2026-10-07",
+       "valid_to": "2026-10-20"
+      }
+     ],
+     "open_repairs": [],
+     "shared_facts": [],
+     "recorded_status_stale": true
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Is WELL-0001 producing oil right now? When was it last inspected, and by whom?"
+  },
+  {
+   "id": "Q2",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a table.",
+   "expected": "Four T200 wells, all last inspected 15 Oct 2026: WELL-0164 (4.1 \u00b0C, no recorded reason, inspector noted pump jack not moving), WELL-0170 (2.9 \u00b0C, down, repair MNT-0170-031 bearing wear open), WELL-0172 (5.7 \u00b0C, repair MNT-0172-028 flowline pinhole leak open), WELL-0175 (0.4 \u00b0C, no recorded reason). Where nothing explains the stop, say so and suggest a check.",
+   "actual": "Wells: WELL-0164, WELL-0170, WELL-0172, WELL-0175.\n| Well | Recorded status | Last inspected | Reason |\n|---|---|---|---|\n| WELL-0164 | active (out of date) | 2026-10-15 (INS-0164-0205) | No recorded reason. Inspector noted: \"Pump jack not moving.\" Suggest a field check. |\n| WELL-0170 | down | 2026-10-15 (INS-0170-0206) | Repair MNT-0170-031: Walking beam bearing wear, started 2026-09-19, still open. |\n| WELL-0172 | active (out of date) | 2026-10-15 (INS-0172-0206) | Repair MNT-0172-028: Flowline corrosion pinhole leak, started 2026-10-03, still open. |\n| WELL-0175 | active (out of date) | 2026-10-15 (INS-0175-0204) | No recorded reason. Suggest a field check. |",
+   "tool": "wells_not_producing",
+   "visual": "table",
+   "blocks": [
+    "kpis",
+    "table",
+    "callout",
+    "bar",
+    "map"
+   ],
+   "citations": [
+    "INS-0164-0205",
+    "INS-0170-0206",
+    "INS-0172-0206",
+    "INS-0175-0204",
+    "MNT-0170-031",
+    "MNT-0172-028"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0164",
+     "Wellhead above air (\u00b0C)": 4.1,
+     "Recorded status": "active (out of date)",
+     "Last inspected": "2026-10-15",
+     "Reason": "No recorded reason. Inspector noted: \"Pump jack not moving.\". Suggest a field check.",
+     "Correction": ""
+    },
+    {
+     "Well": "WELL-0170",
+     "Wellhead above air (\u00b0C)": 2.9,
+     "Recorded status": "down",
+     "Last inspected": "2026-10-15",
+     "Reason": "Repair MNT-0170-031: Walking beam bearing wear, started 2026-09-19, still open",
+     "Correction": ""
+    },
+    {
+     "Well": "WELL-0172",
+     "Wellhead above air (\u00b0C)": 5.7,
+     "Recorded status": "active (out of date)",
+     "Last inspected": "2026-10-15",
+     "Reason": "Repair MNT-0172-028: Flowline corrosion pinhole leak, started 2026-10-03, still open",
+     "Correction": ""
+    },
+    {
+     "Well": "WELL-0175",
+     "Wellhead above air (\u00b0C)": 0.4,
+     "Recorded status": "active (out of date)",
+     "Last inspected": "2026-10-15",
+     "Reason": "No recorded reason. Suggest a field check.",
+     "Correction": ""
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a table."
+  },
+  {
+   "id": "Q3",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Show a line chart of WELL-0001's wellhead temperature against air temperature for the last 13 weeks, and mark when it was not producing oil.",
+   "expected": "Line chart with 13 readings (23 Jul to 15 Oct 2026). Not producing on 8 Oct and 15 Oct.",
+   "actual": "WELL-0001 was producing oil on 2026-07-23 (INS-0001-0191), 2026-07-30 (INS-0001-0192), 2026-08-06 (INS-0001-0193), 2026-08-13 (INS-0001-0194), 2026-08-20 (INS-0001-0195), 2026-08-27 (INS-0001-0196), 2026-09-03 (INS-0001-0197), 2026-09-10 (INS-0001-0198), 2026-09-17 (INS-0001-0199), 2026-09-24 (INS-0001-0200), and 2026-10-01 (INS-0001-0201). It was not producing oil on 2026-10-08 (INS-0001-0202) and 2026-10-15 (INS-0001-0203).",
+   "tool": "timeseries",
+   "visual": "line",
+   "blocks": [
+    "kpis",
+    "line",
+    "callout",
+    "scatter",
+    "table"
+   ],
+   "citations": [
+    "INS-0001-0191",
+    "INS-0001-0192",
+    "INS-0001-0193",
+    "INS-0001-0194",
+    "INS-0001-0195",
+    "INS-0001-0196",
+    "INS-0001-0197",
+    "INS-0001-0198",
+    "INS-0001-0199",
+    "INS-0001-0200",
+    "INS-0001-0201",
+    "INS-0001-0202",
+    "INS-0001-0203"
+   ],
+   "rows_preview": [
+    {
+     "date": "2026-07-23",
+     "wellhead_temp_c": 61.2,
+     "ambient_temp_c": 33.1,
+     "delta_c": 28.1,
+     "producing": true,
+     "inspection": "INS-0001-0191"
+    },
+    {
+     "date": "2026-07-30",
+     "wellhead_temp_c": 58.2,
+     "ambient_temp_c": 32.0,
+     "delta_c": 26.2,
+     "producing": true,
+     "inspection": "INS-0001-0192"
+    },
+    {
+     "date": "2026-08-06",
+     "wellhead_temp_c": 65.0,
+     "ambient_temp_c": 35.1,
+     "delta_c": 29.9,
+     "producing": true,
+     "inspection": "INS-0001-0193"
+    },
+    {
+     "date": "2026-08-13",
+     "wellhead_temp_c": 60.6,
+     "ambient_temp_c": 34.0,
+     "delta_c": 26.6,
+     "producing": true,
+     "inspection": "INS-0001-0194"
+    },
+    {
+     "date": "2026-08-20",
+     "wellhead_temp_c": 59.3,
+     "ambient_temp_c": 36.3,
+     "delta_c": 23.0,
+     "producing": true,
+     "inspection": "INS-0001-0195"
+    },
+    {
+     "date": "2026-08-27",
+     "wellhead_temp_c": 61.2,
+     "ambient_temp_c": 34.4,
+     "delta_c": 26.8,
+     "producing": true,
+     "inspection": "INS-0001-0196"
+    }
+   ],
+   "judge": {
+    "error": "LLM unavailable: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free mod"
+   },
+   "ok": false,
+   "desc": "Show a line chart of WELL-0001's wellhead temperature against air temperature for the last 13 weeks, and mark when it was not producing oil."
+  },
+  {
+   "id": "Q4",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "How many oil spills has WELL-0001 had in the last 4 years, and how much oil in total? List them in a table.",
+   "expected": "6 spills, 15.1 barrels total. 7 detections; INS-0001-0070 (7 Mar 2024) was corrected as rainwater (CTX-0001-001) and does not count. Spills: 16 Mar 2023 0.5, 27 Apr 2023 2.6, 28 Sep 2023 3.3, 19 Oct 2023 0.3, 11 Jun 2026 6.8, 1 Oct 2026 1.6 bbl.",
+   "actual": "Wells: WELL-0001.\nWELL-0001 has had 6 oil spills in the last 4 years, totaling 15.1 barrels.\n\n| Date       | Barrels | Class      | Inspection  |\n|------------|---------|------------|-------------|\n| 2023-03-16 | 0.5     | minor      | INS-0001-0021 |\n| 2023-04-27 | 2.6     | moderate   | INS-0001-0027 |\n| 2023-09-28 | 3.3     | moderate   | INS-0001-0048 |\n| 2023-10-19 | 0.3     | minor      | INS-0001-0051 |\n| 2026-06-11 | 6.8     | reportable | INS-0001-0185 |\n| 2026-10-01 | 1.6     | moderate   | INS-0001-0201 |\n\nNote that inspection INS-0001-0070 from 2024-03-07 was corrected as not a spill (CTX-0001-001).",
+   "tool": "spills",
+   "visual": "table",
+   "blocks": [
+    "kpis",
+    "table",
+    "map",
+    "donut",
+    "bar"
+   ],
+   "citations": [
+    "INS-0001-0021",
+    "INS-0001-0027",
+    "INS-0001-0048",
+    "INS-0001-0051",
+    "INS-0001-0185",
+    "INS-0001-0201",
+    "INS-0001-0070"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0001",
+     "Date": "2023-03-16",
+     "Barrels": 0.5,
+     "Area %": 2.7,
+     "Inspection": "INS-0001-0021",
+     "lat": 31.85425,
+     "lon": -102.50232,
+     "Class": "minor",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0001",
+     "Date": "2023-04-27",
+     "Barrels": 2.6,
+     "Area %": 6.6,
+     "Inspection": "INS-0001-0027",
+     "lat": 31.85425,
+     "lon": -102.50232,
+     "Class": "moderate",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0001",
+     "Date": "2023-09-28",
+     "Barrels": 3.3,
+     "Area %": 10.3,
+     "Inspection": "INS-0001-0048",
+     "lat": 31.85425,
+     "lon": -102.50232,
+     "Class": "moderate",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0001",
+     "Date": "2023-10-19",
+     "Barrels": 0.3,
+     "Area %": 0.8,
+     "Inspection": "INS-0001-0051",
+     "lat": 31.85425,
+     "lon": -102.50232,
+     "Class": "minor",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0001",
+     "Date": "2026-06-11",
+     "Barrels": 6.8,
+     "Area %": 9.4,
+     "Inspection": "INS-0001-0185",
+     "lat": 31.85425,
+     "lon": -102.50232,
+     "Class": "reportable",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0001",
+     "Date": "2026-10-01",
+     "Barrels": 1.6,
+     "Area %": 4.0,
+     "Inspection": "INS-0001-0201",
+     "lat": 31.85425,
+     "lon": -102.50232,
+     "Class": "moderate",
+     "Note": ""
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "How many oil spills has WELL-0001 had in the last 4 years, and how much oil in total? List them in a table."
+  },
+  {
+   "id": "Q5",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "How many days was WELL-0001 down in 2025?",
+   "expected": "21 days in 2025: three weekly inspections not producing: 24 Jul 2025 (wellhead 51.6 \u00b0C but air 43.1 \u00b0C, only 8.5 \u00b0C warmer; MNT-0001-021), and 16 and 23 Oct 2025 (MNT-0001-023).",
+   "actual": "Wells: WELL-0001.\nWELL-0001 was down for 21 days in 2025. This includes 7 days for each of the three weekly inspections where the well was not producing. The reasons for not producing were: on 2025-07-24 (INS-0001-0140) a prime mover tripped on high temperature (MNT-0001-021); on 2025-10-16 (INS-0001-0152) a stuffing box packing leak (MNT-0001-023) and scheduled lubrication and belt inspection (MNT-0001-024); and on 2025-10-23 (INS-0001-0153) there was no recorded reason.",
+   "tool": "downtime",
+   "visual": "card",
+   "blocks": [
+    "kpis",
+    "bar",
+    "donut",
+    "table"
+   ],
+   "citations": [
+    "INS-0001-0140",
+    "INS-0001-0152",
+    "INS-0001-0153",
+    "MNT-0001-021",
+    "MNT-0001-023",
+    "MNT-0001-024"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0001",
+     "Downtime (days)": 21,
+     "Type": "T200",
+     "Inspections": 3
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 2,
+     "grounding": 2,
+     "completeness": 5,
+     "honesty": 3,
+     "clarity": 5
+    },
+    "verdict": "fail",
+    "issues": [
+     "The reason provided for the July 24 downtime (prime mover trip) contradicts the expected fact (low temperature differential).",
+     "The answer cites a maintenance record (MNT-0001-024) for the October 16 downtime that is not in the expected facts.",
+     "The answer incorrectly states there is no recorded reason for the October 23 downtime, contradicting the expected fact which cites MNT-0001-023."
+    ]
+   },
+   "ok": false,
+   "desc": "How many days was WELL-0001 down in 2025?"
+  },
+  {
+   "id": "Q6",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months? Show a bar chart.",
+   "expected": "Bar chart: WELL-0121 49 days (T200), WELL-0138 42 days (T350), WELL-0107 42 days (T350). Next is WELL-0119 at 28.",
+   "actual": "WELL-0121 had 49 days of downtime. WELL-0107 had 42 days of downtime. WELL-0138 had 42 days of downtime. Each non-producing weekly inspection counts as 7 days of downtime, as noted for the period from 2026-06-16 to 2026-10-17.",
+   "tool": "downtime",
+   "visual": "bar",
+   "blocks": [
+    "kpis",
+    "bar",
+    "donut",
+    "table"
+   ],
+   "citations": [
+    "INS-0121-0189",
+    "INS-0121-0200",
+    "INS-0121-0201",
+    "INS-0121-0202",
+    "INS-0121-0203",
+    "INS-0121-0205",
+    "INS-0121-0206",
+    "INS-0107-0194",
+    "INS-0107-0195",
+    "INS-0107-0196",
+    "INS-0107-0197",
+    "INS-0107-0198",
+    "INS-0107-0199",
+    "INS-0138-0195",
+    "INS-0138-0196",
+    "INS-0138-0200",
+    "INS-0138-0201",
+    "INS-0138-0206",
+    "INS-0138-0207"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0121",
+     "Downtime (days)": 49,
+     "Type": "T200",
+     "Inspections": 7
+    },
+    {
+     "Well": "WELL-0107",
+     "Downtime (days)": 42,
+     "Type": "T350",
+     "Inspections": 6
+    },
+    {
+     "Well": "WELL-0138",
+     "Downtime (days)": 42,
+     "Type": "T350",
+     "Inspections": 6
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 4,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": [
+     "The summary text does not include the well type (e.g., T200, T350), which acts as a citation in the expected facts. This information is present in the accompanying table, however."
+    ]
+   },
+   "ok": true,
+   "desc": "Which 3 wells in Northeast Block 7 had the most downtime in the last 4 months? Show a bar chart."
+  },
+  {
+   "id": "Q7",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Show on a map every well in Northeast Block 8 with a real spill in the last 90 days.",
+   "expected": "Map with 4 pins: WELL-0151 24 Sep 2026 4.5 bbl, WELL-0165 30 Jul 1.2, WELL-0175 30 Jul 3.9, WELL-0186 23 Jul 0.6.",
+   "actual": "Wells: WELL-0186, WELL-0165, WELL-0175, WELL-0151.\nThere are 4 spills in Northeast Block 8 in the last 90 days, totaling 10.2 barrels.\n\n*   WELL-0186 (lat: 32.17552, lon: -102.17775) had a minor spill of 0.6 barrels on 2026-07-23, affecting 3.6% of the area (INS-0186-0097).\n*   WELL-0165 (lat: 32.15665, lon: -102.14522) had a moderate spill of 1.2 barrels on 2026-07-30, affecting 2.5% of the area (INS-0165-0194).\n*   WELL-0175 (lat: 32.1802, lon: -102.1479) had a moderate spill of 3.9 barrels on 2026-07-30, affecting 9.2% of the area (INS-0175-0193).\n*   WELL-0151 (lat: 32.12246, lon: -102.18445) had a moderate spill of 4.5 barrels on 2026-09-24, affecting 10.5% of the area (INS-0151-0201).\n\nNote that inspection INS-0194-0192 on 2026-07-23 and INS-0199-0200 on 2026-09-10 were corrected as shadows from the pump jack, not crude spills.",
+   "tool": "spills",
+   "visual": "map",
+   "blocks": [
+    "kpis",
+    "table",
+    "map",
+    "donut",
+    "bar"
+   ],
+   "citations": [
+    "INS-0151-0201",
+    "INS-0165-0194",
+    "INS-0175-0193",
+    "INS-0186-0097",
+    "INS-0194-0192",
+    "INS-0199-0200"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0186",
+     "Date": "2026-07-23",
+     "Barrels": 0.6,
+     "Area %": 3.6,
+     "Inspection": "INS-0186-0097",
+     "lat": 32.17552,
+     "lon": -102.17775,
+     "Class": "minor",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0165",
+     "Date": "2026-07-30",
+     "Barrels": 1.2,
+     "Area %": 2.5,
+     "Inspection": "INS-0165-0194",
+     "lat": 32.15665,
+     "lon": -102.14522,
+     "Class": "moderate",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0175",
+     "Date": "2026-07-30",
+     "Barrels": 3.9,
+     "Area %": 9.2,
+     "Inspection": "INS-0175-0193",
+     "lat": 32.1802,
+     "lon": -102.1479,
+     "Class": "moderate",
+     "Note": ""
+    },
+    {
+     "Well": "WELL-0151",
+     "Date": "2026-09-24",
+     "Barrels": 4.5,
+     "Area %": 10.5,
+     "Inspection": "INS-0151-0201",
+     "lat": 32.12246,
+     "lon": -102.18445,
+     "Class": "moderate",
+     "Note": ""
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Show on a map every well in Northeast Block 8 with a real spill in the last 90 days."
+  },
+  {
+   "id": "Q8",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Show a heatmap of 2026 spills by geographic area and month.",
+   "expected": "Heatmap totals 2026: Southwest Block 23 = 35, Southwest Block 24 = 43, Northeast Block 7 = 37, Northeast Block 8 = 26 (corrected detections removed).",
+   "actual": "The following spills were recorded in 2026. Southwest Block 23 had 4 spills in January, 3 in February, 3 in March, 6 in April, 3 in May, 4 in June, 4 in July, 3 in August, 3 in September, and 2 in October, for a total of 35. Southwest Block 24 had 7 spills in January, 4 in February, 5 in March, 6 in April, 5 in May, 5 in June, 3 in July, 1 in August, 5 in September, and 2 in October, for a total of 43. Northeast Block 7 had 5 spills in January, 3 in February, 2 in March, 4 in April, 6 in May, 6 in June, 2 in July, 4 in August, 4 in September, and 1 in October, for a total of 37. Northeast Block 8 had 4 spills in January, 4 in February, 4 in March, 3 in April, 2 in May, 4 in June, 4 in July, 0 in August, 1 in September, and 0 in October, for a total of 26. Corrected detections (e.g. rainwater) are excluded.",
+   "tool": "spills",
+   "visual": "heatmap",
+   "blocks": [
+    "kpis",
+    "heatmap",
+    "bar",
+    "line"
+   ],
+   "citations": [],
+   "rows_preview": [
+    {
+     "Area": "Southwest Block 23",
+     "Jan": 4,
+     "Feb": 3,
+     "Mar": 3,
+     "Apr": 6,
+     "May": 3,
+     "Jun": 4,
+     "Jul": 4,
+     "Aug": 3,
+     "Sep": 3,
+     "Oct": 2,
+     "Total": 35
+    },
+    {
+     "Area": "Southwest Block 24",
+     "Jan": 7,
+     "Feb": 4,
+     "Mar": 5,
+     "Apr": 6,
+     "May": 5,
+     "Jun": 5,
+     "Jul": 3,
+     "Aug": 1,
+     "Sep": 5,
+     "Oct": 2,
+     "Total": 43
+    },
+    {
+     "Area": "Northeast Block 7",
+     "Jan": 5,
+     "Feb": 3,
+     "Mar": 2,
+     "Apr": 4,
+     "May": 6,
+     "Jun": 6,
+     "Jul": 2,
+     "Aug": 4,
+     "Sep": 4,
+     "Oct": 1,
+     "Total": 37
+    },
+    {
+     "Area": "Northeast Block 8",
+     "Jan": 4,
+     "Feb": 4,
+     "Mar": 4,
+     "Apr": 3,
+     "May": 2,
+     "Jun": 4,
+     "Jul": 4,
+     "Aug": 0,
+     "Sep": 1,
+     "Oct": 0,
+     "Total": 26
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 4
+    },
+    "verdict": "pass",
+    "issues": [
+     "long-winded"
+    ]
+   },
+   "ok": true,
+   "desc": "Show a heatmap of 2026 spills by geographic area and month."
+  },
+  {
+   "id": "Q9",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Which rules has WELL-0001 broken in the last 12 months, and what is still open?",
+   "expected": "Four breaches from the 11 Jun 2026 spill of 6.8 bbl: SR-01 reported after 41 h vs 24 h (REG-0001-001) leading to NOV REG-0001-002 USD 5,000 fine open; SR-02 contained after about 7 h vs 4 h (only in the June report); SR-03 clean-up verification due 10 Aug 2026 still open (REG-0001-003); RC-04 notice response due 30 Jul 2026 none recorded. Pending: root-cause analysis on flowline (MNT-0001-028, -029, -032) and the 7 Oct shut-in not recorded in the maintenance system.",
+   "actual": "Wells: WELL-0001.\nWELL-0001 has broken four rules in the last 12 months. Protocol SR-01 was broken on 2026-06-11 because a spill of 6.8 units was reported after 41 hours, exceeding the 24-hour limit (REG-0001-001). Protocol SR-02 was broken on 2026-06-11 because the same spill was contained after approximately 7 hours, exceeding the 4-hour limit (MNT-0001-029). Protocol SR-03 was broken on 2026-06-11 because the clean-up verification for the spill was due on 2026-08-10 and is not yet closed (REG-0001-003). Protocol RC-04 was broken on 2026-06-30 because a response to a notice of violation (REG-0001-002) for a USD 5000 fine was due by 2026-07-30, but none is recorded, and the status is open.\n\nFour items are still open for WELL-0001. The clean-up verification for Protocol SR-03 is not closed (REG-0001-003). The response to the notice of violation for Protocol RC-04 is open (REG-0001-002), with an open fine of USD 5000. A root-cause analysis is due for Manual \u00a710 due to three corrective flowline repairs in 12 months (MNT-0001-028, MNT-0001-029, MNT-0001-032). Additionally, a planned shut-in for Manual \u00a74 is not yet recorded in the maintenance system (CTX-0001-003).",
+   "tool": "compliance",
+   "visual": "table",
+   "blocks": [
+    "kpis",
+    "table",
+    "table",
+    "donut",
+    "callout"
+   ],
+   "citations": [
+    "INS-0001-0185",
+    "INS-0001-0201",
+    "MNT-0001-029",
+    "REG-0001-001"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0001",
+     "Protocol": "SR-01",
+     "Spill": "INS-0001-0185",
+     "Date": "2026-06-11",
+     "Volume": 6.8,
+     "Finding": "Reported after 41 h vs 24 h limit",
+     "Evidence": "REG-0001-001"
+    },
+    {
+     "Well": "WELL-0001",
+     "Protocol": "SR-02",
+     "Spill": "INS-0001-0185",
+     "Date": "2026-06-11",
+     "Volume": 6.8,
+     "Finding": "Contained after ~7 h vs 4 h limit",
+     "Evidence": "MNT-0001-029"
+    },
+    {
+     "Well": "WELL-0001",
+     "Protocol": "SR-03",
+     "Spill": "INS-0001-0185",
+     "Date": "2026-06-11",
+     "Volume": 6.8,
+     "Finding": "Clean-up verification due 2026-08-10, not closed",
+     "Evidence": "REG-0001-003"
+    },
+    {
+     "Well": "WELL-0001",
+     "Protocol": "RC-04",
+     "Spill": "INS-0001-0185",
+     "Date": "2026-06-30",
+     "Volume": 6.8,
+     "Finding": "Notice of violation REG-0001-002 (fine USD 5000) needed a response by 2026-07-30; none recorded, status open",
+     "Evidence": "REG-0001-002"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Which rules has WELL-0001 broken in the last 12 months, and what is still open?"
+  },
+  {
+   "id": "Q10",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "In Southwest Block 24, which spills in the last 90 days were not contained within the SOP time limit?",
+   "expected": "Two spills: WELL-0082 contained after about 7.1 h (MNT-0082-028, INS-0082-0198) and WELL-0100 after about 8.1 h (MNT-0100-034, INS-0100-0196); limit 4 hours.",
+   "actual": "Two spills in Southwest Block 24 were not contained within the SOP time limit in the last 90 days. The spill at WELL-0082 on 2026-09-10 (INS-0082-0198, MNT-0082-028) was contained after 7.1 hours, exceeding the 4.0-hour limit. The spill at WELL-0100 on 2026-09-10 (INS-0100-0196, MNT-0100-034) was contained after 8.1 hours, also exceeding the 4.0-hour limit.",
+   "tool": "spills_over_containment",
+   "visual": "table",
+   "blocks": [
+    "table"
+   ],
+   "citations": [
+    "INS-0082-0198",
+    "MNT-0082-028",
+    "INS-0100-0196",
+    "MNT-0100-034"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0082",
+     "Date": "2026-09-10",
+     "Inspection": "INS-0082-0198",
+     "Report": "MNT-0082-028",
+     "Contained after (h)": 7.1,
+     "Limit (h)": 4.0
+    },
+    {
+     "Well": "WELL-0100",
+     "Date": "2026-09-10",
+     "Inspection": "INS-0100-0196",
+     "Report": "MNT-0100-034",
+     "Contained after (h)": 8.1,
+     "Limit (h)": 4.0
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "In Southwest Block 24, which spills in the last 90 days were not contained within the SOP time limit?"
+  },
+  {
+   "id": "Q11",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "For the three wells we discussed yesterday, what have repairs cost this year?",
+   "expected": "WELL-0121 USD 25,794; WELL-0138 USD 46,942; WELL-0107 USD 5,176 (the three wells from Q6).",
+   "actual": "For WELL-0107, repairs this year cost 5176 USD across 6 repairs (MNT-0107-025, MNT-0107-026, MNT-0107-027, MNT-0107-028, MNT-0107-029, MNT-0107-030). For WELL-0121, repairs cost 25794 USD across 7 repairs (MNT-0121-029, MNT-0121-030, MNT-0121-031, MNT-0121-032, MNT-0121-033, MNT-0121-034, MNT-0121-035). For WELL-0138, repairs cost 46942 USD across 10 repairs (MNT-0138-026, MNT-0138-027, MNT-0138-028, MNT-0138-029, MNT-0138-030, MNT-0138-031, MNT-0138-032, MNT-0138-033, MNT-0138-034, MNT-0138-035). These costs are for repairs started between 2026-01-01 and 2026-12-31.",
+   "tool": "repair_costs",
+   "visual": "table",
+   "blocks": [
+    "kpis",
+    "bar",
+    "donut",
+    "table"
+   ],
+   "citations": [
+    "MNT-0107-025",
+    "MNT-0107-026",
+    "MNT-0107-027",
+    "MNT-0107-028",
+    "MNT-0107-029",
+    "MNT-0107-030",
+    "MNT-0121-029",
+    "MNT-0121-030",
+    "MNT-0121-031",
+    "MNT-0121-032",
+    "MNT-0121-033",
+    "MNT-0121-034",
+    "MNT-0121-035",
+    "MNT-0138-026",
+    "MNT-0138-027",
+    "MNT-0138-028",
+    "MNT-0138-029",
+    "MNT-0138-030",
+    "MNT-0138-031",
+    "MNT-0138-032",
+    "MNT-0138-033",
+    "MNT-0138-034",
+    "MNT-0138-035"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0107",
+     "Total cost (USD)": 5176,
+     "Repairs": 6
+    },
+    {
+     "Well": "WELL-0121",
+     "Total cost (USD)": 25794,
+     "Repairs": 7
+    },
+    {
+     "Well": "WELL-0138",
+     "Total cost (USD)": 46942,
+     "Repairs": 10
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "For the three wells we discussed yesterday, what have repairs cost this year?"
+  },
+  {
+   "id": "Q12a",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "The 15 Oct reading for WELL-0164 is wrong. The handheld thermal gun used in that inspection was faulty; the field crew re-measured the wellhead at 41.0 \u00b0C.",
+   "expected": "Correction recorded against INS-0164-0205, original 24.0 \u00b0C kept, who and why noted. With 41.0 \u00b0C vs 19.9 \u00b0C air (21.1 \u00b0C warmer) WELL-0164 IS producing. Points out the same inspection has the note 'Pump jack not moving' (Tyler Hughes) that disagrees; asks Michael Turner to confirm.",
+   "actual": "Recorded Michael Turner's correction on INS-0164-0205 (2026-10-15): wellhead_temp_c 24.0 -> 41.0. The original value is kept and the correction applies to every user from now on. Reason: Handheld thermal gun faulty, re-measured at 41.0 C\nWith the corrected reading, the wellhead is 21.1 \u00b0C above air (limit 15.0 \u00b0C), so WELL-0164 IS producing oil.\nNote: the same inspection has the inspector note \"Pump jack not moving.\" which may disagree with this correction. Can you confirm?",
+   "tool": "correct_raw",
+   "visual": "card",
+   "blocks": [],
+   "citations": [
+    "INS-0164-0205"
+   ],
+   "rows_preview": [
+    {
+     "well": "WELL-0164",
+     "name": "NE-08 Well 164",
+     "type": "T200",
+     "area": "Northeast Block 8",
+     "producing": true,
+     "inspection": "INS-0164-0205",
+     "inspected_at": "2026-10-15",
+     "inspected_by": "Tyler Hughes",
+     "method": "manual",
+     "wellhead_temp_c": 41.0,
+     "ambient_temp_c": 19.9,
+     "delta_c": 21.1,
+     "threshold_c": 15.0,
+     "threshold_source": "T200.md \u00a79.3",
+     "recorded_status": "active",
+     "inspector_note": "Pump jack not moving.",
+     "correction": "Michael Turner: wellhead_temp_c 24.0 -> 41.0 (Handheld thermal gun faulty, re-measured at 41.0 C)",
+     "original_wellhead_temp_c": 24.0,
+     "notes": [],
+     "open_repairs": [],
+     "shared_facts": [],
+     "recorded_status_stale": false
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "The 15 Oct reading for WELL-0164 is wrong. The handheld thermal gun used in that inspection was faulty; the field crew re-measured the wellhead at 41.0 \u00b0C."
+  },
+  {
+   "id": "Q12b",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a table.",
+   "expected": "Three wells: WELL-0170, WELL-0172, WELL-0175. WELL-0164 no longer listed, and the answer says why (corrected reading).",
+   "actual": "Wells: WELL-0170, WELL-0172, WELL-0175.\n| Well | Wellhead above air (\u00b0C) | Recorded status | Last inspected | Reason |\n|---|---|---|---|---|\n| WELL-0170 | 2.9 | down | 2026-10-15 | Repair MNT-0170-031: Walking beam bearing wear, started 2026-09-19, still open |\n| WELL-0172 | 5.7 | active (out of date) | 2026-10-15 | Repair MNT-0172-028: Flowline corrosion pinhole leak, started 2026-10-03, still open |\n| WELL-0175 | 0.4 | active (out of date) | 2026-10-15 | No recorded reason. Suggest a field check. |\n\nWELL-0164 is no longer listed because its latest reading was corrected (INS-0164-0205): Michael Turner corrected the wellhead_temp_c from 24.0 to 41.0, stating the handheld thermal gun was faulty and the temperature was re-measured at 41.0 C.",
+   "tool": "wells_not_producing",
+   "visual": "table",
+   "blocks": [
+    "kpis",
+    "table",
+    "callout",
+    "bar",
+    "map"
+   ],
+   "citations": [
+    "INS-0164-0205",
+    "INS-0170-0206",
+    "INS-0172-0206",
+    "INS-0175-0204",
+    "MNT-0170-031",
+    "MNT-0172-028"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0170",
+     "Wellhead above air (\u00b0C)": 2.9,
+     "Recorded status": "down",
+     "Last inspected": "2026-10-15",
+     "Reason": "Repair MNT-0170-031: Walking beam bearing wear, started 2026-09-19, still open",
+     "Correction": ""
+    },
+    {
+     "Well": "WELL-0172",
+     "Wellhead above air (\u00b0C)": 5.7,
+     "Recorded status": "active (out of date)",
+     "Last inspected": "2026-10-15",
+     "Reason": "Repair MNT-0172-028: Flowline corrosion pinhole leak, started 2026-10-03, still open",
+     "Correction": ""
+    },
+    {
+     "Well": "WELL-0175",
+     "Wellhead above air (\u00b0C)": 0.4,
+     "Recorded status": "active (out of date)",
+     "Last inspected": "2026-10-15",
+     "Reason": "No recorded reason. Suggest a field check.",
+     "Correction": ""
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Which wells in Northeast Block 8 are not producing oil right now, and why? Show them in a table."
+  },
+  {
+   "id": "Q13",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "The AI estimated the 24 Sep spill at WELL-0151 as 4.5 bbl. The field crew measured 5.4 bbl.",
+   "expected": "Correction recorded on INS-0151-0201 (AI estimate 4.5 kept). At 5.4 bbl the spill is reportable: written notice due within 24 h of the 24 Sep 15:30 inspection, none recorded: possible SR-01 breach. Report MNT-0151-025 classed it moderate based on the old estimate. Containment about 6.4 h (SR-02 breach). SR-03 verification due 23 Nov 2026.",
+   "actual": "Recorded Michael Turner's correction on INS-0151-0201 (2026-09-24): spill_est_volume_bbl 4.5 -> 5.4. The original value is kept and the correction applies to every user from now on. Reason: Field crew measured 5.4 bbl vs AI estimate of 4.5 bbl\nAt 5.4 bbl the spill is now 'reportable'. (AI estimate was 4.5 bbl, kept for reference.)\n- SR-01: Possible breach: reportable (5.4 bbl) but no written notice on record; was due within 24 h of discovery (evidence INS-0151-0201)\n- SR-02: Contained after ~6.4 h vs 4 h limit (evidence MNT-0151-025)\n- SR-03: Clean-up verification due 2026-11-23, not closed (evidence INS-0151-0201)\n- Repair report MNT-0151-025 classed this spill 'moderate' with no reporting duty; that was based on the old estimate and no longer holds.",
+   "tool": "correct_ai",
+   "visual": "table",
+   "blocks": [],
+   "citations": [
+    "INS-0151-0201"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0151",
+     "Protocol": "SR-01",
+     "Spill": "INS-0151-0201",
+     "Date": "2026-09-24",
+     "Volume": 5.4,
+     "Finding": "Possible breach: reportable (5.4 bbl) but no written notice on record; was due within 24 h of discovery",
+     "Evidence": "INS-0151-0201"
+    },
+    {
+     "Well": "WELL-0151",
+     "Protocol": "SR-02",
+     "Spill": "INS-0151-0201",
+     "Date": "2026-09-24",
+     "Volume": 5.4,
+     "Finding": "Contained after ~6.4 h vs 4 h limit",
+     "Evidence": "MNT-0151-025"
+    },
+    {
+     "Well": "WELL-0151",
+     "Protocol": "SR-03",
+     "Spill": "INS-0151-0201",
+     "Date": "2026-09-24",
+     "Volume": 5.4,
+     "Finding": "Clean-up verification due 2026-11-23, not closed",
+     "Evidence": "INS-0151-0201"
+    },
+    {
+     "Well": "WELL-0151",
+     "Protocol": "Manual \u00a710",
+     "Spill": "",
+     "Date": "",
+     "Volume": "",
+     "Finding": "Root-cause analysis due: 3 corrective flowline repairs in 12 months",
+     "Evidence": "MNT-0151-020, MNT-0151-025, MNT-0151-026"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 4,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": [
+     "The answer omits the specific inspection time (15:30) which sets the deadline for the written notice.",
+     "The answer includes an extra finding about a root-cause analysis (Manual \u00a710) that was not part of the expected facts."
+    ]
+   },
+   "ok": true,
+   "desc": "The AI estimated the 24 Sep spill at WELL-0151 as 4.5 bbl. The field crew measured 5.4 bbl."
+  },
+  {
+   "id": "Q14a",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?",
+   "expected": "WELL-0108, WELL-0121 and WELL-0138 (3 corrective pump jack repairs each in the last 12 months).",
+   "actual": "WELL-0108, WELL-0121, and WELL-0138 each had 3 corrective repairs in the last 12 months, meeting the threshold of 3 repairs for a root cause analysis. The repairs for WELL-0108 are MNT-0108-024, MNT-0108-026, and MNT-0108-028. The repairs for WELL-0121 are MNT-0121-031, MNT-0121-034, and MNT-0121-035. The repairs for WELL-0138 are MNT-0138-031, MNT-0138-032, and MNT-0138-034.",
+   "tool": "rca_candidates",
+   "visual": "table",
+   "blocks": [
+    "table"
+   ],
+   "citations": [
+    "MNT-0108-024",
+    "MNT-0108-026",
+    "MNT-0108-028",
+    "MNT-0121-031",
+    "MNT-0121-034",
+    "MNT-0121-035",
+    "MNT-0138-031",
+    "MNT-0138-032",
+    "MNT-0138-034",
+    "OM-T200 \u00a710"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0108",
+     "Type": "T350",
+     "Corrective repairs (12 mo)": 3,
+     "Threshold": 3,
+     "Source": "manual",
+     "Repairs": "MNT-0108-024, MNT-0108-026, MNT-0108-028"
+    },
+    {
+     "Well": "WELL-0121",
+     "Type": "T200",
+     "Corrective repairs (12 mo)": 3,
+     "Threshold": 3,
+     "Source": "manual",
+     "Repairs": "MNT-0121-031, MNT-0121-034, MNT-0121-035"
+    },
+    {
+     "Well": "WELL-0138",
+     "Type": "T350",
+     "Corrective repairs (12 mo)": 3,
+     "Threshold": 3,
+     "Source": "manual",
+     "Repairs": "MNT-0138-031, MNT-0138-032, MNT-0138-034"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?"
+  },
+  {
+   "id": "Q14b",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Note for all T350 wells: our team now wants a pump jack root-cause analysis after 2 repairs, not 3.",
+   "expected": "Rule recorded for all T350 wells: root-cause analysis after 2 pump jack repairs instead of 3, by Michael Turner, T350 scope only.",
+   "actual": "Recorded Michael Turner's rule for all T350 wells: rca_count = 2 (manual says 3). It applies to T350 wells only, for every user, and I'll say when an answer follows this rule instead of the manual.",
+   "tool": "rule",
+   "visual": "text",
+   "blocks": [],
+   "citations": [],
+   "rows_preview": [],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Note for all T350 wells: our team now wants a pump jack root-cause analysis after 2 repairs, not 3."
+  },
+  {
+   "id": "Q14c",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?",
+   "expected": "WELL-0108, WELL-0120, WELL-0121 and WELL-0138. WELL-0120 (T350, 2 repairs) is added; WELL-0102 (T200, 2 repairs) is NOT added. The answer says this follows Michael Turner's rule, not the manual.",
+   "actual": "4 result(s). Wells: WELL-0108, WELL-0120, WELL-0121, WELL-0138. Threshold for T350 wells is 2 repairs by Michael Turner's rule (manual says 3). (Summary replaced by a template: unsupported claims ['contradicts the table about WELL-0120', 'contradicts the table about WELL-0121'].)",
+   "tool": "rca_candidates",
+   "visual": "table",
+   "blocks": [
+    "table",
+    "callout"
+   ],
+   "citations": [
+    "MNT-0108-024",
+    "MNT-0108-026",
+    "MNT-0108-028",
+    "MNT-0120-025",
+    "MNT-0120-030",
+    "MNT-0121-031",
+    "MNT-0121-034",
+    "MNT-0121-035",
+    "MNT-0138-031",
+    "MNT-0138-032",
+    "MNT-0138-034",
+    "OM-T200 \u00a710"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0108",
+     "Type": "T350",
+     "Corrective repairs (12 mo)": 3,
+     "Threshold": 2,
+     "Source": "rule set by Michael Turner",
+     "Repairs": "MNT-0108-024, MNT-0108-026, MNT-0108-028"
+    },
+    {
+     "Well": "WELL-0120",
+     "Type": "T350",
+     "Corrective repairs (12 mo)": 2,
+     "Threshold": 2,
+     "Source": "rule set by Michael Turner",
+     "Repairs": "MNT-0120-025, MNT-0120-030"
+    },
+    {
+     "Well": "WELL-0121",
+     "Type": "T200",
+     "Corrective repairs (12 mo)": 3,
+     "Threshold": 3,
+     "Source": "manual",
+     "Repairs": "MNT-0121-031, MNT-0121-034, MNT-0121-035"
+    },
+    {
+     "Well": "WELL-0138",
+     "Type": "T350",
+     "Corrective repairs (12 mo)": 3,
+     "Threshold": 2,
+     "Source": "rule set by Michael Turner",
+     "Repairs": "MNT-0138-031, MNT-0138-032, MNT-0138-034"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Which wells in Northeast Block 7 need a root-cause analysis on their pump jack?"
+  },
+  {
+   "id": "Q15a",
+   "suite": "given",
+   "user": "Jessica Reed",
+   "question": "Is WELL-0164 producing oil right now?",
+   "expected": "Yes, producing, based on the corrected reading of 41.0 \u00b0C; says the 15 Oct value was corrected by Michael Turner and mentions the inspector's 'Pump jack not moving' note that disagrees.",
+   "actual": "Yes, WELL-0164 is producing. The last inspection (INS-0164-0205) was on 2026-10-15 by Tyler Hughes. The wellhead temperature is 41.0 C, which is 21.1 C above ambient, exceeding the 15.0 C threshold from T200.md \u00a79.3. The inspector noted \"Pump jack not moving.\" Michael Turner corrected the wellhead temperature from 24.0 C to 41.0 C, stating \"Handheld thermal gun faulty, re-measured at 41.0 C\". The recorded status is active and not stale.",
+   "tool": "well_status",
+   "visual": "card",
+   "blocks": [
+    "status",
+    "callout",
+    "line",
+    "scatter",
+    "timeline",
+    "map"
+   ],
+   "citations": [
+    "INS-0164-0205",
+    "T200.md \u00a79.3"
+   ],
+   "rows_preview": [
+    {
+     "well": "WELL-0164",
+     "name": "NE-08 Well 164",
+     "type": "T200",
+     "area": "Northeast Block 8",
+     "producing": true,
+     "inspection": "INS-0164-0205",
+     "inspected_at": "2026-10-15",
+     "inspected_by": "Tyler Hughes",
+     "method": "manual",
+     "wellhead_temp_c": 41.0,
+     "ambient_temp_c": 19.9,
+     "delta_c": 21.1,
+     "threshold_c": 15.0,
+     "threshold_source": "T200.md \u00a79.3",
+     "recorded_status": "active",
+     "inspector_note": "Pump jack not moving.",
+     "correction": "Michael Turner: wellhead_temp_c 24.0 -> 41.0 (Handheld thermal gun faulty, re-measured at 41.0 C)",
+     "original_wellhead_temp_c": 24.0,
+     "notes": [],
+     "open_repairs": [],
+     "shared_facts": [],
+     "recorded_status_stale": false
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Is WELL-0164 producing oil right now?"
+  },
+  {
+   "id": "Q15b",
+   "suite": "given",
+   "user": "Laura Simmons",
+   "question": "Which spills in Northeast Block 8 in the last 90 days needed a report to the regulator?",
+   "expected": "WELL-0151, because its volume was corrected to 5.4 bbl; no written notice on record so it is flagged overdue. No other spill in that period reached 5 bbl.",
+   "actual": "Wells: WELL-0151.\nOne reportable spill occurred in Northeast Block 8 in the last 90 days. On 2026-09-24, 5.4 barrels spilled from WELL-0151 (INS-0151-0201). This spill was classified as reportable. Michael Turner noted that the spill estimate was corrected from 4.5 bbl to 5.4 bbl based on field crew measurements. A written notice for this spill was due by 2026-09-25 15:30 and is currently overdue.\nExcluded INS-0194-0192 (2026-07-23): corrected, CTX-0194-002: Inspection INS-0194-0192: shadow from the pump jack. Not a crude spill. Excluded INS-0199-0200 (2026-09-10): corrected, CTX-0199-002: Inspection INS-0199-0200: shadow from the pump jack. Not a crude spill.",
+   "tool": "spills",
+   "visual": "table",
+   "blocks": [
+    "kpis",
+    "table",
+    "map",
+    "donut",
+    "bar"
+   ],
+   "citations": [
+    "INS-0151-0201",
+    "INS-0194-0192",
+    "INS-0199-0200"
+   ],
+   "rows_preview": [
+    {
+     "Well": "WELL-0151",
+     "Date": "2026-09-24",
+     "Barrels": 5.4,
+     "Area %": 10.5,
+     "Inspection": "INS-0151-0201",
+     "lat": 32.12246,
+     "lon": -102.18445,
+     "Class": "reportable",
+     "Note": "Michael Turner: spill_est_volume_bbl 4.5 -> 5.4 (Field crew measured 5.4 bbl vs AI estimate of 4.5 bbl)"
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Which spills in Northeast Block 8 in the last 90 days needed a report to the regulator?"
+  },
+  {
+   "id": "Q16a",
+   "suite": "given",
+   "user": "Jake Morales",
+   "question": "FYI for everyone: WELL-0007 will be shut in from 17 Oct for a 10-day planned workover.",
+   "expected": "Recorded as shared knowledge from Jake Morales: WELL-0007 shut in from 17 Oct for a 10-day planned workover.",
+   "actual": "Recorded for WELL-0007 as shared knowledge from Jake Morales: \"Planned workover\" (valid from 2026-10-17 to 2026-10-27). Other users asking about this will see it, attributed to you.",
+   "tool": "note",
+   "visual": "text",
+   "blocks": [],
+   "citations": [],
+   "rows_preview": [],
+   "judge": {
+    "scores": {
+     "correctness": 4,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 4,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": [
+     "The answer assumes the year is 2026 without stating this assumption, when the user only provided '17 Oct'.",
+     "The answer records 'Planned workover' but omits the explicit 'shut in' status from the user's statement."
+    ]
+   },
+   "ok": true,
+   "desc": "FYI for everyone: WELL-0007 will be shut in from 17 Oct for a 10-day planned workover."
+  },
+  {
+   "id": "Q16b",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "Is any downtime planned for WELL-0007?",
+   "expected": "Yes: shut in from 17 Oct for about 10 days, according to Jake Morales.",
+   "actual": "Yes, a planned shutdown for WELL-0007 has been confirmed by Jake Morales. It is scheduled from 2026-10-17 to 2026-10-27 for a planned workover.",
+   "tool": "well_status",
+   "visual": "card",
+   "blocks": [
+    "status",
+    "callout",
+    "line",
+    "scatter",
+    "timeline",
+    "map"
+   ],
+   "citations": [
+    "INS-0007-0203",
+    "T350.md \u00a73"
+   ],
+   "rows_preview": [
+    {
+     "well": "WELL-0007",
+     "name": "SW-23 Well 007",
+     "type": "T350",
+     "area": "Southwest Block 23",
+     "producing": true,
+     "inspection": "INS-0007-0203",
+     "inspected_at": "2026-10-15",
+     "inspected_by": "Sarah Mitchell",
+     "method": "manual",
+     "wellhead_temp_c": 50.6,
+     "ambient_temp_c": 20.7,
+     "delta_c": 29.9,
+     "threshold_c": 20.0,
+     "threshold_source": "T350.md \u00a73",
+     "recorded_status": "active",
+     "inspector_note": "",
+     "correction": null,
+     "original_wellhead_temp_c": 50.6,
+     "notes": [],
+     "open_repairs": [],
+     "shared_facts": [
+      {
+       "by": "Jake Morales",
+       "text": "Planned workover",
+       "status": "confirmed",
+       "valid_from": "2026-10-17",
+       "valid_to": "2026-10-27"
+      }
+     ],
+     "recorded_status_stale": false
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Is any downtime planned for WELL-0007?"
+  },
+  {
+   "id": "Q16c",
+   "suite": "given",
+   "user": "Jessica Reed",
+   "question": "For the three wells we discussed yesterday, what have repairs cost this year?",
+   "expected": "Says it has no such earlier conversation with Jessica Reed; must NOT use Michael Turner's history.",
+   "actual": "I have no earlier conversation with you about that set of wells, so I don't know which wells you mean. Which wells should I look at?",
+   "tool": "repair_costs",
+   "visual": "text",
+   "blocks": [],
+   "citations": [],
+   "rows_preview": [],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "For the three wells we discussed yesterday, what have repairs cost this year?"
+  },
+  {
+   "id": "Q17a",
+   "suite": "given",
+   "user": "Michael Turner",
+   "question": "WELL-0175 has been shut in for planned work since 14 Oct.",
+   "expected": "Recorded; the 15 Oct inspection (Jessica Reed) shows WELL-0175 only 0.4 \u00b0C above air, so it is not producing, which supports Michael Turner's note.",
+   "actual": "Recorded. The latest inspection (INS-0175-0204, 2026-10-15, Jessica Reed) supports this: wellhead 0.4 \u00b0C above air, WELL-0175 is not producing.",
+   "tool": "note",
+   "visual": "text",
+   "blocks": [],
+   "citations": [],
+   "rows_preview": [],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 4,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": [
+     "minor omission"
+    ]
+   },
+   "ok": true,
+   "desc": "WELL-0175 has been shut in for planned work since 14 Oct."
+  },
+  {
+   "id": "Q17b",
+   "suite": "given",
+   "user": "Tyler Hughes",
+   "question": "WELL-0175 is running fine.",
+   "expected": "Tells Tyler Hughes the 15 Oct inspection shows WELL-0175 0.4 \u00b0C above air so it is not producing, matching Michael Turner's note, not his claim; keeps both statements, marks Tyler's unconfirmed, asks for confirmation.",
+   "actual": "This conflicts with the data: the latest inspection INS-0175-0204 on 2026-10-15 (by Jessica Reed) shows the wellhead 0.4 \u00b0C above air (limit 15.0 \u00b0C), so WELL-0175 is NOT producing. I recorded your statement as UNCONFIRMED; can you confirm?\nMichael Turner stated: \"Shut in for planned work.\" which matches the inspection, not your statement. Both statements stay on record.",
+   "tool": "note",
+   "visual": "text",
+   "blocks": [],
+   "citations": [],
+   "rows_preview": [],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "WELL-0175 is running fine."
+  },
+  {
+   "id": "Q17c",
+   "suite": "given",
+   "user": "Jake Morales",
+   "question": "WELL-0001 is back online since 14 Oct.",
+   "expected": "Points out the 15 Oct inspection shows WELL-0001 not producing and note CTX-0001-003 expects return around 20 Oct; records the claim as unconfirmed.",
+   "actual": "This conflicts with the data: the latest inspection INS-0001-0203 on 2026-10-15 (by Ryan Brooks) shows the wellhead 3.2 \u00b0C above air (limit 15.0 \u00b0C), so WELL-0001 is NOT producing. I recorded your statement as UNCONFIRMED; can you confirm?\nExisting note CTX-0001-002 by Emily Carter: Pump jack counterweights rebalanced. Expect slightly lower wellhead temperature (~3 C) from now on; this is normal.\nExisting note CTX-0001-003 by Jake Morales: Well shut in from 7 Oct for planned rod string replacement. Work order not yet in the maintenance system. Expected back online around 20 Oct.",
+   "tool": "note",
+   "visual": "text",
+   "blocks": [],
+   "citations": [],
+   "rows_preview": [],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "WELL-0001 is back online since 14 Oct."
+  },
+  {
+   "id": "Q18",
+   "suite": "given",
+   "user": "Tyler Hughes",
+   "question": "Was the 20 Aug spill at WELL-0101 real oil?",
+   "expected": "Yes, real oil: the AI flagged a 1.0 bbl spill at INS-0101-0197; Ryan Brooks thought produced water (CTX-0101-002) but Chris Dalton (HSE) sampled and confirmed crude (CTX-0101-003); neither is a formal correction and repair MNT-0101-029 was done, so the detection stands; shows both sources.",
+   "actual": "Yes, the 2026-08-20 spill at WELL-0101 was real oil. Inspector Chris Dalton sampled the stain and confirmed it was crude oil, stating \"The detection stands\" (CTX-0101-003). This contradicts Ryan Brooks' feedback that it was only produced water (CTX-0101-002). The spill volume was 1.0 bbl, with an AI estimate of 1.0 bbl (INS-0101-0197). The inspector noted an \"Oil sheen around cellar\" (INS-0101-0197). A flowline leak caused the spill (MNT-0101-029).",
+   "tool": "spill_check",
+   "visual": "card",
+   "blocks": [
+    "table",
+    "callout"
+   ],
+   "citations": [
+    "INS-0101-0197",
+    "CTX-0101-002",
+    "CTX-0101-003",
+    "MNT-0101-029"
+   ],
+   "rows_preview": [
+    {
+     "well": "WELL-0101",
+     "inspection": "INS-0101-0197",
+     "date": "2026-08-20",
+     "volume_bbl": 1.0,
+     "ai_estimate_bbl": 1.0,
+     "inspector_note": "Oil sheen around cellar.",
+     "formally_corrected": false,
+     "correction": null,
+     "repair": [
+      "MNT-0101-029: Flowline leak causing spill"
+     ],
+     "notes": [
+      {
+       "id": "CTX-0101-002",
+       "by": "Ryan Brooks",
+       "type": "operator_feedback",
+       "text": "Inspection INS-0101-0197: I think this was only produced water, not crude."
+      },
+      {
+       "id": "CTX-0101-003",
+       "by": "Chris Dalton",
+       "type": "operator_feedback",
+       "text": "Inspection INS-0101-0197: sampled the stain, it is crude oil. The detection stands."
+      }
+     ]
+    }
+   ],
+   "judge": {
+    "scores": {
+     "correctness": 5,
+     "grounding": 5,
+     "completeness": 5,
+     "honesty": 5,
+     "clarity": 5
+    },
+    "verdict": "pass",
+    "issues": []
+   },
+   "ok": true,
+   "desc": "Was the 20 Aug spill at WELL-0101 real oil?"
+  }
+ ],
+ "judge_model": "gemini-2.5-pro"
+}

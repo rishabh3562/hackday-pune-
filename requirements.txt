@@ -1,0 +1,13 @@
+pandas
+numpy
+fastapi
+uvicorn
+httpx
+requests
+rank-bm25
+duckdb
+python-dateutil
+google-auth
+ag-ui-protocol
+livekit-agents[google]
+livekit-api

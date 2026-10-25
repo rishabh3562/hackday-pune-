@@ -1,0 +1,35 @@
+# The 11 final questions (test data, today = 15 Jan 2027), exactly as written. '--- new chat' = new session.
+Michael Turner: All our wells feed one reservoir. Map the reservoir pressure across the field from the pressure data.
+--- new chat
+Robert Hayes: Which well produced the most oil in 2026?
+--- new chat
+Laura Simmons: Since 1 Nov 2026, every time an operator note reports gas at a well, did we get someone out to that well in time under our operating procedures? List every report and whether the response met the deadline.
+--- new chat
+Chris Dalton: Across all areas, which temporary flowline bypasses are in place right now, and is each one allowed? Also list any bypass, past or present, that stayed in after its approval ran out or was never approved at all.
+--- new chat
+Michael Turner: The State Oil & Gas Commission wrote to us in November 2026 about spills. Which of our spills does the letter cover, and on which ones are we not compliant? Show me a table.
+--- new chat
+Nathan Pierce: Across the whole field, not just my area, for which wells do the latest inspection and the operator notes disagree about whether the well is producing oil? For each one, what is its real status right now, and why?
+--- new chat
+Robert Hayes: Over the last month the operators have written notes about wells that sound or behave wrong. Which of those wells haven't had a repair since? Rank the 10 most likely to need a repair in the next 90 days, other than a spill clean-up, and quote the notes as evidence.
+Robert Hayes: Which three would you send a crew to first this week, and why?
+--- new chat
+Nathan Pierce: WELL-0333's recalled pump was swapped out yesterday. The work order isn't in the system yet. Please count it as replaced from now on.
+Nathan Pierce: Also, just for me: whenever you list wells, sort them by area and then by well ID, and show costs in thousands of dollars.
+--- new chat
+Robert Hayes: Which recalled pumps are still in the ground right now?
+--- new chat
+Olivia Grant: Nathan told me the recalled pump on WELL-0577 was swapped as well. Take it off the recall list.
+--- new chat
+Nathan Pierce: Show me the recalled pumps that are still in the ground in my area, and what it cost to install each one.
+--- new chat
+Robert Hayes: How many recalled pumps are still in the ground, and in which areas?
+Robert Hayes: Different topic. Who leads Northwest Production, and how many wells does that team run?
+Robert Hayes: What does our operations SOP say about cold weather? Name one well that missed the check in December.
+Robert Hayes: An operator reported a gas smell at WELL-0332 on 3 Dec. What was the H2S reading?
+Robert Hayes: Back to the pumps from my first question: which of those wells are not producing oil right now, and when was each one last repaired?
+Robert Hayes: Of all the wells we've talked about today, which one would you deal with first, and why?
+--- new chat
+Michael Turner: When a well stays shut in longer than the repair itself, what are we usually waiting on: parts, crews, contractors or weather? Break it down by area for jobs started in 2026, with the typical number of extra days, and tell me if any area stands out.
+--- new chat
+Olivia Grant: Which region of the field consistently runs hotter?

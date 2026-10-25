@@ -1,0 +1,32 @@
+{
+ "suite": "critic",
+ "ran_at": "2026-10-17 15:19",
+ "passed": 4,
+ "total": 4,
+ "items": [
+  {
+   "id": "C1",
+   "desc": "a correct draft is accepted",
+   "ok": true,
+   "info": "[]"
+  },
+  {
+   "id": "C2",
+   "desc": "a draft that excludes a listed row is flagged",
+   "ok": true,
+   "info": "(False, ['WELL-0120 is incorrectly excluded. It requires analysis as its 2 repairs meet the threshold of 2.', \"The note explaining that the threshold for T350 wells is 2 due to Michael Turner's rule is missing.\"])"
+  },
+  {
+   "id": "C3",
+   "desc": "a draft with a wrong number is flagged",
+   "ok": true,
+   "info": "(False, ['WELL-0108 had 3 corrective repairs, not 7.', \"The draft does not mention the note explaining that the threshold for T350 wells is 2 repairs due to Michael Turner's rule.\"])"
+  },
+  {
+   "id": "C4",
+   "desc": "a draft that hides the user-rule/manual conflict is flagged",
+   "ok": true,
+   "info": "(False, [\"The draft does not mention that the threshold for T350 wells is based on Michael Turner's rule, which is an important detail from the notes.\"])"
+  }
+ ]
+}

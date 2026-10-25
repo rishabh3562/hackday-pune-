@@ -1,9 +1,21 @@
-# Organizer-only prototype, not part of the participant repo
-prototype/
-
-# OS files
+.env
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+*.db
 .DS_Store
-Thumbs.db
-.qodo
-.claude
-.vscode
+data/
+traces.jsonl
+*.memory.db
+.cache/
+*.duckdb
+WRITEUP.pdf
+docs/*.pdf
+docs/*-d*.png
+WRITEUP-d*.png
+docs-tools/node_modules/
+.next/
+web/.next/
+web/next-env.d.ts
+.playwright-cli/
